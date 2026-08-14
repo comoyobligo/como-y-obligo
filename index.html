@@ -1,4 +1,939 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Como y Obligó | Carta Digital</title>
+
+<meta name="description" content="Carta digital de Como y Obligó. Superpanchos, promos, bebidas, aderezos y toppings.">
+<meta name="theme-color" content="#080808">
+
+<style>
+
+:root{
+    --black:#070707;
+    --black2:#101010;
+    --card:#151515;
+    --red:#e21b12;
+    --red-dark:#8f100b;
+    --orange:#ff9d00;
+    --orange-light:#ffc04d;
+    --cream:#ffe3a3;
+    --white:#fff;
+    --muted:#b99b67;
+    --border:#3a1b08;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(circle at top,#241000 0,#090909 32%,#050505 100%);
+    color:var(--cream);
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    text-align:center;
+    padding:34px 18px 28px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid #5b2105;
+    background:
+        radial-gradient(circle at 50% 20%,#3b1600 0%,#120800 42%,#060606 75%);
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:#ff6b0015;
+    border-radius:50%;
+    filter:blur(30px);
+    top:-100px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.logo{
+    position:relative;
+    font-family:Georgia,serif;
+    font-size:38px;
+    font-weight:900;
+    letter-spacing:2px;
+    color:var(--red);
+    text-shadow:
+        0 0 5px #ff5a00,
+        0 0 18px #ff780044;
+}
+
+.subtitle{
+    position:relative;
+    margin-top:8px;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:var(--orange);
+}
+
+.header-line{
+    width:80px;
+    height:3px;
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    margin:18px auto 0;
+    border-radius:10px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+    padding:18px 14px 45px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    text-align:center;
+    padding:15px 10px 8px;
+}
+
+.intro h1{
+    font-size:24px;
+    color:var(--white);
+    margin-bottom:7px;
+}
+
+.intro p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px 2px 17px;
+    scrollbar-width:none;
+}
+
+.nav::-webkit-scrollbar{
+    display:none;
+}
+
+.nav a{
+    flex:0 0 auto;
+    text-decoration:none;
+    color:var(--cream);
+    background:#111;
+    border:1px solid #49200a;
+    padding:9px 13px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+}
+
+.nav a:first-child{
+    color:#080808;
+    background:linear-gradient(135deg,var(--orange),#ff6b00);
+    border-color:var(--orange);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    background:
+        linear-gradient(145deg,#171717,#0c0c0c);
+    border:1px solid var(--border);
+    border-radius:20px;
+    margin:16px 0;
+    padding:20px 17px;
+    box-shadow:
+        0 8px 25px #00000055,
+        inset 0 1px 0 #ffffff08;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.section-title .emoji{
+    display:block;
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.section-title h2{
+    color:var(--orange);
+    font-size:23px;
+    letter-spacing:1px;
+}
+
+.section-title p{
+    margin-top:5px;
+    color:#987c50;
+    font-size:11px;
+}
+
+/* =========================
+   ITEMS
+========================= */
+
+.item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:15px 2px;
+    border-bottom:1px solid #2c190b;
+}
+
+.item:last-child{
+    border-bottom:none;
+    padding-bottom:3px;
+}
+
+.item-left{
+    min-width:0;
+}
+
+.item-name{
+    color:var(--cream);
+    font-size:16px;
+    font-weight:900;
+    line-height:1.25;
+}
+
+.item-desc{
+    display:block;
+    margin-top:5px;
+    color:#a98b58;
+    font-size:12px;
+    line-height:1.4;
+}
+
+.price{
+    flex-shrink:0;
+    color:var(--orange);
+    font-size:18px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+/* =========================
+   FEATURED ITEMS
+========================= */
+
+.featured{
+    position:relative;
+    background:
+        linear-gradient(135deg,#211006,#100b08);
+    border:1px solid #74300b;
+    border-radius:15px;
+    padding:16px 13px;
+    margin-bottom:10px;
+}
+
+.featured:last-child{
+    margin-bottom:0;
+}
+
+.featured .item{
+    border:0;
+    padding:0;
+}
+
+.badge{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    font-size:9px;
+    font-weight:900;
+    padding:4px 7px;
+    border-radius:20px;
+    margin-bottom:6px;
+    letter-spacing:.5px;
+}
+
+/* =========================
+   PROMOS
+========================= */
+
+.promo{
+    border:1px solid #63300d;
+    border-radius:15px;
+    padding:15px 13px;
+    margin-bottom:10px;
+    background:
+        linear-gradient(135deg,#1d0d04,#0f0f0f);
+}
+
+.promo:last-child{
+    margin-bottom:0;
+}
+
+.promo-name{
+    color:#ffe6ae;
+    font-size:15px;
+    font-weight:900;
+    line-height:1.35;
+}
+
+.promo-price{
+    color:var(--orange);
+    font-size:21px;
+    font-weight:900;
+    margin-top:7px;
+}
+
+/* =========================
+   LISTAS
+========================= */
+
+.group-title{
+    color:var(--red);
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin:17px 0 8px;
+}
+
+.group-title:first-child{
+    margin-top:0;
+}
+
+.list{
+    list-style:none;
+}
+
+.list li{
+    position:relative;
+    padding:7px 0 7px 20px;
+    color:#e6c27f;
+    font-size:14px;
+    border-bottom:1px dotted #40240e;
+}
+
+.list li:last-child{
+    border-bottom:none;
+}
+
+.list li::before{
+    content:"•";
+    position:absolute;
+    left:4px;
+    color:var(--orange);
+    font-size:18px;
+    top:3px;
+}
+
+/* =========================
+   TOPPINGS
+========================= */
+
+.toppings{
+    text-align:center;
+}
+
+.toppings-text{
+    color:#e8c47e;
+    line-height:1.9;
+    font-size:14px;
+}
+
+.topping-price{
+    margin-top:15px;
+    color:var(--orange);
+    font-size:26px;
+    font-weight:900;
+}
+
+.availability{
+    margin-top:5px;
+    color:#8e744a;
+    font-size:11px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+    padding:30px 10px 10px;
+}
+
+.footer-logo{
+    color:var(--red);
+    font-family:Georgia,serif;
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.footer-text{
+    margin-top:8px;
+    color:var(--orange);
+    font-size:13px;
+    font-weight:800;
+}
+
+.footer-small{
+    margin-top:13px;
+    color:#725b3a;
+    font-size:10px;
+}
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+.top{
+    position:fixed;
+    right:15px;
+    bottom:18px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,var(--red),#9e1009);
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:900;
+    box-shadow:0 5px 20px #00000088;
+    z-index:10;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media(min-width:700px){
+
+    main{
+        padding-top:25px;
+    }
+
+    .logo{
+        font-size:46px;
+    }
+
+    .section{
+        padding:23px;
+    }
+
+    .item-name{
+        font-size:17px;
+    }
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<header>
+
+    <div class="logo">COMO Y OBLIGÓ</div>
+
+    <div class="subtitle">
+        CARTA DIGITAL
+    </div>
+
+    <div class="header-line"></div>
+
+</header>
+
+
+<main>
+
+    <div class="intro">
+
+        <h1>🌭 Elegí tu próximo pancho</h1>
+
+        <p>
+            Superpanchos, promos, bebidas y todos los extras
+            para armarlo como más te gusta.
+        </p>
+
+    </div>
+
+
+    <!-- NAVEGACIÓN -->
+
+    <nav class="nav">
+
+        <a href="#panchos">🌭 Panchos</a>
+        <a href="#promos">🔥 Promos</a>
+        <a href="#bebidas">🥤 Bebidas</a>
+        <a href="#aderezos">🥫 Aderezos</a>
+        <a href="#toppings">➕ Toppings</a>
+
+    </nav>
+
+
+    <!-- PANCHOS -->
+
+    <section class="section" id="panchos">
+
+        <div class="section-title">
+
+            <span class="emoji">🌭</span>
+
+            <h2>SUPERPANCHO</h2>
+
+            <p>Elegí tu favorito</p>
+
+        </div>
+
+
+        <div class="featured">
+
+            <div class="badge">EL CLÁSICO</div>
+
+            <div class="item">
+
+                <div class="item-left">
+
+                    <div class="item-name">
+                        Parmesano
+                    </div>
+
+                    <span class="item-desc">
+                        Nuestro clásico Superpancho.
+                    </span>
+
+                </div>
+
+                <div class="price">
+                    $3.000
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="featured">
+
+            <div class="item">
+
+                <div class="item-left">
+
+                    <div class="item-name">
+                        Doble
+                    </div>
+
+                    <span class="item-desc">
+                        Para los que vienen con hambre.
+                    </span>
+
+                </div>
+
+                <div class="price">
+                    $4.500
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="featured">
+
+            <div class="item">
+
+                <div class="item-left">
+
+                    <div class="item-name">
+                        Veggie
+                    </div>
+
+                    <span class="item-desc">
+                        Pan de papa y salchicha de soja.
+                    </span>
+
+                </div>
+
+                <div class="price">
+                    $5.000
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROMOS -->
+
+    <section class="section" id="promos">
+
+        <div class="section-title">
+
+            <span class="emoji">🔥</span>
+
+            <h2>PROMOS</h2>
+
+            <p>Más comida, mejor precio</p>
+
+        </div>
+
+
+        <div class="promo">
+
+            <div class="promo-name">
+                Superparmesano + Gaseosa
+            </div>
+
+            <div class="promo-price">
+                $4.500
+            </div>
+
+        </div>
+
+
+        <div class="promo">
+
+            <div class="promo-name">
+                Superdoble + Gaseosa
+            </div>
+
+            <div class="promo-price">
+                $6.000
+            </div>
+
+        </div>
+
+
+        <div class="promo">
+
+            <div class="promo-name">
+                Superveggie + Gaseosa
+            </div>
+
+            <div class="promo-price">
+                $6.500
+            </div>
+
+        </div>
+
+
+        <div class="promo">
+
+            <div class="promo-name">
+                Superparmesano + Cerveza
+            </div>
+
+            <div class="promo-price">
+                $5.500
+            </div>
+
+        </div>
+
+
+        <div class="promo">
+
+            <div class="promo-name">
+                Superdoble + Cerveza
+            </div>
+
+            <div class="promo-price">
+                $7.000
+            </div>
+
+        </div>
+
+
+        <div class="promo">
+
+            <div class="promo-name">
+                2 Superparmesano + Gaseosa
+            </div>
+
+            <div class="promo-price">
+                $7.000
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BEBIDAS -->
+
+    <section class="section" id="bebidas">
+
+        <div class="section-title">
+
+            <span class="emoji">🥤</span>
+
+            <h2>BEBIDAS</h2>
+
+            <p>Algo fresco para acompañar</p>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Agua</div>
+            </div>
+
+            <div class="price">$2.000</div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Gaseosa</div>
+            </div>
+
+            <div class="price">$3.000</div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Red Bull</div>
+            </div>
+
+            <div class="price">$5.000</div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Ortuzar</div>
+            </div>
+
+            <div class="price">$3.000</div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Schneider</div>
+            </div>
+
+            <div class="price">$4.000</div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Andes</div>
+            </div>
+
+            <div class="price">$5.000</div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-left">
+                <div class="item-name">Stella</div>
+            </div>
+
+            <div class="price">$6.000</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADEREZOS -->
+
+    <section class="section" id="aderezos">
+
+        <div class="section-title">
+
+            <span class="emoji">🥫</span>
+
+            <h2>ADEREZOS</h2>
+
+            <p>Elegí cómo acompañarlo</p>
+
+        </div>
+
+
+        <div class="group-title">
+            Clásicos
+        </div>
+
+        <ul class="list">
+
+            <li>
+                Mayonesa
+            </li>
+
+            <li>
+                Mayonesa vegana — Felices las Vacas
+            </li>
+
+            <li>
+                Ketchup
+            </li>
+
+            <li>
+                Mostaza
+            </li>
+
+            <li>
+                Barbacoa
+            </li>
+
+        </ul>
+
+
+        <div class="group-title">
+            Especiales
+        </div>
+
+        <ul class="list">
+
+            <li>
+                Cheddar
+            </li>
+
+            <li>
+                Alioli — mayonesa de ajo
+            </li>
+
+            <li>
+                Parmesano
+            </li>
+
+            <li>
+                Salsa picante
+            </li>
+
+            <li>
+                Roquefort
+            </li>
+
+            <li>
+                Salsa golf
+            </li>
+
+            <li>
+                Salsa mil islas
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- TOPPINGS -->
+
+    <section class="section toppings" id="toppings">
+
+        <div class="section-title">
+
+            <span class="emoji">➕</span>
+
+            <h2>TOPPINGS EXTRAS</h2>
+
+            <p>Sumale lo que quieras</p>
+
+        </div>
+
+
+        <div class="toppings-text">
+
+            Guacamole · Salsa criolla · Tomate ·
+            Aceitunas · Choclo · Champiñones · etc.
+
+        </div>
+
+
+        <div class="topping-price">
+            $500
+        </div>
+
+
+        <div class="availability">
+            Sujetos a disponibilidad
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            COMO Y OBLIGÓ
+        </div>
+
+        <div class="footer-text">
+            COMÉ RICO, MUCHO MÁS QUE UN PANCHO ❤️
+        </div>
+
+        <div class="footer-small">
+            Carta digital · Precios sujetos a actualización
+        </div>
+
+    </footer>
+
+</main>
+
+
+<a href="#top" class="top" aria-label="Volver arriba">
+    ↑
+</a>
+
+
+</body>
+</html><!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
