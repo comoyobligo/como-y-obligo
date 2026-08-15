@@ -4,13 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="Promo exclusiva Como y Obligó — 2x1 en Panchos Parmesano.">
-<title>Como y Obligó — Voucher 2x1</title>
+<meta name="description" content="Como y Obligó — Voucher 2x1">
+<title>Como y Obligó — 2x1</title>
 
 <style>
 :root{
-  --black:#050505;
-  --card:#101010;
   --red:#e21b12;
   --orange:#ff9d00;
   --cream:#ffe5a5;
@@ -40,7 +38,7 @@ main{
 .brand{
   text-align:center;
   color:var(--red);
-  font:900 44px/0.9 Georgia,serif;
+  font:900 44px/.9 Georgia,serif;
   text-shadow:
     0 0 5px #ffcf00,
     0 0 16px #ff7200,
@@ -83,7 +81,7 @@ main{
 }
 
 .title{
-  font-size:30px;
+  font-size:29px;
   font-weight:900;
   color:#fff;
   margin-top:18px;
@@ -146,13 +144,39 @@ main{
   cursor:pointer;
 }
 
+.verify{
+  margin-top:20px;
+  padding:18px;
+  border:1px solid #5c250b;
+  border-radius:18px;
+  background:#0b0b0b;
+}
+
+.verify h3{
+  margin:0 0 8px;
+  color:#fff;
+  font-size:18px;
+}
+
+.verify p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+
 .voucher{
+  display:none;
   margin-top:20px;
   border:2px dashed var(--orange);
   border-radius:20px;
   padding:22px 16px;
   background:
     radial-gradient(circle at top right,#351500,#090909);
+}
+
+.voucher.show{
+  display:block;
 }
 
 .voucher-label{
@@ -169,7 +193,7 @@ main{
 }
 
 .code{
-  font:900 22px monospace;
+  font:900 24px monospace;
   color:var(--orange);
   letter-spacing:2px;
   margin:15px 0;
@@ -232,93 +256,165 @@ main{
 
 <section class="card">
 
-  <div class="tag">
-    PROMO EXCLUSIVA
-  </div>
+<div class="tag">
+  PROMO EXCLUSIVA
+</div>
 
-  <div class="title">
-    SEGUINOS Y TENÉS
-  </div>
+<div class="title">
+  SEGUINOS Y TENÉS
+</div>
 
-  <div class="big">
-    2x1
-  </div>
+<div class="big">
+  2x1
+</div>
 
-  <div class="subtitle">
-    EN PANCHOS
-  </div>
+<div class="subtitle">
+  EN PANCHOS
+</div>
 
-  <div class="desc">
-    Promo especial para seguidores de @comoyobligo.
-    El más pedido: Pancho Parmesano.
-  </div>
+<div class="desc">
+  Seguí a @comoyobligo en Instagram y presentá
+  el voucher en el local. El más pedido:
+  Pancho Parmesano.
+</div>
 
-  <div class="follow">
 
-    <strong>
-      Primero seguinos en Instagram
-    </strong>
+<!-- PASO 1 -->
 
-    <span>
-      @comoyobligo
-    </span>
+<div class="follow">
 
-    <a
-      class="btn"
-      href="https://www.instagram.com/comoyobligo/"
-      target="_blank"
-      rel="noopener"
-    >
-      SEGUIR A @COMOYOOBLIGO
-    </a>
+<strong>
+  1. Seguinos en Instagram
+</strong>
 
-  </div>
+<span>
+  @comoyobligo
+</span>
 
-  <!-- VOUCHER VISIBLE DIRECTAMENTE -->
+<a
+  class="btn"
+  href="https://www.instagram.com/comoyobligo/"
+  target="_blank"
+  rel="noopener"
+>
+  SEGUIR A @COMOYOOBLIGO
+</a>
 
-  <div class="voucher">
+</div>
 
-    <div class="voucher-label">
-      COMO Y OBLIGÓ · VOUCHER 2x1
-    </div>
 
-    <h2>
-      2 PANCHOS → PAGÁS 1
-    </h2>
+<!-- PASO 2 -->
 
-    <div class="code">
-      CYOB-2X1-482731
-    </div>
+<div class="verify">
 
-    <div class="rules">
-      Presentá este voucher en el local.<br>
-      Válido para seguidores. Un voucher por persona.<br>
-      Promo sujeta a las condiciones indicadas por el local.
-    </div>
+<h3>
+  2. ¿Ya estás siguiendo a @comoyobligo?
+</h3>
 
-    <div class="address">
-      Gorriti 5061 · Palermo
-    </div>
+<p>
+  Volvé a esta página después de seguirnos.
+  Al mostrar el voucher en el local,
+  verificamos desde nuestra cuenta que
+  efectivamente nos sigas.
+</p>
 
-    <a
-      class="ig"
-      href="https://www.instagram.com/comoyobligo/"
-      target="_blank"
-      rel="noopener"
-    >
-      @comoyobligo
-    </a>
+<button
+  class="btn"
+  onclick="mostrarVoucher()"
+>
+  MOSTRAR MI VOUCHER
+</button>
 
-  </div>
+</div>
 
-  <div class="small">
-    Como y Obligó · Palermo<br>
-    Guardá esta pantalla y mostrá el voucher al pedir.
-  </div>
+
+<!-- VOUCHER -->
+
+<div
+  id="voucher"
+  class="voucher"
+>
+
+<div class="voucher-label">
+  COMO Y OBLIGÓ · VOUCHER 2x1
+</div>
+
+<h2>
+  2 PANCHOS → PAGÁS 1
+</h2>
+
+<div class="code">
+  CYOB-2X1-482731
+</div>
+
+<div class="rules">
+
+<strong style="color:#fff">
+  ⚠️ VOUCHER SUJETO A VERIFICACIÓN
+</strong>
+
+<br><br>
+
+Presentá este voucher en el local.
+<br>
+
+Nuestro equipo verificará que sigas
+a @comoyobligo antes de aplicar la promo.
+<br>
+
+Un voucher por persona.
+
+</div>
+
+<div class="address">
+  Gorriti 5061 · Palermo
+</div>
+
+<a
+  class="ig"
+  href="https://www.instagram.com/comoyobligo/"
+  target="_blank"
+  rel="noopener"
+>
+  @comoyobligo
+</a>
+
+</div>
+
+
+<div class="small">
+
+Como y Obligó · Palermo
+<br>
+
+Guardá esta pantalla y mostrá el voucher al pedir.
+
+</div>
 
 </section>
 
 </main>
+
+
+<script>
+
+function mostrarVoucher(){
+
+  document
+    .getElementById('voucher')
+    .classList
+    .add('show');
+
+  document
+    .getElementById('voucher')
+    .scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+
+}
+
+</script>
 
 </body>
 </html>
