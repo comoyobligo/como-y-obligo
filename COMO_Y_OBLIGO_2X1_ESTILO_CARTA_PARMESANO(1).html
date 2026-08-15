@@ -6,68 +6,319 @@
 <meta name="theme-color" content="#050505">
 <meta name="description" content="Promo exclusiva Como y Obligó — 2x1 en Panchos Parmesano.">
 <title>Como y Obligó — Voucher 2x1</title>
+
 <style>
-:root{--black:#050505;--card:#101010;--red:#e21b12;--orange:#ff9d00;--cream:#ffe5a5;--muted:#b99658}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -5%,#4a1000,#120500 35%,#050505 70%);color:var(--cream);font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;padding:24px 14px}
-main{width:min(520px,100%)}
-.brand{text-align:center;color:var(--red);font:900 44px/0.9 Georgia,serif;text-shadow:0 0 5px #ffcf00,0 0 16px #ff7200,0 0 30px #ff2400;margin:18px 0}
-.line{height:3px;width:150px;margin:20px auto;background:linear-gradient(90deg,transparent,var(--orange),transparent)}
-.card{background:linear-gradient(145deg,#181818,#080808);border:1.5px solid var(--orange);border-radius:26px;padding:28px 20px;box-shadow:0 0 35px #ff650022,0 12px 35px #000;text-align:center}
-.tag{display:inline-block;background:linear-gradient(90deg,var(--red),#ff5500);color:#fff;padding:7px 12px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:2px}
-.title{font-size:30px;font-weight:900;color:#fff;margin-top:18px}
-.big{font-size:64px;line-height:1;color:var(--orange);font-weight:1000;margin:8px 0;text-shadow:0 0 20px #ff8c0033}
-.subtitle{font-size:18px;font-weight:900;color:#fff0c2}
-.desc{font-size:13px;color:var(--muted);margin:10px 0 22px}
-.follow{background:#0b0b0b;border:1px solid #5c250b;border-radius:18px;padding:16px;margin:16px 0}
-.follow strong{display:block;color:#fff;font-size:16px}
-.follow span{display:block;color:var(--orange);font-weight:900;margin-top:5px}
-.btn{display:block;width:100%;padding:15px;border:0;border-radius:999px;background:linear-gradient(90deg,var(--red),#ff6200);color:#fff;font-size:15px;font-weight:900;text-decoration:none;margin-top:12px;cursor:pointer}
-.btn.secondary{background:#111;border:1px solid var(--orange)}
-.voucher{display:none;margin-top:20px;border:2px dashed var(--orange);border-radius:20px;padding:22px 16px;background:radial-gradient(circle at top right,#351500,#090909)}
-.voucher.show{display:block}
-.voucher-label{font-size:11px;letter-spacing:3px;color:var(--orange);font-weight:900}
-.voucher h2{margin:8px 0;color:#fff;font-size:28px}
-.code{font:900 22px monospace;color:var(--orange);letter-spacing:2px;margin:15px 0}
-.rules{font-size:11px;line-height:1.6;color:var(--muted)}
-.address{margin-top:18px;color:#fff;font-weight:900}
-.ig{display:inline-block;margin-top:18px;color:var(--orange);font-weight:900;text-decoration:none}
-.small{font-size:10px;color:#735c38;margin-top:22px;line-height:1.5}
-@media(max-width:380px){.brand{font-size:36px}.big{font-size:54px}.title{font-size:26px}}
+:root{
+  --black:#050505;
+  --card:#101010;
+  --red:#e21b12;
+  --orange:#ff9d00;
+  --cream:#ffe5a5;
+  --muted:#b99658;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% -5%,#4a1000,#120500 35%,#050505 70%);
+  color:var(--cream);
+  font-family:Arial,Helvetica,sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:24px 14px;
+}
+
+main{
+  width:min(520px,100%);
+}
+
+.brand{
+  text-align:center;
+  color:var(--red);
+  font:900 44px/0.9 Georgia,serif;
+  text-shadow:
+    0 0 5px #ffcf00,
+    0 0 16px #ff7200,
+    0 0 30px #ff2400;
+  margin:18px 0;
+}
+
+.line{
+  height:3px;
+  width:150px;
+  margin:20px auto;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--orange),
+    transparent
+  );
+}
+
+.card{
+  background:linear-gradient(145deg,#181818,#080808);
+  border:1.5px solid var(--orange);
+  border-radius:26px;
+  padding:28px 20px;
+  box-shadow:
+    0 0 35px #ff650022,
+    0 12px 35px #000;
+  text-align:center;
+}
+
+.tag{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--red),#ff5500);
+  color:#fff;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.title{
+  font-size:30px;
+  font-weight:900;
+  color:#fff;
+  margin-top:18px;
+}
+
+.big{
+  font-size:64px;
+  line-height:1;
+  color:var(--orange);
+  font-weight:1000;
+  margin:8px 0;
+  text-shadow:0 0 20px #ff8c0033;
+}
+
+.subtitle{
+  font-size:18px;
+  font-weight:900;
+  color:#fff0c2;
+}
+
+.desc{
+  font-size:13px;
+  color:var(--muted);
+  margin:10px 0 22px;
+}
+
+.follow{
+  background:#0b0b0b;
+  border:1px solid #5c250b;
+  border-radius:18px;
+  padding:16px;
+  margin:16px 0;
+}
+
+.follow strong{
+  display:block;
+  color:#fff;
+  font-size:16px;
+}
+
+.follow span{
+  display:block;
+  color:var(--orange);
+  font-weight:900;
+  margin-top:5px;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--red),#ff6200);
+  color:#fff;
+  font-size:15px;
+  font-weight:900;
+  text-decoration:none;
+  margin-top:12px;
+  cursor:pointer;
+}
+
+.voucher{
+  margin-top:20px;
+  border:2px dashed var(--orange);
+  border-radius:20px;
+  padding:22px 16px;
+  background:
+    radial-gradient(circle at top right,#351500,#090909);
+}
+
+.voucher-label{
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--orange);
+  font-weight:900;
+}
+
+.voucher h2{
+  margin:8px 0;
+  color:#fff;
+  font-size:28px;
+}
+
+.code{
+  font:900 22px monospace;
+  color:var(--orange);
+  letter-spacing:2px;
+  margin:15px 0;
+}
+
+.rules{
+  font-size:11px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.address{
+  margin-top:18px;
+  color:#fff;
+  font-weight:900;
+}
+
+.ig{
+  display:inline-block;
+  margin-top:18px;
+  color:var(--orange);
+  font-weight:900;
+  text-decoration:none;
+}
+
+.small{
+  font-size:10px;
+  color:#735c38;
+  margin-top:22px;
+  line-height:1.5;
+}
+
+@media(max-width:380px){
+
+  .brand{
+    font-size:36px;
+  }
+
+  .big{
+    font-size:54px;
+  }
+
+  .title{
+    font-size:26px;
+  }
+
+}
 </style>
 </head>
+
 <body>
+
 <main>
-<div class="brand">COMO Y<br>OBLIGÓ</div>
+
+<div class="brand">
+  COMO Y<br>OBLIGÓ
+</div>
+
 <div class="line"></div>
+
 <section class="card">
-<div class="tag">PROMO EXCLUSIVA</div>
-<div class="title">SEGUINOS Y TENÉS</div>
-<div class="big">2x1</div>
-<div class="subtitle">EN PANCHOS</div>
-<div class="desc">Promo especial para seguidores de @comoyobligo. El más pedido: Pancho Parmesano.</div>
-<div class="follow">
-<strong>Primero seguinos en Instagram</strong>
-<span>@comoyobligo</span>
-<a class="btn" href="https://www.instagram.com/comoyobligo/" target="_blank" rel="noopener">SEGUIR A @COMOYOOBLIGO</a>
-</div>
-<button class="btn secondary" onclick="mostrarVoucher()">YA TE SEGUÍ → OBTENER VOUCHER</button>
-<div id="voucher" class="voucher">
-<div class="voucher-label">COMO Y OBLIGÓ · VOUCHER 2x1</div>
-<h2>2 PANCHOS → PAGÁS 1</h2>
-<div class="code">CYOB-2X1-482731</div>
-<div class="rules">Presentá este voucher en el local.<br>Válido para seguidores. Un voucher por persona.<br>Promo sujeta a las condiciones indicadas por el local.</div>
-<div class="address">Gorriti 5061 · Palermo</div>
-<a class="ig" href="https://www.instagram.com/comoyobligo/" target="_blank" rel="noopener">@comoyobligo</a>
-</div>
-<div class="small">Como y Obligó · Palermo<br>Guardá esta pantalla y mostrá el voucher al pedir.</div>
+
+  <div class="tag">
+    PROMO EXCLUSIVA
+  </div>
+
+  <div class="title">
+    SEGUINOS Y TENÉS
+  </div>
+
+  <div class="big">
+    2x1
+  </div>
+
+  <div class="subtitle">
+    EN PANCHOS
+  </div>
+
+  <div class="desc">
+    Promo especial para seguidores de @comoyobligo.
+    El más pedido: Pancho Parmesano.
+  </div>
+
+  <div class="follow">
+
+    <strong>
+      Primero seguinos en Instagram
+    </strong>
+
+    <span>
+      @comoyobligo
+    </span>
+
+    <a
+      class="btn"
+      href="https://www.instagram.com/comoyobligo/"
+      target="_blank"
+      rel="noopener"
+    >
+      SEGUIR A @COMOYOOBLIGO
+    </a>
+
+  </div>
+
+  <!-- VOUCHER VISIBLE DIRECTAMENTE -->
+
+  <div class="voucher">
+
+    <div class="voucher-label">
+      COMO Y OBLIGÓ · VOUCHER 2x1
+    </div>
+
+    <h2>
+      2 PANCHOS → PAGÁS 1
+    </h2>
+
+    <div class="code">
+      CYOB-2X1-482731
+    </div>
+
+    <div class="rules">
+      Presentá este voucher en el local.<br>
+      Válido para seguidores. Un voucher por persona.<br>
+      Promo sujeta a las condiciones indicadas por el local.
+    </div>
+
+    <div class="address">
+      Gorriti 5061 · Palermo
+    </div>
+
+    <a
+      class="ig"
+      href="https://www.instagram.com/comoyobligo/"
+      target="_blank"
+      rel="noopener"
+    >
+      @comoyobligo
+    </a>
+
+  </div>
+
+  <div class="small">
+    Como y Obligó · Palermo<br>
+    Guardá esta pantalla y mostrá el voucher al pedir.
+  </div>
+
 </section>
+
 </main>
-<script>
-function mostrarVoucher(){
- document.getElementById('voucher').classList.add('show');
- document.getElementById('voucher').scrollIntoView({behavior:'smooth',block:'center'});
-}
-</script>
+
 </body>
 </html>
