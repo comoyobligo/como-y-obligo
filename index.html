@@ -1,102 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Como y Obligó | Carta Digital</title>
-
-<meta name="description" content="Carta digital de Como y Obligó. Superpanchos, promos, bebidas, aderezos y toppings.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080808">
+<meta name="description" content="Como y Obligó — Carta digital. Panchos, promos, bebidas y más en Palermo.">
+<title>Como y Obligó — Carta Digital</title>
 
 <style>
-
 :root{
-    --black:#070707;
-    --black2:#101010;
-    --card:#151515;
-    --red:#e21b12;
-    --red-dark:#8f100b;
-    --orange:#ff9d00;
-    --orange-light:#ffc04d;
-    --cream:#ffe3a3;
-    --white:#fff;
-    --muted:#b99b67;
-    --border:#3a1b08;
+  --black:#050505;
+  --black2:#0b0b0b;
+  --card:#111111;
+  --red:#e21b12;
+  --red2:#ff3020;
+  --orange:#ff9d00;
+  --yellow:#ffd15c;
+  --cream:#ffe5a5;
+  --muted:#b99658;
+  --line:#ff5a16;
+  --green:#31d158;
 }
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
 html{
-    scroll-behavior:smooth;
+  background:#050505;
 }
 
 body{
-    background:
-        radial-gradient(circle at top,#241000 0,#090909 32%,#050505 100%);
-    color:var(--cream);
-    font-family:Arial,Helvetica,sans-serif;
-    min-height:100vh;
+  margin:0;
+  background:
+    radial-gradient(circle at 50% -10%,#3b0b00 0%,#100500 25%,#050505 55%);
+  color:var(--cream);
+  font-family:Arial,Helvetica,sans-serif;
+  padding-bottom:75px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font-family:inherit;
 }
 
 /* =========================
    HEADER
 ========================= */
 
-header{
-    text-align:center;
-    padding:34px 18px 28px;
-    position:relative;
-    overflow:hidden;
-    border-bottom:1px solid #5b2105;
-    background:
-        radial-gradient(circle at 50% 20%,#3b1600 0%,#120800 42%,#060606 75%);
+.hero{
+  min-height:390px;
+  padding:32px 18px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:2px solid var(--orange);
 }
 
-header::before{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    background:#ff6b0015;
-    border-radius:50%;
-    filter:blur(30px);
-    top:-100px;
-    left:50%;
-    transform:translateX(-50%);
+.hero:before,
+.hero:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(45px);
+  opacity:.25;
+}
+
+.hero:before{
+  width:220px;
+  height:220px;
+  background:var(--red);
+  top:-100px;
+  left:-80px;
+}
+
+.hero:after{
+  width:250px;
+  height:250px;
+  background:var(--orange);
+  bottom:-150px;
+  right:-80px;
 }
 
 .logo{
-    position:relative;
-    font-family:Georgia,serif;
-    font-size:38px;
-    font-weight:900;
-    letter-spacing:2px;
-    color:var(--red);
-    text-shadow:
-        0 0 5px #ff5a00,
-        0 0 18px #ff780044;
+  position:relative;
+  z-index:2;
+  font-family:Georgia,serif;
+  font-size:clamp(36px,10vw,64px);
+  line-height:.95;
+  font-weight:900;
+  color:var(--red);
+  letter-spacing:1px;
+  text-shadow:
+    0 0 4px #ffcf00,
+    0 0 14px #ff7200,
+    0 0 28px #ff2400;
 }
 
-.subtitle{
-    position:relative;
-    margin-top:8px;
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:4px;
-    color:var(--orange);
+.logo-line{
+  width:180px;
+  height:4px;
+  background:linear-gradient(90deg,transparent,var(--orange),transparent);
+  margin:22px auto 18px;
+  box-shadow:0 0 12px var(--orange);
 }
 
-.header-line{
-    width:80px;
-    height:3px;
-    background:linear-gradient(90deg,var(--red),var(--orange));
-    margin:18px auto 0;
-    border-radius:10px;
+.hero-title{
+  position:relative;
+  z-index:2;
+  color:var(--orange);
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:5px;
+}
+
+.hero-subtitle{
+  position:relative;
+  z-index:2;
+  margin-top:10px;
+  color:var(--cream);
+  font-size:13px;
+  opacity:.8;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions{
+  width:min(680px,calc(100% - 28px));
+  margin:-28px auto 0;
+  position:relative;
+  z-index:5;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.action{
+  min-height:62px;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:linear-gradient(145deg,#181818,#090909);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-weight:900;
+  color:white;
+  box-shadow:0 5px 20px #000;
+  transition:.2s;
+}
+
+.action:hover{
+  transform:translateY(-3px);
+  border-color:var(--orange);
+  box-shadow:0 0 20px #ff650055;
+}
+
+.action span:first-child{
+  font-size:21px;
+}
+
+.action small{
+  display:block;
+  color:var(--orange);
+  font-size:9px;
+  letter-spacing:1px;
+  margin-top:3px;
 }
 
 /* =========================
@@ -104,104 +185,135 @@ header::before{
 ========================= */
 
 main{
-    width:100%;
-    max-width:700px;
-    margin:auto;
-    padding:18px 14px 45px;
+  width:min(680px,100%);
+  margin:auto;
+  padding:25px 14px 30px;
 }
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-    text-align:center;
-    padding:15px 10px 8px;
-}
-
-.intro h1{
-    font-size:24px;
-    color:var(--white);
-    margin-bottom:7px;
-}
-
-.intro p{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.5;
-}
-
-/* =========================
-   NAV
-========================= */
-
-.nav{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding:12px 2px 17px;
-    scrollbar-width:none;
-}
-
-.nav::-webkit-scrollbar{
-    display:none;
-}
-
-.nav a{
-    flex:0 0 auto;
-    text-decoration:none;
-    color:var(--cream);
-    background:#111;
-    border:1px solid #49200a;
-    padding:9px 13px;
-    border-radius:30px;
-    font-size:12px;
-    font-weight:800;
-}
-
-.nav a:first-child{
-    color:#080808;
-    background:linear-gradient(135deg,var(--orange),#ff6b00);
-    border-color:var(--orange);
-}
-
-/* =========================
-   SECTIONS
-========================= */
 
 .section{
-    background:
-        linear-gradient(145deg,#171717,#0c0c0c);
-    border:1px solid var(--border);
-    border-radius:20px;
-    margin:16px 0;
-    padding:20px 17px;
-    box-shadow:
-        0 8px 25px #00000055,
-        inset 0 1px 0 #ffffff08;
+  margin:20px 0;
+  padding:20px 16px;
+  border:1px solid #74320d;
+  border-radius:20px;
+  background:
+    linear-gradient(145deg,#151515,#080808);
+  box-shadow:
+    0 8px 25px #000,
+    inset 0 0 25px #ff5a1608;
+  animation:fadeUp .6s ease both;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:18px;
+  color:var(--orange);
+  font-size:24px;
+  font-weight:900;
 }
 
-.section-title .emoji{
-    display:block;
-    font-size:27px;
-    margin-bottom:5px;
+.section-title:after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,var(--line),transparent);
 }
 
-.section-title h2{
-    color:var(--orange);
-    font-size:23px;
-    letter-spacing:1px;
+/* =========================
+   STATUS
+========================= */
+
+.status-card{
+  padding:16px;
+  margin-bottom:20px;
+  border-radius:17px;
+  background:#0a0a0a;
+  border:1px solid #2d2d2d;
+  text-align:center;
 }
 
-.section-title p{
-    margin-top:5px;
-    color:#987c50;
-    font-size:11px;
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:16px;
+  font-weight:900;
+}
+
+.status-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 12px var(--green);
+}
+
+.status.closed .status-dot{
+  background:var(--red);
+  box-shadow:0 0 12px var(--red);
+}
+
+.status-info{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* =========================
+   FEATURED
+========================= */
+
+.featured{
+  border:1.5px solid var(--orange);
+  background:
+    radial-gradient(circle at top right,#3a1800,transparent 55%),
+    linear-gradient(145deg,#18100a,#080808);
+  box-shadow:
+    0 0 25px #ff800022,
+    inset 0 0 25px #ff9d0010;
+}
+
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--red),#ff4d00);
+  color:white;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+.featured-name{
+  font-size:26px;
+  font-weight:900;
+  color:#fff;
+}
+
+.featured-desc{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.featured-price{
+  margin-top:14px;
+  color:var(--orange);
+  font-size:27px;
+  font-weight:900;
 }
 
 /* =========================
@@ -209,79 +321,36 @@ main{
 ========================= */
 
 .item{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    padding:15px 2px;
-    border-bottom:1px solid #2c190b;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:14px 0;
+  border-bottom:1px dotted #70430e;
 }
 
 .item:last-child{
-    border-bottom:none;
-    padding-bottom:3px;
+  border-bottom:0;
 }
 
-.item-left{
-    min-width:0;
+.name{
+  color:#ffe0a2;
+  font-weight:900;
+  font-size:15px;
 }
 
-.item-name{
-    color:var(--cream);
-    font-size:16px;
-    font-weight:900;
-    line-height:1.25;
-}
-
-.item-desc{
-    display:block;
-    margin-top:5px;
-    color:#a98b58;
-    font-size:12px;
-    line-height:1.4;
+.desc{
+  display:block;
+  margin-top:4px;
+  color:#a98b55;
+  font-size:11px;
+  line-height:1.4;
 }
 
 .price{
-    flex-shrink:0;
-    color:var(--orange);
-    font-size:18px;
-    font-weight:900;
-    white-space:nowrap;
-}
-
-/* =========================
-   FEATURED ITEMS
-========================= */
-
-.featured{
-    position:relative;
-    background:
-        linear-gradient(135deg,#211006,#100b08);
-    border:1px solid #74300b;
-    border-radius:15px;
-    padding:16px 13px;
-    margin-bottom:10px;
-}
-
-.featured:last-child{
-    margin-bottom:0;
-}
-
-.featured .item{
-    border:0;
-    padding:0;
-}
-
-.badge{
-    display:inline-block;
-    background:var(--red);
-    color:#fff;
-    font-size:9px;
-    font-weight:900;
-    padding:4px 7px;
-    border-radius:20px;
-    margin-bottom:6px;
-    letter-spacing:.5px;
+  white-space:nowrap;
+  color:var(--orange);
+  font-weight:900;
+  font-size:16px;
 }
 
 /* =========================
@@ -289,72 +358,61 @@ main{
 ========================= */
 
 .promo{
-    border:1px solid #63300d;
-    border-radius:15px;
-    padding:15px 13px;
-    margin-bottom:10px;
-    background:
-        linear-gradient(135deg,#1d0d04,#0f0f0f);
+  position:relative;
+  padding:15px 13px;
+  margin:10px 0;
+  border:1px solid #5c250b;
+  border-radius:14px;
+  background:#0c0c0c;
+  overflow:hidden;
 }
 
-.promo:last-child{
-    margin-bottom:0;
+.promo:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:linear-gradient(var(--red),var(--orange));
 }
 
 .promo-name{
-    color:#ffe6ae;
-    font-size:15px;
-    font-weight:900;
-    line-height:1.35;
+  color:#fff0c2;
+  font-weight:900;
+  padding-left:7px;
 }
 
 .promo-price{
-    color:var(--orange);
-    font-size:21px;
-    font-weight:900;
-    margin-top:7px;
+  color:var(--orange);
+  font-size:18px;
+  font-weight:900;
+  padding-left:7px;
+  margin-top:5px;
 }
 
 /* =========================
-   LISTAS
+   GROUPS
 ========================= */
 
-.group-title{
-    color:var(--red);
-    font-size:13px;
-    font-weight:900;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    margin:17px 0 8px;
+.group{
+  margin:18px 0 8px;
+  color:var(--red2);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
-.group-title:first-child{
-    margin-top:0;
+ul{
+  margin:5px 0 0 18px;
+  padding:0;
 }
 
-.list{
-    list-style:none;
-}
-
-.list li{
-    position:relative;
-    padding:7px 0 7px 20px;
-    color:#e6c27f;
-    font-size:14px;
-    border-bottom:1px dotted #40240e;
-}
-
-.list li:last-child{
-    border-bottom:none;
-}
-
-.list li::before{
-    content:"•";
-    position:absolute;
-    left:4px;
-    color:var(--orange);
-    font-size:18px;
-    top:3px;
+li{
+  padding:4px 0;
+  color:#f0c879;
+  font-size:14px;
 }
 
 /* =========================
@@ -362,26 +420,125 @@ main{
 ========================= */
 
 .toppings{
-    text-align:center;
-}
-
-.toppings-text{
-    color:#e8c47e;
-    line-height:1.9;
-    font-size:14px;
+  color:#e8c77e;
+  text-align:center;
+  line-height:1.9;
+  font-size:14px;
 }
 
 .topping-price{
-    margin-top:15px;
-    color:var(--orange);
-    font-size:26px;
-    font-weight:900;
+  margin-top:12px;
+  text-align:center;
+  color:var(--orange);
+  font-size:27px;
+  font-weight:900;
 }
 
-.availability{
-    margin-top:5px;
-    color:#8e744a;
-    font-size:11px;
+/* =========================
+   LOCATION
+========================= */
+
+.location{
+  text-align:center;
+}
+
+.address{
+  color:#fff;
+  font-size:19px;
+  font-weight:900;
+}
+
+.neighborhood{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.maps-button{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:15px;
+  padding:13px 20px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--red),#ff6200);
+  color:white;
+  font-weight:900;
+  box-shadow:0 5px 20px #ff390044;
+  transition:.2s;
+}
+
+.maps-button:hover{
+  transform:scale(1.03);
+}
+
+/* =========================
+   HORARIOS
+========================= */
+
+.hours{
+  display:grid;
+  gap:8px;
+}
+
+.hour{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:13px 12px;
+  border-radius:12px;
+  background:#090909;
+  border:1px solid #292929;
+}
+
+.day{
+  color:#fff;
+  font-weight:900;
+  font-size:13px;
+}
+
+.time{
+  color:var(--orange);
+  font-weight:900;
+  font-size:13px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.instagram{
+  text-align:center;
+}
+
+.instagram-title{
+  font-size:20px;
+  font-weight:900;
+  color:white;
+}
+
+.instagram-handle{
+  color:var(--orange);
+  margin-top:5px;
+  font-weight:900;
+}
+
+.instagram-button{
+  display:inline-flex;
+  margin-top:16px;
+  padding:13px 22px;
+  border-radius:999px;
+  border:1px solid var(--orange);
+  color:white;
+  font-weight:900;
+  background:#111;
+  transition:.2s;
+}
+
+.instagram-button:hover{
+  background:var(--orange);
+  color:#080808;
 }
 
 /* =========================
@@ -389,548 +546,745 @@ main{
 ========================= */
 
 .footer{
-    text-align:center;
-    padding:30px 10px 10px;
+  padding:35px 10px 15px;
+  text-align:center;
 }
 
-.footer-logo{
-    color:var(--red);
-    font-family:Georgia,serif;
-    font-size:23px;
-    font-weight:900;
-    letter-spacing:1px;
+.footer-brand{
+  color:var(--red);
+  font-size:22px;
+  font-weight:900;
+  text-shadow:0 0 10px #ff450055;
 }
 
 .footer-text{
-    margin-top:8px;
-    color:var(--orange);
-    font-size:13px;
-    font-weight:800;
+  margin-top:8px;
+  color:var(--orange);
+  font-size:14px;
+  font-weight:900;
 }
 
 .footer-small{
-    margin-top:13px;
-    color:#725b3a;
-    font-size:10px;
+  margin-top:15px;
+  color:#735c38;
+  font-size:10px;
 }
 
 /* =========================
-   TOP BUTTON
+   BACK TOP
 ========================= */
 
 .top{
-    position:fixed;
-    right:15px;
-    bottom:18px;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,var(--red),#9e1009);
-    color:#fff;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:900;
-    box-shadow:0 5px 20px #00000088;
-    z-index:10;
+  position:fixed;
+  right:15px;
+  bottom:86px;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  border:1px solid var(--orange);
+  background:#0b0b0b;
+  color:var(--orange);
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:20;
+  box-shadow:0 5px 20px #000;
 }
 
 /* =========================
-   DESKTOP
+   MOBILE NAV
 ========================= */
 
-@media(min-width:700px){
-
-    main{
-        padding-top:25px;
-    }
-
-    .logo{
-        font-size:46px;
-    }
-
-    .section{
-        padding:23px;
-    }
-
-    .item-name{
-        font-size:17px;
-    }
+.bottom-nav{
+  position:fixed;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  height:60px;
+  border:1px solid #74320d;
+  border-radius:18px;
+  background:rgba(10,10,10,.95);
+  backdrop-filter:blur(12px);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  z-index:30;
+  box-shadow:0 5px 30px #000;
 }
 
+.nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  color:#d7b76d;
+  font-size:10px;
+  font-weight:900;
+}
+
+.nav-item span{
+  font-size:20px;
+}
+
+.nav-item:hover{
+  color:var(--orange);
+}
+
+@media(min-width:700px){
+  .bottom-nav{
+    width:500px;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+  }
+}
 </style>
 </head>
 
-<body id="top">
+<body id="inicio">
 
-<header>
+<!-- =========================
+     HERO
+========================= -->
 
-    <div class="logo">COMO Y OBLIGÓ</div>
+<header class="hero">
 
-    <div class="subtitle">
-        CARTA DIGITAL
-    </div>
+  <div class="logo">
+    COMO Y<br>OBLIGÓ
+  </div>
 
-    <div class="header-line"></div>
+  <div class="logo-line"></div>
+
+  <div class="hero-title">
+    CARTA DIGITAL
+  </div>
+
+  <div class="hero-subtitle">
+    COMÉ RICO. MUCHO MÁS QUE UN PANCHO.
+  </div>
 
 </header>
 
+<!-- =========================
+     ACTION BUTTONS
+========================= -->
+
+<div class="actions">
+
+  <a class="action"
+     href="https://www.google.com/maps/search/?api=1&query=Gorriti+5061+Palermo+Buenos+Aires"
+     target="_blank">
+    <span>📍</span>
+    <div>
+      CÓMO LLEGAR
+      <small>PALERMO</small>
+    </div>
+  </a>
+
+  <a class="action"
+     href="https://www.instagram.com/comoyobligo/"
+     target="_blank">
+    <span>📸</span>
+    <div>
+      INSTAGRAM
+      <small>@COMOYOOBLIGO</small>
+    </div>
+  </a>
+
+</div>
 
 <main>
 
-    <div class="intro">
+<!-- =========================
+     STATUS
+========================= -->
 
-        <h1>🌭 Elegí tu próximo pancho</h1>
+<section class="status-card">
 
-        <p>
-            Superpanchos, promos, bebidas y todos los extras
-            para armarlo como más te gusta.
-        </p>
+  <div id="status" class="status">
+    <span class="status-dot"></span>
+    <span id="statusText">CONSULTANDO HORARIO...</span>
+  </div>
 
+  <div id="statusInfo" class="status-info"></div>
+
+</section>
+
+
+<!-- =========================
+     MÁS PEDIDO
+========================= -->
+
+<section class="section featured">
+
+  <div class="badge">⭐ EL MÁS PEDIDO</div>
+
+  <div class="featured-name">
+    Parmesano Clásico
+  </div>
+
+  <div class="featured-desc">
+    Nuestro clásico. El favorito de Como y Obligó.
+  </div>
+
+  <div class="featured-price">
+    $3.000
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SUPERPANCHO
+========================= -->
+
+<section class="section" id="carta">
+
+  <h2 class="section-title">
+    🌭 SUPERPANCHO
+  </h2>
+
+  <div class="item">
+    <div>
+      <div class="name">Parmesano</div>
+    </div>
+    <div class="price">$3.000</div>
+  </div>
+
+  <div class="item">
+    <div>
+      <div class="name">Doble</div>
+    </div>
+    <div class="price">$4.500</div>
+  </div>
+
+  <div class="item">
+    <div>
+      <div class="name">Veggie</div>
+      <span class="desc">
+        Pan de papa y salchicha de soja
+      </span>
+    </div>
+    <div class="price">$5.000</div>
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROMOS
+========================= -->
+
+<section class="section" id="promos">
+
+  <h2 class="section-title">
+    🔥 PROMOS
+  </h2>
+
+  <div class="promo">
+    <div class="promo-name">
+      Superparmesano + Gaseosa
+    </div>
+    <div class="promo-price">$4.500</div>
+  </div>
+
+  <div class="promo">
+    <div class="promo-name">
+      Superdoble + Gaseosa
+    </div>
+    <div class="promo-price">$6.000</div>
+  </div>
+
+  <div class="promo">
+    <div class="promo-name">
+      Superveggie + Gaseosa
+    </div>
+    <div class="promo-price">$6.500</div>
+  </div>
+
+  <div class="promo">
+    <div class="promo-name">
+      Superparmesano + Cerveza
+    </div>
+    <div class="promo-price">$5.500</div>
+  </div>
+
+  <div class="promo">
+    <div class="promo-name">
+      Superdoble + Cerveza
+    </div>
+    <div class="promo-price">$7.000</div>
+  </div>
+
+  <div class="promo">
+    <div class="promo-name">
+      2 Superparmesano + Gaseosa
+    </div>
+    <div class="promo-price">$7.000</div>
+  </div>
+
+</section>
+
+
+<!-- =========================
+     BEBIDAS
+========================= -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    🥤 BEBIDAS
+  </h2>
+
+  <div class="item">
+    <div class="name">Agua</div>
+    <div class="price">$2.000</div>
+  </div>
+
+  <div class="item">
+    <div class="name">Gaseosa</div>
+    <div class="price">$3.000</div>
+  </div>
+
+  <div class="item">
+    <div class="name">Red Bull</div>
+    <div class="price">$5.000</div>
+  </div>
+
+  <div class="item">
+    <div class="name">Ortuzar</div>
+    <div class="price">$3.000</div>
+  </div>
+
+  <div class="item">
+    <div class="name">Schneider</div>
+    <div class="price">$4.000</div>
+  </div>
+
+  <div class="item">
+    <div class="name">Andes</div>
+    <div class="price">$5.000</div>
+  </div>
+
+  <div class="item">
+    <div class="name">Stella</div>
+    <div class="price">$6.000</div>
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ADEREZOS
+========================= -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    🥫 ADEREZOS
+  </h2>
+
+  <div class="group">
+    Clásicos
+  </div>
+
+  <ul>
+    <li>Mayonesa</li>
+    <li>Mayonesa vegana (Felices las Vacas)</li>
+    <li>Ketchup</li>
+    <li>Mostaza</li>
+    <li>Barbacoa</li>
+  </ul>
+
+  <div class="group">
+    Especiales
+  </div>
+
+  <ul>
+    <li>Cheddar</li>
+    <li>Alioli (mayonesa de ajo)</li>
+    <li>Parmesano</li>
+    <li>Salsa picante</li>
+    <li>Roquefort</li>
+    <li>Salsa golf</li>
+    <li>Salsa mil islas</li>
+  </ul>
+
+</section>
+
+
+<!-- =========================
+     TOPPINGS
+========================= -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    ➕ TOPPINGS EXTRAS
+  </h2>
+
+  <div class="toppings">
+    Guacamole · Salsa criolla · Tomate ·
+    Aceitunas · Choclo · Champiñones · etc.
+  </div>
+
+  <div class="topping-price">
+    $500
+  </div>
+
+  <div class="footer-small">
+    Sujetos a disponibilidad
+  </div>
+
+</section>
+
+
+<!-- =========================
+     HORARIOS
+========================= -->
+
+<section class="section" id="horarios">
+
+  <h2 class="section-title">
+    🕐 HORARIOS
+  </h2>
+
+  <div class="hours">
+
+    <div class="hour">
+      <div class="day">LUNES</div>
+      <div class="time">12:00 – 22:00</div>
     </div>
 
+    <div class="hour">
+      <div class="day">MARTES A JUEVES</div>
+      <div class="time">00:00 – 03:00</div>
+    </div>
 
-    <!-- NAVEGACIÓN -->
+    <div class="hour">
+      <div class="day">VIERNES Y SÁBADO</div>
+      <div class="time">00:00 – 05:00</div>
+    </div>
 
-    <nav class="nav">
+    <div class="hour">
+      <div class="day">DOMINGO</div>
+      <div class="time">17:00 – 02:00</div>
+    </div>
 
-        <a href="#panchos">🌭 Panchos</a>
-        <a href="#promos">🔥 Promos</a>
-        <a href="#bebidas">🥤 Bebidas</a>
-        <a href="#aderezos">🥫 Aderezos</a>
-        <a href="#toppings">➕ Toppings</a>
+  </div>
 
-    </nav>
+</section>
 
 
-    <!-- PANCHOS -->
+<!-- =========================
+     UBICACIÓN
+========================= -->
 
-    <section class="section" id="panchos">
+<section class="section location">
 
-        <div class="section-title">
+  <h2 class="section-title">
+    📍 DÓNDE ESTAMOS
+  </h2>
 
-            <span class="emoji">🌭</span>
+  <div class="address">
+    Gorriti 5061
+  </div>
 
-            <h2>SUPERPANCHO</h2>
+  <div class="neighborhood">
+    Palermo · Buenos Aires
+  </div>
 
-            <p>Elegí tu favorito</p>
+  <a class="maps-button"
+     href="https://www.google.com/maps/search/?api=1&query=Gorriti+5061+Palermo+Buenos+Aires"
+     target="_blank">
+    📍 ABRIR EN GOOGLE MAPS
+  </a>
 
-        </div>
+</section>
 
 
-        <div class="featured">
+<!-- =========================
+     INSTAGRAM
+========================= -->
 
-            <div class="badge">EL CLÁSICO</div>
+<section class="section instagram">
 
-            <div class="item">
+  <h2 class="section-title">
+    📸 INSTAGRAM
+  </h2>
 
-                <div class="item-left">
+  <div class="instagram-title">
+    Seguinos en Instagram
+  </div>
 
-                    <div class="item-name">
-                        Parmesano
-                    </div>
+  <div class="instagram-handle">
+    @comoyobligo
+  </div>
 
-                    <span class="item-desc">
-                        Nuestro clásico Superpancho.
-                    </span>
+  <a class="instagram-button"
+     href="https://www.instagram.com/comoyobligo/"
+     target="_blank">
+    📸 VER INSTAGRAM
+  </a>
 
-                </div>
+</section>
 
-                <div class="price">
-                    $3.000
-                </div>
 
-            </div>
+<!-- =========================
+     FOOTER
+========================= -->
 
-        </div>
+<footer class="footer">
 
+  <div class="footer-brand">
+    COMO Y OBLIGÓ
+  </div>
 
-        <div class="featured">
+  <div class="footer-text">
+    COMÉ RICO, MUCHO MÁS QUE UN PANCHO ❤️
+  </div>
 
-            <div class="item">
+  <div class="footer-small">
+    Carta digital · Palermo · Buenos Aires
+  </div>
 
-                <div class="item-left">
-
-                    <div class="item-name">
-                        Doble
-                    </div>
-
-                    <span class="item-desc">
-                        Para los que vienen con hambre.
-                    </span>
-
-                </div>
-
-                <div class="price">
-                    $4.500
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="featured">
-
-            <div class="item">
-
-                <div class="item-left">
-
-                    <div class="item-name">
-                        Veggie
-                    </div>
-
-                    <span class="item-desc">
-                        Pan de papa y salchicha de soja.
-                    </span>
-
-                </div>
-
-                <div class="price">
-                    $5.000
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROMOS -->
-
-    <section class="section" id="promos">
-
-        <div class="section-title">
-
-            <span class="emoji">🔥</span>
-
-            <h2>PROMOS</h2>
-
-            <p>Más comida, mejor precio</p>
-
-        </div>
-
-
-        <div class="promo">
-
-            <div class="promo-name">
-                Superparmesano + Gaseosa
-            </div>
-
-            <div class="promo-price">
-                $4.500
-            </div>
-
-        </div>
-
-
-        <div class="promo">
-
-            <div class="promo-name">
-                Superdoble + Gaseosa
-            </div>
-
-            <div class="promo-price">
-                $6.000
-            </div>
-
-        </div>
-
-
-        <div class="promo">
-
-            <div class="promo-name">
-                Superveggie + Gaseosa
-            </div>
-
-            <div class="promo-price">
-                $6.500
-            </div>
-
-        </div>
-
-
-        <div class="promo">
-
-            <div class="promo-name">
-                Superparmesano + Cerveza
-            </div>
-
-            <div class="promo-price">
-                $5.500
-            </div>
-
-        </div>
-
-
-        <div class="promo">
-
-            <div class="promo-name">
-                Superdoble + Cerveza
-            </div>
-
-            <div class="promo-price">
-                $7.000
-            </div>
-
-        </div>
-
-
-        <div class="promo">
-
-            <div class="promo-name">
-                2 Superparmesano + Gaseosa
-            </div>
-
-            <div class="promo-price">
-                $7.000
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- BEBIDAS -->
-
-    <section class="section" id="bebidas">
-
-        <div class="section-title">
-
-            <span class="emoji">🥤</span>
-
-            <h2>BEBIDAS</h2>
-
-            <p>Algo fresco para acompañar</p>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Agua</div>
-            </div>
-
-            <div class="price">$2.000</div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Gaseosa</div>
-            </div>
-
-            <div class="price">$3.000</div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Red Bull</div>
-            </div>
-
-            <div class="price">$5.000</div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Ortuzar</div>
-            </div>
-
-            <div class="price">$3.000</div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Schneider</div>
-            </div>
-
-            <div class="price">$4.000</div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Andes</div>
-            </div>
-
-            <div class="price">$5.000</div>
-
-        </div>
-
-
-        <div class="item">
-
-            <div class="item-left">
-                <div class="item-name">Stella</div>
-            </div>
-
-            <div class="price">$6.000</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ADEREZOS -->
-
-    <section class="section" id="aderezos">
-
-        <div class="section-title">
-
-            <span class="emoji">🥫</span>
-
-            <h2>ADEREZOS</h2>
-
-            <p>Elegí cómo acompañarlo</p>
-
-        </div>
-
-
-        <div class="group-title">
-            Clásicos
-        </div>
-
-        <ul class="list">
-
-            <li>
-                Mayonesa
-            </li>
-
-            <li>
-                Mayonesa vegana — Felices las Vacas
-            </li>
-
-            <li>
-                Ketchup
-            </li>
-
-            <li>
-                Mostaza
-            </li>
-
-            <li>
-                Barbacoa
-            </li>
-
-        </ul>
-
-
-        <div class="group-title">
-            Especiales
-        </div>
-
-        <ul class="list">
-
-            <li>
-                Cheddar
-            </li>
-
-            <li>
-                Alioli — mayonesa de ajo
-            </li>
-
-            <li>
-                Parmesano
-            </li>
-
-            <li>
-                Salsa picante
-            </li>
-
-            <li>
-                Roquefort
-            </li>
-
-            <li>
-                Salsa golf
-            </li>
-
-            <li>
-                Salsa mil islas
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- TOPPINGS -->
-
-    <section class="section toppings" id="toppings">
-
-        <div class="section-title">
-
-            <span class="emoji">➕</span>
-
-            <h2>TOPPINGS EXTRAS</h2>
-
-            <p>Sumale lo que quieras</p>
-
-        </div>
-
-
-        <div class="toppings-text">
-
-            Guacamole · Salsa criolla · Tomate ·
-            Aceitunas · Choclo · Champiñones · etc.
-
-        </div>
-
-
-        <div class="topping-price">
-            $500
-        </div>
-
-
-        <div class="availability">
-            Sujetos a disponibilidad
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-
-        <div class="footer-logo">
-            COMO Y OBLIGÓ
-        </div>
-
-        <div class="footer-text">
-            COMÉ RICO, MUCHO MÁS QUE UN PANCHO ❤️
-        </div>
-
-        <div class="footer-small">
-            Carta digital · Precios sujetos a actualización
-        </div>
-
-    </footer>
+</footer>
 
 </main>
 
 
-<a href="#top" class="top" aria-label="Volver arriba">
-    ↑
+<!-- =========================
+     VOLVER ARRIBA
+========================= -->
+
+<a href="#inicio" class="top">
+  ↑
 </a>
 
+
+<!-- =========================
+     MOBILE NAV
+========================= -->
+
+<nav class="bottom-nav">
+
+  <a href="#carta" class="nav-item">
+    <span>🌭</span>
+    CARTA
+  </a>
+
+  <a href="#horarios" class="nav-item">
+    <span>🕐</span>
+    HORARIOS
+  </a>
+
+  <a href="https://www.instagram.com/comoyobligo/"
+     target="_blank"
+     class="nav-item">
+    <span>📸</span>
+    INSTAGRAM
+  </a>
+
+</nav>
+
+
+<script>
+
+/* ==========================================
+   ESTADO ABIERTO / CERRADO AUTOMÁTICO
+========================================== */
+
+function getSchedule(day){
+
+  /*
+    0 = Domingo
+    1 = Lunes
+    2 = Martes
+    3 = Miércoles
+    4 = Jueves
+    5 = Viernes
+    6 = Sábado
+  */
+
+  const schedules = {
+
+    0: [{start:17*60,end:26*60}], // Domingo 17:00 - 02:00
+    1: [{start:12*60,end:22*60}], // Lunes 12:00 - 22:00
+    2: [{start:0,end:3*60}],      // Martes
+    3: [{start:0,end:3*60}],      // Miércoles
+    4: [{start:0,end:3*60}],      // Jueves
+    5: [{start:0,end:5*60}],      // Viernes
+    6: [{start:0,end:5*60}]       // Sábado
+
+  };
+
+  return schedules[day] || [];
+}
+
+
+function getStatus(){
+
+  const now = new Date();
+
+  let day = now.getDay();
+
+  let minutes =
+    now.getHours()*60 +
+    now.getMinutes();
+
+  /*
+    Para horarios después de medianoche,
+    consideramos que 00:00-03:00 pertenece
+    a la noche anterior.
+  */
+
+  let yesterday = (day + 6) % 7;
+
+  const previousSchedule = getSchedule(yesterday);
+
+  for(const range of previousSchedule){
+
+    if(range.end > 24*60){
+
+      if(minutes < range.end - 24*60){
+
+        return {
+          open:true,
+          text:"ABIERTO AHORA",
+          info:"Estamos atendiendo en este momento 🔥"
+        };
+
+      }
+
+    }
+
+  }
+
+  const todaySchedule = getSchedule(day);
+
+  for(const range of todaySchedule){
+
+    if(minutes >= range.start && minutes < range.end){
+
+      return {
+        open:true,
+        text:"ABIERTO AHORA",
+        info:"Estamos atendiendo en este momento 🔥"
+      };
+
+    }
+
+  }
+
+  /*
+    Buscar próximo horario de apertura
+  */
+
+  const names = [
+    "domingo",
+    "lunes",
+    "martes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado"
+  ];
+
+  for(let i=0;i<7;i++){
+
+    const checkDay = (day+i)%7;
+    const schedule = getSchedule(checkDay);
+
+    if(schedule.length){
+
+      let start = schedule[0].start;
+
+      if(i === 0 && start <= minutes) continue;
+
+      let hours = Math.floor(start/60);
+      let mins = start%60;
+
+      let time =
+        String(hours).padStart(2,"0") +
+        ":" +
+        String(mins).padStart(2,"0");
+
+      return {
+        open:false,
+        text:"CERRADO",
+        info:"Próxima apertura: " +
+             names[checkDay] +
+             " a las " +
+             time
+      };
+
+    }
+
+  }
+
+}
+
+
+function updateStatus(){
+
+  const status = getStatus();
+
+  const element = document.getElementById("status");
+  const text = document.getElementById("statusText");
+  const info = document.getElementById("statusInfo");
+
+  text.textContent = status.text;
+  info.textContent = status.info;
+
+  if(status.open){
+
+    element.classList.remove("closed");
+
+  }else{
+
+    element.classList.add("closed");
+
+  }
+
+}
+
+updateStatus();
+
+setInterval(updateStatus,60000);
+
+
+/* ==========================================
+   ANIMACIÓN SUAVE AL SCROLLEAR
+========================================== */
+
+const sections =
+  document.querySelectorAll(".section");
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.style.animationPlayState =
+            "running";
+
+        }
+
+      });
+
+    },
+    {threshold:.08}
+  );
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+</script>
 
 </body>
 </html>
