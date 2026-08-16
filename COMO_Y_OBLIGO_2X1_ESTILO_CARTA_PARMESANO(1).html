@@ -1,16 +1,1429 @@
-<!-- =========================
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+
+<title>Como y Obligó | 2×1</title>
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#080808;
+  --red:#e21b12;
+  --orange:#ff6900;
+  --gold:#ffb52e;
+  --cream:#fff3cf;
+  --line:#292929;
+}
+
+body{
+  min-height:100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% -15%,
+      #641b06 0%,
+      #1d0803 27%,
+      #080808 67%
+    );
+
+  color:#fff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+.container{
+  width:100%;
+  max-width:520px;
+  margin:auto;
+
+  padding:18px 14px 40px;
+}
+
+
+/* =====================================================
+   MARCA
+===================================================== */
+
+.brand{
+  text-align:center;
+}
+
+.brandName{
+  font-family:Georgia,serif;
+
+  font-size:38px;
+  line-height:.84;
+
+  font-weight:900;
+
+  color:var(--red);
+
+  text-shadow:
+    0 0 5px #ffbd00,
+    0 0 16px #ff5200;
+}
+
+.brandTag{
+  margin-top:13px;
+
+  color:#bda777;
+
+  font-size:9px;
+  font-weight:700;
+
+  letter-spacing:2.4px;
+}
+
+.brandLine{
+  width:95px;
+  height:2px;
+
+  margin:14px auto 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--orange),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  margin-top:25px;
+
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+
+  padding:7px 11px;
+
+  border:1px solid #63300e;
+  border-radius:30px;
+
+  background:#170d08;
+
+  color:#ffb64a;
+
+  font-size:9px;
+  font-weight:900;
+
+  letter-spacing:1.5px;
+}
+
+.hero h1{
+  margin-top:18px;
+
+  font-size:28px;
+  line-height:1.08;
+
+  font-weight:900;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.heroOffer{
+  margin-top:5px;
+
+  font-size:78px;
+  line-height:.9;
+
+  font-weight:1000;
+
+  color:var(--orange);
+
+  text-shadow:
+    0 5px 30px #ff5b0025;
+}
+
+.heroSub{
+  margin-top:9px;
+
+  color:var(--cream);
+
+  font-size:16px;
+  font-weight:800;
+}
+
+.heroDescription{
+  max-width:390px;
+
+  margin:12px auto 0;
+
+  color:#a99573;
+
+  font-size:12px;
+  line-height:1.55;
+}
+
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+.availability{
+  margin-top:22px;
+
+  padding:17px;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0d0d0d
+    );
+
+  box-shadow:
+    0 10px 30px #00000030;
+}
+
+.availabilityTop{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+}
+
+.availabilityTitle{
+  font-size:12px;
+  font-weight:900;
+}
+
+.availabilityCount{
+  color:var(--gold);
+
+  font-size:20px;
+  font-weight:1000;
+}
+
+.availabilityBar{
+  height:9px;
+
+  margin-top:13px;
+
+  overflow:hidden;
+
+  border-radius:20px;
+
+  background:#28201a;
+}
+
+.availabilityFill{
+  width:100%;
+  height:100%;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--red),
+      var(--orange),
+      var(--gold)
+    );
+
+  transition:
+    width .7s ease;
+}
+
+.availabilityBottom{
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:9px;
+
+  color:#8f816c;
+
+  font-size:9px;
+}
+
+.stockStatus{
+  color:#ffb64a;
+
+  font-weight:900;
+}
+
+
+/* =====================================================
+   INSTAGRAM PREMIUM V5.1
+===================================================== */
+
+.instagramPremium{
+  position:relative;
+
+  overflow:hidden;
+
+  margin-top:16px;
+
+  padding:20px 17px 17px;
+
+  border:1px solid #49251c;
+  border-radius:24px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      #ff65002c,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      #b51b2920,
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #1b100d,
+      #0b0b0b 75%
+    );
+
+  box-shadow:
+    0 15px 40px #00000060,
+    inset 0 1px 0 #ffffff0b;
+}
+
+
+/* Halo decorativo */
+
+.instagramPremium::before{
+  content:"";
+
+  position:absolute;
+
+  width:190px;
+  height:190px;
+
+  top:-120px;
+  right:-70px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #ff690038 0%,
+      #ff690010 38%,
+      transparent 70%
+    );
+
+  pointer-events:none;
+}
+
+.instagramPremium::after{
+  content:"";
+
+  position:absolute;
+
+  width:130px;
+  height:130px;
+
+  bottom:-100px;
+  left:-70px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #d6297620,
+      transparent 70%
+    );
+
+  pointer-events:none;
+}
+
+
+/* CABECERA */
+
+.igTop{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:13px;
+}
+
+
+/* LOGO */
+
+.igLogoBox{
+  position:relative;
+
+  width:61px;
+  height:61px;
+
+  flex-shrink:0;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5c176e,
+      #d62976 48%,
+      #ff8a00
+    );
+
+  box-shadow:
+    0 8px 25px #d6297640,
+    0 0 25px #ff650015;
+}
+
+.igLogoBox::after{
+  content:"";
+
+  position:absolute;
+
+  inset:2px;
+
+  border-radius:16px;
+
+  border:1px solid #ffffff45;
+}
+
+.igLogo{
+  position:relative;
+
+  width:34px;
+  height:34px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:2px solid #fff;
+
+  border-radius:10px;
+
+  color:#fff;
+
+  font-size:25px;
+
+  line-height:1;
+
+  box-shadow:
+    0 0 10px #ffffff30;
+}
+
+.igLogo::after{
+  content:"";
+
+  position:absolute;
+
+  width:6px;
+  height:6px;
+
+  top:4px;
+  right:4px;
+
+  border-radius:50%;
+
+  background:#fff;
+}
+
+
+/* INFORMACIÓN */
+
+.igInfo{
+  min-width:0;
+}
+
+.igOfficial{
+  color:#ff9b4b;
+
+  font-size:8px;
+  font-weight:1000;
+
+  letter-spacing:1.6px;
+}
+
+.igUsername{
+  margin-top:3px;
+
+  color:#fff;
+
+  font-size:18px;
+  font-weight:1000;
+
+  letter-spacing:-.3px;
+}
+
+.igDescription{
+  margin-top:4px;
+
+  color:#95836e;
+
+  font-size:10px;
+}
+
+
+/* DIVISOR */
+
+.igDivider{
+  height:1px;
+
+  margin:18px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #493027,
+      transparent
+    );
+}
+
+
+/* TEXTO */
+
+.igMessage{
+  position:relative;
+
+  z-index:2;
+
+  text-align:center;
+}
+
+.igMessage strong{
+  display:block;
+
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:1000;
+}
+
+.igMessage span{
+  display:block;
+
+  max-width:340px;
+
+  margin:5px auto 0;
+
+  color:#91816f;
+
+  font-size:10px;
+
+  line-height:1.5;
+}
+
+
+/* =====================================================
+   BOTÓN INSTAGRAM
+===================================================== */
+
+.igButton{
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  width:100%;
+
+  margin-top:17px;
+
+  padding:17px 14px;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      110deg,
+      #701844 0%,
+      #c92168 38%,
+      #e82c63 60%,
+      #ff6900 100%
+    );
+
+  border:1px solid #ffb07875;
+
+  box-shadow:
+    0 10px 28px #d6297645,
+    0 0 0 1px #ffffff10 inset,
+    0 0 35px #ff5b0012;
+
+  font-size:12px;
+
+  font-weight:1000;
+
+  letter-spacing:.7px;
+
+  transform:translateZ(0);
+
+  animation:
+    instagramPulse 3s ease-in-out infinite;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.igButton:hover{
+  transform:
+    translateY(-3px)
+    scale(1.01);
+
+  box-shadow:
+    0 15px 35px #d6297655,
+    0 0 35px #ff690030,
+    0 0 0 1px #ffffff15 inset;
+}
+
+.igButton:active{
+  transform:
+    scale(.96);
+}
+
+
+/* PULSO */
+
+@keyframes instagramPulse{
+
+  0%,
+  100%{
+    box-shadow:
+      0 10px 28px #d6297640,
+      0 0 0 1px #ffffff10 inset;
+  }
+
+  50%{
+    box-shadow:
+      0 12px 34px #d6297655,
+      0 0 22px #ff690025,
+      0 0 0 1px #ffffff15 inset;
+  }
+
+}
+
+
+/* ICONO BOTÓN */
+
+.igButtonIcon{
+  position:relative;
+
+  z-index:3;
+
+  width:25px;
+  height:25px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:1.5px solid #fff;
+
+  border-radius:7px;
+
+  font-size:17px;
+
+  line-height:1;
+
+  box-shadow:
+    0 0 8px #ffffff25;
+}
+
+
+/* TEXTO */
+
+.igButtonText{
+  position:relative;
+
+  z-index:3;
+
+  white-space:nowrap;
+}
+
+
+/* FLECHA */
+
+.igArrow{
+  position:relative;
+
+  z-index:3;
+
+  font-size:20px;
+
+  line-height:1;
+
+  transition:
+    transform .2s ease;
+}
+
+.igButton:hover .igArrow{
+  transform:
+    translateX(5px);
+}
+
+
+/* BRILLO */
+
+.igShine{
+  position:absolute;
+
+  z-index:2;
+
+  top:-20%;
+
+  left:-80px;
+
+  width:48px;
+  height:140%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ffffff80,
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  animation:
+    igShine 3s infinite;
+}
+
+@keyframes igShine{
+
+  0%{
+    left:-80px;
+  }
+
+  35%{
+    left:120%;
+  }
+
+  100%{
+    left:120%;
+  }
+
+}
+
+
+/* TEXTO OPCIONAL */
+
+.igOptional{
+  position:relative;
+
+  z-index:2;
+
+  margin-top:10px;
+
+  text-align:center;
+
+  color:#65594c;
+
+  font-size:8px;
+
+  line-height:1.4;
+}
+
+
+/* =====================================================
+   ACTION CARD
+===================================================== */
+
+.actionCard{
+  margin-top:14px;
+
+  padding:20px 17px;
+
+  border:1px solid #7a3c0d;
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #19110c,
+      #0d0d0d
+    );
+}
+
+.actionTitle{
+  text-align:center;
+
+  font-size:18px;
+  font-weight:1000;
+}
+
+.actionText{
+  max-width:350px;
+
+  margin:7px auto 15px;
+
+  text-align:center;
+
+  color:#9e8c70;
+
+  font-size:11px;
+
+  line-height:1.5;
+}
+
+.activate{
+  width:100%;
+
+  border:0;
+
+  border-radius:14px;
+
+  padding:17px;
+
+  cursor:pointer;
+
+  color:#1a0b02;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0b8,
+      #ffc13d
+    );
+
+  box-shadow:
+    0 8px 25px #ff970030;
+
+  font-size:15px;
+
+  font-weight:1000;
+
+  transition:
+    transform .15s ease;
+}
+
+.activate:hover{
+  transform:
+    translateY(-2px);
+}
+
+.activate:active{
+  transform:
+    translateY(1px);
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown{
+  display:none;
+
+  padding:28px 0 10px;
+
+  text-align:center;
+}
+
+.countdown.show{
+  display:block;
+}
+
+.countNumber{
+  font-size:74px;
+
+  font-weight:1000;
+
+  color:var(--gold);
+}
+
+.countLabel{
+  margin-top:8px;
+
+  color:#9d8b6d;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+
+  font-weight:900;
+}
+
+
+/* =====================================================
+   UNLOCK
+===================================================== */
+
+.unlock{
+  display:none;
+
+  text-align:center;
+
+  padding:18px 0 5px;
+}
+
+.unlock.show{
+  display:block;
+}
+
+.unlockIcon{
+  font-size:45px;
+}
+
+.unlock h2{
+  margin-top:7px;
+
+  font-size:23px;
+}
+
+.unlock p{
+  margin-top:5px;
+
+  color:#9d8b6d;
+
+  font-size:10px;
+}
+
+
+/* =====================================================
+   VOUCHER
+===================================================== */
+
+.voucher{
+  display:none;
+
+  margin-top:18px;
+
+  overflow:hidden;
+
+  color:#170d06;
+
+  border-radius:22px;
+
+  background:#f8e9bd;
+
+  box-shadow:
+    0 20px 50px #000;
+}
+
+.voucher.show{
+  display:block;
+}
+
+.voucherHeader{
+  padding:20px 18px;
+
+  text-align:center;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a80e09,
+      #e83f0b
+    );
+}
+
+.voucherBrand{
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  opacity:.8;
+}
+
+.voucherTitle{
+  margin-top:5px;
+
+  font-size:29px;
+
+  font-weight:1000;
+}
+
+.voucherSubtitle{
+  margin-top:4px;
+
+  font-size:11px;
+}
+
+.voucherContent{
+  padding:19px 16px 20px;
+
+  text-align:center;
+}
+
+.validBadge{
+  display:inline-block;
+
+  padding:6px 10px;
+
+  border-radius:20px;
+
+  background:#e2f5e8;
+
+  color:#19703b;
+
+  font-size:9px;
+
+  font-weight:1000;
+}
+
+.timer{
+  margin-top:8px;
+
+  color:#c43a0a;
+
+  font-size:51px;
+
+  font-weight:1000;
+}
+
+.timerLabel{
+  color:#7d6948;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:1.5px;
+}
+
+.timer.warning{
+  color:#c00000;
+
+  animation:
+    timerPulse .65s infinite alternate;
+}
+
+@keyframes timerPulse{
+
+  to{
+    transform:
+      scale(1.06);
+  }
+
+}
+
+.codeLabel{
+  margin-top:14px;
+
+  color:#806d4c;
+
+  font-size:8px;
+
+  letter-spacing:2px;
+
+  font-weight:900;
+}
+
+.code{
+  margin-top:5px;
+
+  font-family:monospace;
+
+  font-size:24px;
+
+  font-weight:1000;
+
+  letter-spacing:2px;
+}
+
+.showVoucher{
+  margin-top:17px;
+
+  padding:16px 10px;
+
+  border-radius:14px;
+
+  background:#180c05;
+
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:1000;
+}
+
+.showVoucher small{
+  display:block;
+
+  margin-top:5px;
+
+  color:#b9a17a;
+
+  font-size:9px;
+
+  font-weight:normal;
+
+  line-height:1.4;
+}
+
+.location{
+  margin-top:15px;
+
+  font-size:12px;
+
+  font-weight:1000;
+}
+
+.maps{
+  display:block;
+
+  margin-top:11px;
+
+  padding:13px;
+
+  border-radius:12px;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  background:#231106;
+
+  font-size:11px;
+
+  font-weight:1000;
+}
+
+.terms{
+  margin-top:12px;
+
+  color:#806d4c;
+
+  font-size:8px;
+
+  line-height:1.5;
+}
+
+
+/* =====================================================
+   AFTER
+===================================================== */
+
+.after{
+  display:none;
+
+  margin-top:15px;
+
+  padding:17px;
+
+  text-align:center;
+
+  border:1px solid #242424;
+
+  border-radius:19px;
+
+  background:#0e0e0e;
+}
+
+.after.show{
+  display:block;
+}
+
+.afterTitle{
+  font-size:13px;
+
+  font-weight:900;
+}
+
+.afterText{
+  margin-top:5px;
+
+  color:#8e806b;
+
+  font-size:10px;
+}
+
+.afterButton{
+  display:block;
+
+  margin-top:12px;
+
+  padding:13px;
+
+  border-radius:12px;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  background:#1d1d1d;
+
+  border:1px solid #333;
+
+  font-size:11px;
+
+  font-weight:900;
+}
+
+
+/* =====================================================
+   AGOTADO
+===================================================== */
+
+.soldOut{
+  display:none;
+
+  margin-top:18px;
+
+  padding:22px 15px;
+
+  text-align:center;
+
+  border:1px solid #5a1914;
+
+  border-radius:20px;
+
+  background:#160a09;
+}
+
+.soldOut.show{
+  display:block;
+}
+
+.soldOutIcon{
+  font-size:38px;
+}
+
+.soldOut h2{
+  margin-top:7px;
+
+  font-size:20px;
+}
+
+.soldOut p{
+  margin-top:6px;
+
+  color:#9e8873;
+
+  font-size:10px;
+
+  line-height:1.5;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+  margin-top:22px;
+
+  text-align:center;
+
+  color:#5e5548;
+
+  font-size:8px;
+
+  line-height:1.6;
+}
+
+.footer strong{
+  color:#88785e;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:380px){
+
+  .brandName{
+    font-size:34px;
+  }
+
+  .hero h1{
+    font-size:25px;
+  }
+
+  .heroOffer{
+    font-size:68px;
+  }
+
+  .timer{
+    font-size:46px;
+  }
+
+  .igButtonText{
+    font-size:11px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- =====================================================
+     MARCA
+===================================================== -->
+
+<header class="brand">
+
+  <div class="brandName">
+    COMO Y<br>OBLIGÓ
+  </div>
+
+  <div class="brandTag">
+    PANCHERÍA · PALERMO
+  </div>
+
+  <div class="brandLine"></div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <div class="eyebrow">
+    🔥 EDICIÓN LIMITADA
+  </div>
+
+  <h1>
+    <span>Una promo.</span><br>
+    100 oportunidades.
+  </h1>
+
+  <div class="heroOffer">
+    2×1
+  </div>
+
+  <div class="heroSub">
+    DOS PANCHOS · PAGÁS UNO 🌭
+  </div>
+
+  <p class="heroDescription">
+    Una promo especial de Como y Obligó.
+    Activala solamente cuando estés listo
+    para venir al local.
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     STOCK
+===================================================== -->
+
+<section class="availability">
+
+  <div class="availabilityTop">
+
+    <div class="availabilityTitle">
+      🌭 PANCHOS DISPONIBLES
+    </div>
+
+    <div
+      class="availabilityCount"
+      id="stockNumber"
+    >
+      100 / 100
+    </div>
+
+  </div>
+
+
+  <div class="availabilityBar">
+
+    <div
+      class="availabilityFill"
+      id="barFill"
+    ></div>
+
+  </div>
+
+
+  <div class="availabilityBottom">
+
+    <span id="stockText">
+      Quedan 100 panchos para la promo
+    </span>
+
+    <span
+      class="stockStatus"
+      id="stockStatus"
+    >
+      DISPONIBLE
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      INSTAGRAM PREMIUM
-========================= -->
+===================================================== -->
 
 <section class="instagramPremium">
 
-  <div class="igGlow"></div>
 
   <div class="igTop">
 
+
     <div class="igLogoBox">
-      <div class="igLogo">◎</div>
+
+      <div class="igLogo">
+        ◎
+      </div>
+
     </div>
+
 
     <div class="igInfo">
 
@@ -28,6 +1441,7 @@
 
     </div>
 
+
   </div>
 
 
@@ -35,6 +1449,7 @@
 
 
   <div class="igMessage">
+
     <strong>
       ¿Querés enterarte primero?
     </strong>
@@ -43,6 +1458,7 @@
       Seguinos y descubrí las próximas promos
       antes que nadie.
     </span>
+
   </div>
 
 
@@ -74,4 +1490,574 @@
     Seguinos si querés ❤️ · No es obligatorio para usar el 2×1
   </div>
 
+
 </section>
+
+
+<!-- =====================================================
+     ACTIVACIÓN
+===================================================== -->
+
+<section
+  class="actionCard"
+  id="actionCard"
+>
+
+  <div class="actionTitle">
+    ¿LISTO PARA TU 2×1?
+  </div>
+
+  <p class="actionText">
+    Activá el voucher cuando estés
+    listo para presentarlo en el local.
+    Una vez activado, tenés 5 minutos.
+  </p>
+
+
+  <button
+    class="activate"
+    onclick="startVoucher()"
+  >
+    🔥 ACTIVAR MI 2×1
+  </button>
+
+</section>
+
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<section
+  class="countdown"
+  id="countdown"
+>
+
+  <div
+    class="countNumber"
+    id="countNumber"
+  >
+    3
+  </div>
+
+  <div class="countLabel">
+    PREPARANDO TU BENEFICIO
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     UNLOCK
+===================================================== -->
+
+<section
+  class="unlock"
+  id="unlock"
+>
+
+  <div class="unlockIcon">
+    ✨
+  </div>
+
+  <h2>
+    VOUCHER DESBLOQUEADO
+  </h2>
+
+  <p>
+    Tu beneficio está listo para presentar.
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     VOUCHER
+===================================================== -->
+
+<section
+  class="voucher"
+  id="voucher"
+>
+
+  <div class="voucherHeader">
+
+    <div class="voucherBrand">
+      COMO Y OBLIGÓ · DIGITAL PASS
+    </div>
+
+    <div class="voucherTitle">
+      2×1
+    </div>
+
+    <div class="voucherSubtitle">
+      DOS PANCHOS · PAGÁS UNO
+    </div>
+
+  </div>
+
+
+  <div class="voucherContent">
+
+
+    <div class="validBadge">
+      ● VOUCHER ACTIVO
+    </div>
+
+
+    <div
+      class="timer"
+      id="timer"
+    >
+      05:00
+    </div>
+
+
+    <div class="timerLabel">
+      TIEMPO RESTANTE
+    </div>
+
+
+    <div class="codeLabel">
+      CÓDIGO DE BENEFICIO
+    </div>
+
+
+    <div
+      class="code"
+      id="code"
+    >
+      CYOB • 0000
+    </div>
+
+
+    <div class="showVoucher">
+
+      📱 MOSTRÁ ESTE VOUCHER EN EL LOCAL
+
+      <small>
+        El equipo verificará el código
+        directamente desde esta pantalla.
+      </small>
+
+    </div>
+
+
+    <div class="location">
+      📍 Gorriti 5061 · Palermo
+    </div>
+
+
+    <a
+      class="maps"
+      href="https://www.google.com/maps/search/?api=1&query=Gorriti%205061%20Palermo%20Buenos%20Aires"
+      target="_blank"
+      rel="noopener"
+    >
+      📍 CÓMO LLEGAR
+    </a>
+
+
+    <div class="terms">
+      Un voucher por persona.
+      Válido únicamente presentando
+      esta pantalla en el local.
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     DESPUÉS DEL VOUCHER
+===================================================== -->
+
+<section
+  class="after"
+  id="after"
+>
+
+  <div class="afterTitle">
+    ❤️ ¿TE GUSTÓ LA EXPERIENCIA?
+  </div>
+
+  <div class="afterText">
+    Seguinos para enterarte antes que nadie
+    de las próximas promos.
+  </div>
+
+  <a
+    class="afterButton"
+    href="https://www.instagram.com/comoyobligo/"
+    target="_blank"
+    rel="noopener"
+  >
+    📲 @COMOYOOBLIGO
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     AGOTADO
+===================================================== -->
+
+<section
+  class="soldOut"
+  id="soldOut"
+>
+
+  <div class="soldOutIcon">
+    🌭
+  </div>
+
+  <h2>
+    PROMO AGOTADA
+  </h2>
+
+  <p>
+    Los 100 panchos disponibles
+    ya fueron utilizados.
+    Seguinos en Instagram para
+    enterarte de la próxima promo.
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <strong>
+    COMO Y OBLIGÓ
+  </strong>
+
+  <br>
+
+  Gorriti 5061 · Palermo · Buenos Aires
+
+  <br>
+
+  Voucher digital promocional
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let disponibles = 100;
+
+let timerInterval = null;
+
+
+/* =====================================================
+   STOCK
+===================================================== */
+
+function updateStock(){
+
+  const number =
+    document.getElementById("stockNumber");
+
+  const bar =
+    document.getElementById("barFill");
+
+  const text =
+    document.getElementById("stockText");
+
+  const status =
+    document.getElementById("stockStatus");
+
+
+  number.textContent =
+    disponibles + " / 100";
+
+
+  bar.style.width =
+    disponibles + "%";
+
+
+  if(disponibles >= 70){
+
+    text.textContent =
+      "Quedan " +
+      disponibles +
+      " panchos para la promo";
+
+    status.textContent =
+      "DISPONIBLE";
+
+  }
+
+  else if(disponibles >= 30){
+
+    text.textContent =
+      "La promo ya está en movimiento";
+
+    status.textContent =
+      "QUEDAN VARIOS";
+
+  }
+
+  else if(disponibles > 0){
+
+    text.textContent =
+      "¡Últimos panchos disponibles!";
+
+    status.textContent =
+      "ÚLTIMOS";
+
+  }
+
+  else{
+
+    text.textContent =
+      "Los 100 panchos se agotaron";
+
+    status.textContent =
+      "AGOTADO";
+
+  }
+
+}
+
+
+/* =====================================================
+   CÓDIGO
+===================================================== */
+
+function generateCode(){
+
+  const number =
+    Math.floor(
+      1000 +
+      Math.random() * 9000
+    );
+
+  return "CYOB • " + number;
+
+}
+
+
+/* =====================================================
+   ACTIVAR
+===================================================== */
+
+function startVoucher(){
+
+  if(disponibles <= 0){
+
+    document
+      .getElementById("soldOut")
+      .classList.add("show");
+
+    return;
+
+  }
+
+
+  /* RESTAMOS UNO */
+
+  disponibles--;
+
+  updateStock();
+
+
+  const actionCard =
+    document.getElementById("actionCard");
+
+  const countdown =
+    document.getElementById("countdown");
+
+  const number =
+    document.getElementById("countNumber");
+
+  const unlock =
+    document.getElementById("unlock");
+
+  const voucher =
+    document.getElementById("voucher");
+
+  const after =
+    document.getElementById("after");
+
+
+  actionCard.style.display =
+    "none";
+
+
+  countdown.classList.add("show");
+
+
+  let count = 3;
+
+  number.textContent =
+    count;
+
+
+  const animation =
+    setInterval(function(){
+
+      count--;
+
+
+      if(count > 0){
+
+        number.textContent =
+          count;
+
+      }
+
+      else{
+
+        clearInterval(animation);
+
+
+        countdown.classList.remove(
+          "show"
+        );
+
+
+        unlock.classList.add(
+          "show"
+        );
+
+
+        document
+          .getElementById("code")
+          .textContent =
+          generateCode();
+
+
+        setTimeout(function(){
+
+          unlock.classList.remove(
+            "show"
+          );
+
+
+          voucher.classList.add(
+            "show"
+          );
+
+
+          after.classList.add(
+            "show"
+          );
+
+
+          startTimer();
+
+
+          voucher.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+          });
+
+
+        },900);
+
+      }
+
+    },700);
+
+}
+
+
+/* =====================================================
+   TIMER 5 MINUTOS
+===================================================== */
+
+function startTimer(){
+
+  if(timerInterval){
+    return;
+  }
+
+
+  let seconds = 300;
+
+
+  const timer =
+    document.getElementById("timer");
+
+
+  function updateTimer(){
+
+    const minutes =
+      Math.floor(
+        seconds / 60
+      );
+
+    const secs =
+      seconds % 60;
+
+
+    timer.textContent =
+      String(minutes).padStart(2,"0")
+      +
+      ":"
+      +
+      String(secs).padStart(2,"0");
+
+
+    if(seconds <= 30){
+
+      timer.classList.add(
+        "warning"
+      );
+
+    }
+
+
+    if(seconds <= 0){
+
+      clearInterval(
+        timerInterval
+      );
+
+      timer.textContent =
+        "VENCIDO";
+
+    }
+
+
+    seconds--;
+
+  }
+
+
+  updateTimer();
+
+
+  timerInterval =
+    setInterval(
+      updateTimer,
+      1000
+    );
+
+}
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+updateStock();
+
+</script>
+
+</body>
+</html>
