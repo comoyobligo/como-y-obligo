@@ -1,149 +1,182 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Récord Como y Obligo 🌭</title>
+<title>Jugá y Ganá | Como y Obligo</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
 }
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#fff;
     background:
-        radial-gradient(circle at 50% 15%, #4b1207 0%, #1c0502 42%, #070101 100%);
-    color: white;
-    user-select: none;
-    touch-action: manipulation;
+        radial-gradient(circle at 50% 10%,#551507 0%,#220602 38%,#070101 100%);
+    user-select:none;
+    touch-action:manipulation;
 }
 
 /* =========================
    INICIO
 ========================= */
 
-#inicio {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+#inicio{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
 }
 
-.inicio-box {
-    width: 100%;
-    max-width: 430px;
-    padding: 30px 22px;
-    text-align: center;
+.inicio-box{
+    width:100%;
+    max-width:430px;
+    padding:28px 21px;
+    text-align:center;
 
-    background: rgba(18, 3, 2, .90);
-    border: 2px solid rgba(255, 92, 25, .45);
-    border-radius: 28px;
+    background:rgba(17,3,2,.94);
+
+    border:2px solid rgba(255,92,25,.48);
+    border-radius:28px;
 
     box-shadow:
-        0 0 50px rgba(255, 55, 0, .20),
-        inset 0 0 30px rgba(255, 70, 0, .05);
+        0 0 55px rgba(255,55,0,.22),
+        inset 0 0 35px rgba(255,80,0,.05);
 }
 
-.logo {
-    font-size: 70px;
-    line-height: 1;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 14px rgba(255, 90, 0, .55));
+.logo{
+    font-size:68px;
+    line-height:1;
+    margin-bottom:7px;
+
+    filter:drop-shadow(0 0 14px rgba(255,90,0,.55));
 }
 
-.marca {
-    font-size: 13px;
-    letter-spacing: 4px;
-    font-weight: 900;
-    color: #ff8b45;
-    margin-bottom: 10px;
+.marca{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:900;
+    color:#ff8c48;
+    margin-bottom:10px;
 }
 
-.titulo {
-    font-size: 40px;
-    line-height: .92;
-    font-weight: 1000;
-    text-transform: uppercase;
-    text-shadow: 0 4px 0 #711805;
-    margin-bottom: 18px;
+.titulo{
+    font-size:38px;
+    line-height:.94;
+    font-weight:1000;
+    text-transform:uppercase;
+    text-shadow:0 4px 0 #721905;
+    margin-bottom:17px;
 }
 
-.titulo span {
-    color: #ff5b16;
+.titulo span{
+    color:#ff5c16;
 }
 
-.descripcion {
-    color: #e7ccc5;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 22px;
+.descripcion{
+    color:#ead1c9;
+    font-size:15px;
+    line-height:1.45;
+    margin-bottom:19px;
 }
 
-.record-inicio {
-    display: inline-block;
-    padding: 10px 18px;
-    margin-bottom: 24px;
+.premio{
+    margin:0 auto 18px;
+    padding:13px 14px;
 
-    border-radius: 100px;
+    border-radius:17px;
 
-    background: linear-gradient(135deg, #ff6b1a, #d92a06);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,104,20,.22),
+            rgba(255,50,0,.07)
+        );
 
-    font-size: 15px;
-    font-weight: 1000;
+    border:1px solid rgba(255,123,47,.35);
+}
+
+.premio strong{
+    display:block;
+    color:#ffd15a;
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.premio small{
+    color:#c9aaa2;
+    font-size:12px;
+}
+
+.record{
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:9px 17px;
+
+    border-radius:100px;
+
+    background:linear-gradient(135deg,#ff6b1b,#d92806);
+
+    font-weight:1000;
 
     box-shadow:
-        0 0 25px rgba(255, 70, 0, .30);
+        0 0 24px rgba(255,70,0,.28);
 }
 
-.btn {
-    width: 100%;
-    border: 0;
-    border-radius: 15px;
+.btn{
+    width:100%;
 
-    padding: 17px 20px;
+    border:0;
+    border-radius:15px;
 
-    color: white;
-    background: linear-gradient(135deg, #ff6b1a, #e22d07);
+    padding:17px 20px;
 
-    font-size: 19px;
-    font-weight: 1000;
+    color:white;
 
-    cursor: pointer;
+    background:
+        linear-gradient(
+            135deg,
+            #ff6c1b,
+            #e02d07
+        );
+
+    font-size:19px;
+    font-weight:1000;
 
     box-shadow:
-        0 7px 0 #8c1905,
-        0 0 25px rgba(255, 65, 0, .35);
+        0 7px 0 #8d1905,
+        0 0 25px rgba(255,65,0,.35);
 
-    transition: transform .1s;
+    cursor:pointer;
 }
 
-.btn:active {
-    transform: translateY(6px);
+.btn:active{
+    transform:translateY(6px);
 
     box-shadow:
-        0 1px 0 #8c1905,
-        0 0 20px rgba(255, 65, 0, .3);
+        0 1px 0 #8d1905;
 }
 
-.instruccion {
-    margin-top: 20px;
-    color: #a99590;
-    font-size: 12px;
+.ayuda{
+    margin-top:18px;
+    color:#a89590;
+    font-size:11px;
 }
 
 
@@ -151,38 +184,40 @@ body {
    JUEGO
 ========================= */
 
-#juego {
-    display: none;
+#juego{
+    display:none;
 
-    position: fixed;
-    inset: 0;
+    position:fixed;
+    inset:0;
 
-    overflow: hidden;
+    overflow:hidden;
 }
 
-.fondo {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: .08;
+.fondo{
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.07;
 }
 
-.fondo::before {
-    content: "🌭";
-    position: absolute;
-    font-size: 150px;
-    left: -50px;
-    top: 30%;
-    transform: rotate(-25deg);
+.fondo:before{
+    content:"🌭";
+    position:absolute;
+    font-size:150px;
+    left:-55px;
+    top:25%;
+    transform:rotate(-25deg);
 }
 
-.fondo::after {
-    content: "🍟";
-    position: absolute;
-    font-size: 130px;
-    right: -40px;
-    bottom: 10%;
-    transform: rotate(20deg);
+.fondo:after{
+    content:"🍟";
+    position:absolute;
+    font-size:130px;
+    right:-45px;
+    bottom:8%;
+    transform:rotate(18deg);
 }
 
 
@@ -190,54 +225,56 @@ body {
    HUD
 ========================= */
 
-.hud {
-    position: relative;
-    z-index: 20;
+.hud{
+    position:relative;
+    z-index:30;
 
-    display: flex;
-    gap: 8px;
+    display:flex;
+    gap:7px;
 
-    padding: 15px;
+    padding:13px 12px 0;
 }
 
-.hud-box {
-    flex: 1;
+.hud-box{
+    flex:1;
 
-    text-align: center;
+    text-align:center;
 
-    padding: 9px 5px;
+    padding:8px 4px;
 
-    background: rgba(12, 2, 1, .82);
+    background:rgba(9,2,1,.86);
 
-    border: 1px solid rgba(255, 101, 42, .35);
+    border:
+        1px solid rgba(255,105,42,.35);
 
-    border-radius: 15px;
+    border-radius:14px;
 }
 
-.hud-label {
-    color: #bca39d;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.hud-label{
+    color:#bba39c;
+
+    font-size:9px;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
-.hud-value {
-    margin-top: 2px;
+.hud-value{
+    margin-top:2px;
 
-    font-size: 24px;
-    font-weight: 1000;
+    font-size:23px;
+    font-weight:1000;
 }
 
-#tiempo {
-    color: #ff681a;
+#tiempo{
+    color:#ff6a1b;
 }
 
-#puntos {
-    color: white;
+#puntos{
+    color:#fff;
 }
 
-#combo {
-    color: #ffd04d;
+#combo{
+    color:#ffd04d;
 }
 
 
@@ -245,35 +282,84 @@ body {
    BARRA
 ========================= */
 
-.barra-contenedor {
-    position: absolute;
+.barra-wrap{
+    position:absolute;
 
-    top: 91px;
-    left: 15px;
-    right: 15px;
+    top:77px;
+    left:12px;
+    right:12px;
 
-    height: 8px;
+    height:8px;
 
-    overflow: hidden;
+    border-radius:20px;
 
-    background: rgba(255,255,255,.10);
+    overflow:hidden;
 
-    border-radius: 20px;
+    background:rgba(255,255,255,.09);
 
-    z-index: 20;
+    z-index:30;
 }
 
-#barra {
-    width: 100%;
-    height: 100%;
+#barra{
+    width:100%;
+    height:100%;
 
-    background: linear-gradient(
-        90deg,
-        #ffb000,
-        #ff4d10
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #ffd000,
+            #ff4c0b
+        );
 
-    transform-origin: left center;
+    transform-origin:left center;
+}
+
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+#cuenta{
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    z-index:100;
+
+    pointer-events:none;
+
+    font-size:105px;
+    font-weight:1000;
+
+    text-shadow:
+        0 7px 0 #7d1d05,
+        0 0 35px rgba(255,90,0,.6);
+}
+
+#cuenta.mostrar{
+    display:flex;
+    animation:cuenta .75s ease-out;
+}
+
+@keyframes cuenta{
+    0%{
+        opacity:0;
+        transform:scale(1.5);
+    }
+
+    25%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(.7);
+    }
 }
 
 
@@ -281,13 +367,13 @@ body {
    ZONA
 ========================= */
 
-#zona-juego {
-    position: absolute;
+#zona{
+    position:absolute;
 
-    top: 110px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top:92px;
+    left:0;
+    right:0;
+    bottom:0;
 }
 
 
@@ -295,47 +381,85 @@ body {
    PANCHO
 ========================= */
 
-.pancho {
-    position: absolute;
+.pancho{
+    position:absolute;
 
-    width: 95px;
-    height: 95px;
+    width:68px;
+    height:68px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    font-size: 65px;
+    font-size:49px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    z-index: 10;
+    z-index:20;
+
+    touch-action:none;
 
     filter:
-        drop-shadow(0 7px 7px rgba(0,0,0,.55));
+        drop-shadow(
+            0 6px 7px rgba(0,0,0,.65)
+        );
 
     animation:
-        aparecer .16s ease-out;
-
-    touch-action: manipulation;
+        aparecer .13s ease-out;
 }
 
-.pancho:active {
-    transform: scale(.72);
+.pancho:active{
+    transform:scale(.72);
 }
 
-@keyframes aparecer {
+@keyframes aparecer{
 
-    from {
-        opacity: 0;
-        transform: scale(.15) rotate(-25deg);
+    from{
+        opacity:0;
+        transform:scale(.15) rotate(-30deg);
     }
 
-    to {
-        opacity: 1;
-        transform: scale(1) rotate(0);
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+
+/* =========================
+   MISS
+========================= */
+
+.miss{
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:70;
+
+    color:#ff5e36;
+
+    font-size:19px;
+    font-weight:1000;
+
+    text-shadow:
+        0 2px 4px #000;
+
+    animation:
+        miss .55s ease-out forwards;
+}
+
+@keyframes miss{
+
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(.8);
     }
 
+    100%{
+        opacity:0;
+        transform:translateY(-35px) scale(1.05);
+    }
 }
 
 
@@ -343,37 +467,36 @@ body {
    PUNTOS
 ========================= */
 
-.punto {
-    position: fixed;
+.punto{
+    position:fixed;
 
-    pointer-events: none;
+    pointer-events:none;
 
-    color: #ffb23c;
+    z-index:70;
 
-    font-size: 27px;
-    font-weight: 1000;
+    color:#ffca48;
 
-    z-index: 50;
+    font-size:24px;
+    font-weight:1000;
 
     text-shadow:
-        0 2px 4px black;
+        0 2px 4px #000;
 
     animation:
-        subir .7s ease-out forwards;
+        subir .55s ease-out forwards;
 }
 
-@keyframes subir {
+@keyframes subir{
 
-    0% {
-        opacity: 1;
-        transform: translateY(0) scale(.7);
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(.7);
     }
 
-    100% {
-        opacity: 0;
-        transform: translateY(-65px) scale(1.25);
+    100%{
+        opacity:0;
+        transform:translateY(-48px) scale(1.15);
     }
-
 }
 
 
@@ -381,58 +504,83 @@ body {
    COMBO
 ========================= */
 
-.combo-grande {
-    position: fixed;
+#comboGrande{
+    position:fixed;
 
-    left: 50%;
-    top: 43%;
+    left:50%;
+    top:42%;
 
-    transform: translate(-50%, -50%);
+    pointer-events:none;
 
-    pointer-events: none;
+    z-index:80;
 
-    opacity: 0;
+    opacity:0;
 
-    z-index: 60;
+    color:#ffd04d;
 
-    color: #ffd04d;
+    font-size:35px;
+    font-weight:1000;
 
-    font-size: 38px;
-    font-weight: 1000;
+    text-transform:uppercase;
 
-    text-transform: uppercase;
+    white-space:nowrap;
 
     text-shadow:
-        0 4px 0 #8d3600,
-        0 0 25px rgba(255,170,0,.5);
+        0 4px 0 #873100,
+        0 0 30px rgba(255,170,0,.55);
 }
 
-.combo-grande.mostrar {
-    animation: combo .7s ease-out;
+#comboGrande.show{
+    animation:
+        combo .7s ease-out;
 }
 
-@keyframes combo {
+@keyframes combo{
 
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(.5) rotate(-8deg);
+    0%{
+        opacity:0;
+        transform:translate(-50%,-50%) scale(.4);
     }
 
-    20% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.15) rotate(2deg);
+    20%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1.15);
     }
 
-    70% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1) rotate(0);
+    70%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1);
     }
 
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -60%) scale(.9);
+    100%{
+        opacity:0;
+        transform:translate(-50%,-58%) scale(.9);
+    }
+}
+
+
+/* =========================
+   ÚLTIMOS 5 SEGUNDOS
+========================= */
+
+body.urgente #juego{
+    animation:
+        urgente .35s infinite alternate;
+}
+
+body.urgente #tiempo{
+    color:#ff2f0b;
+    transform:scale(1.08);
+}
+
+@keyframes urgente{
+    from{
+        filter:brightness(1);
     }
 
+    to{
+        filter:brightness(1.13);
+    }
 }
 
 
@@ -440,181 +588,168 @@ body {
    FINAL
 ========================= */
 
-#final {
-    display: none;
+#final{
+    display:none;
 
-    position: fixed;
-    inset: 0;
+    position:fixed;
+    inset:0;
 
-    z-index: 100;
+    z-index:200;
 
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
 
-    padding: 20px;
+    padding:18px;
 
-    background: rgba(5,1,0,.95);
+    background:
+        rgba(5,1,0,.96);
 }
 
-.final-box {
-    width: 100%;
-    max-width: 430px;
+.final-box{
+    width:100%;
+    max-width:430px;
 
-    padding: 32px 22px;
+    padding:28px 20px;
 
-    text-align: center;
+    text-align:center;
 
     background:
         linear-gradient(
             180deg,
-            #2b0804,
+            #2d0804,
             #100201
         );
 
-    border: 2px solid rgba(255,94,30,.5);
+    border:
+        2px solid rgba(255,94,30,.5);
 
-    border-radius: 28px;
+    border-radius:27px;
 
     box-shadow:
-        0 0 50px rgba(255,60,0,.25);
+        0 0 55px rgba(255,60,0,.25);
 }
 
-.final-emoji {
-    font-size: 65px;
-    margin-bottom: 5px;
+.final-emoji{
+    font-size:60px;
+    margin-bottom:5px;
 }
 
-.final-titulo {
-    font-size: 36px;
-    font-weight: 1000;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+.final-titulo{
+    font-size:34px;
+    font-weight:1000;
+    text-transform:uppercase;
+    margin-bottom:8px;
 }
 
-.final-subtitulo {
-    color: #cdb9b3;
-    margin-bottom: 22px;
-    line-height: 1.4;
+.final-subtitulo{
+    color:#d0b8b1;
+    font-size:14px;
+    line-height:1.4;
+    margin-bottom:20px;
 }
 
-.resultado {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+.resultados{
+    display:flex;
+    gap:9px;
+
+    margin-bottom:18px;
 }
 
-.resultado-box {
-    flex: 1;
+.resultado{
+    flex:1;
 
-    padding: 15px 5px;
+    padding:13px 4px;
 
-    border-radius: 16px;
+    border-radius:15px;
 
-    background: rgba(255,255,255,.05);
+    background:
+        rgba(255,255,255,.05);
 }
 
-.resultado-label {
-    display: block;
+.resultado small{
+    display:block;
 
-    color: #a99791;
+    color:#a99791;
 
-    font-size: 10px;
-    text-transform: uppercase;
+    font-size:9px;
+    text-transform:uppercase;
 
-    margin-bottom: 5px;
+    margin-bottom:4px;
 }
 
-.resultado-numero {
-    font-size: 30px;
-    font-weight: 1000;
+.resultado strong{
+    font-size:29px;
 }
 
-.nuevo-record {
-    display: none;
+.nuevo{
+    display:none;
 
-    color: #ffd04d;
+    margin-bottom:16px;
 
-    font-size: 18px;
-    font-weight: 1000;
+    color:#ffd04d;
 
-    margin-bottom: 18px;
+    font-size:18px;
+    font-weight:1000;
 
-    animation: brillo 1s infinite alternate;
+    animation:
+        brillo 1s infinite alternate;
 }
 
-@keyframes brillo {
+@keyframes brillo{
 
-    from {
-        transform: scale(1);
+    from{
+        transform:scale(1);
     }
 
-    to {
-        transform: scale(1.06);
+    to{
+        transform:scale(1.06);
     }
-
 }
 
-.btn-secundario {
-    margin-top: 12px;
+.premio-final{
+    margin-bottom:17px;
 
-    background: rgba(255,255,255,.05);
+    padding:12px;
 
-    border: 1px solid rgba(255,255,255,.18);
+    border-radius:14px;
 
-    box-shadow: none;
+    background:
+        rgba(255,160,30,.08);
+
+    border:
+        1px solid rgba(255,190,70,.22);
+
+    color:#f0d6cd;
+
+    font-size:12px;
 }
 
-.btn-secundario:active {
-    box-shadow: none;
+.premio-final strong{
+    color:#ffd15a;
 }
 
 
 /* =========================
-   PC
+   EFECTO
 ========================= */
 
-@media (min-width: 700px) {
-
-    #zona-juego {
-        width: 700px;
-
-        left: 50%;
-        right: auto;
-
-        transform: translateX(-50%);
-
-        border-left:
-            1px solid rgba(255,255,255,.04);
-
-        border-right:
-            1px solid rgba(255,255,255,.04);
-    }
-
+body.golpe{
+    animation:golpe .1s;
 }
 
+@keyframes golpe{
 
-/* =========================
-   EFECTO GOLPE
-========================= */
-
-body.golpe {
-    animation: golpe .12s;
-}
-
-@keyframes golpe {
-
-    0% {
-        transform: translateX(0);
+    0%{
+        transform:translateX(0);
     }
 
-    50% {
-        transform: translateX(-4px);
+    50%{
+        transform:translateX(-3px);
     }
 
-    100% {
-        transform: translateX(0);
+    100%{
+        transform:translateX(0);
     }
-
 }
 </style>
 </head>
@@ -623,7 +758,7 @@ body.golpe {
 
 
 <!-- =========================
-     PANTALLA INICIAL
+     INICIO
 ========================= -->
 
 <section id="inicio">
@@ -639,24 +774,37 @@ body.golpe {
         </div>
 
         <div class="titulo">
-            RÉCORD<br>
-            <span>COMO Y OBLIGO</span>
+            JUGÁ<br>
+            <span>Y GANÁ</span>
         </div>
 
         <div class="descripcion">
 
-            Tenés <strong>30 segundos</strong>
+            Tenés solamente
+            <strong>15 SEGUNDOS</strong>
             para tocar todos los panchos que puedas.
 
             <br><br>
 
-            ¿Podés romper el récord?
+            Y ojo...
+            <strong>no es fácil.</strong>
 
         </div>
 
-        <div class="record-inicio">
+        <div class="premio">
 
-            🏆 RÉCORD:
+            <strong>🏆 PREMIO SEMANAL</strong>
+
+            <small>
+                El ganador de la semana se lleva
+                1 PARMESANO GRATIS 🌭
+            </small>
+
+        </div>
+
+        <div class="record">
+
+            🔥 RÉCORD:
             <span id="recordInicio">0</span>
 
         </div>
@@ -665,13 +813,15 @@ body.golpe {
             class="btn"
             id="btnJugar">
 
-            🌭 EMPEZAR A JUGAR
+            🌭 JUGAR AHORA
 
         </button>
 
-        <div class="instruccion">
+        <div class="ayuda">
 
-            Tocá los panchos lo más rápido posible 🔥
+            Tocá rápido. Apuntá bien.
+            <br>
+            ¿Podés ser el campeón de la semana?
 
         </div>
 
@@ -688,6 +838,7 @@ body.golpe {
 
     <div class="fondo"></div>
 
+
     <div class="hud">
 
         <div class="hud-box">
@@ -700,7 +851,7 @@ body.golpe {
                 class="hud-value"
                 id="tiempo">
 
-                30
+                15
 
             </div>
 
@@ -743,22 +894,23 @@ body.golpe {
     </div>
 
 
-    <div class="barra-contenedor">
+    <div class="barra-wrap">
 
         <div id="barra"></div>
 
     </div>
 
 
-    <div id="zona-juego"></div>
+    <div id="zona"></div>
 
 
-    <div
-        class="combo-grande"
-        id="comboGrande">
-
+    <div id="comboGrande">
         ¡COMBO!
+    </div>
 
+
+    <div id="cuenta">
+        3
     </div>
 
 </section>
@@ -782,45 +934,37 @@ body.golpe {
 
         <div
             class="final-subtitulo"
-            id="mensajeFinal">
+            id="mensaje">
 
             Veamos qué hiciste...
 
         </div>
 
 
-        <div class="resultado">
+        <div class="resultados">
 
-            <div class="resultado-box">
+            <div class="resultado">
 
-                <span class="resultado-label">
+                <small>
                     Tu puntaje
-                </span>
+                </small>
 
-                <span
-                    class="resultado-numero"
-                    id="resultadoPuntos">
-
+                <strong id="resultadoPuntos">
                     0
-
-                </span>
+                </strong>
 
             </div>
 
 
-            <div class="resultado-box">
+            <div class="resultado">
 
-                <span class="resultado-label">
+                <small>
                     Récord
-                </span>
+                </small>
 
-                <span
-                    class="resultado-numero"
-                    id="resultadoRecord">
-
+                <strong id="resultadoRecord">
                     0
-
-                </span>
+                </strong>
 
             </div>
 
@@ -828,10 +972,23 @@ body.golpe {
 
 
         <div
-            class="nuevo-record"
+            class="nuevo"
             id="nuevoRecord">
 
             🏆 ¡NUEVO RÉCORD!
+
+        </div>
+
+
+        <div class="premio-final">
+
+            🎁 <strong>PREMIO SEMANAL</strong>
+
+            <br>
+
+            El jugador con el mejor puntaje
+            de la semana gana
+            <strong>1 PARMESANO GRATIS</strong>.
 
         </div>
 
@@ -840,16 +997,7 @@ body.golpe {
             class="btn"
             id="btnNuevo">
 
-            🔥 JUGAR DE NUEVO
-
-        </button>
-
-
-        <button
-            class="btn btn-secundario"
-            id="btnInicio">
-
-            ← VOLVER AL INICIO
+            🔥 INTENTAR DE NUEVO
 
         </button>
 
@@ -864,7 +1012,17 @@ body.golpe {
    CONFIGURACIÓN
 ========================= */
 
-const DURACION = 30;
+const DURACION = 15;
+
+
+/*
+   DIFICULTAD
+
+   Cuanto menor sea el pancho,
+   más difícil resulta acertarlo.
+*/
+
+const TAMANO_PANCHO = 68;
 
 
 /* =========================
@@ -876,8 +1034,7 @@ let combo = 0;
 let tiempo = DURACION;
 
 let jugando = false;
-
-let intervaloTiempo = null;
+let intervalo = null;
 
 let record =
     Number(
@@ -900,20 +1057,14 @@ const juego =
 const final =
     document.getElementById("final");
 
+const zona =
+    document.getElementById("zona");
 
 const btnJugar =
     document.getElementById("btnJugar");
 
 const btnNuevo =
     document.getElementById("btnNuevo");
-
-const btnInicio =
-    document.getElementById("btnInicio");
-
-
-const zonaJuego =
-    document.getElementById("zona-juego");
-
 
 const tiempoTexto =
     document.getElementById("tiempo");
@@ -924,14 +1075,11 @@ const puntosTexto =
 const comboTexto =
     document.getElementById("combo");
 
-
 const barra =
     document.getElementById("barra");
 
-
 const recordInicio =
     document.getElementById("recordInicio");
-
 
 const resultadoPuntos =
     document.getElementById("resultadoPuntos");
@@ -942,12 +1090,14 @@ const resultadoRecord =
 const nuevoRecord =
     document.getElementById("nuevoRecord");
 
-const mensajeFinal =
-    document.getElementById("mensajeFinal");
-
+const mensaje =
+    document.getElementById("mensaje");
 
 const comboGrande =
     document.getElementById("comboGrande");
+
+const cuenta =
+    document.getElementById("cuenta");
 
 
 recordInicio.textContent =
@@ -960,26 +1110,106 @@ recordInicio.textContent =
 
 btnJugar.addEventListener(
     "click",
-    iniciarJuego
+    comenzarCuenta
 );
 
 btnNuevo.addEventListener(
     "click",
-    iniciarJuego
-);
-
-
-btnInicio.addEventListener(
-    "click",
-    volverInicio
+    comenzarCuenta
 );
 
 
 /* =========================
-   INICIAR
+   CUENTA REGRESIVA
 ========================= */
 
-function iniciarJuego() {
+function comenzarCuenta(){
+
+    inicio.style.display =
+        "none";
+
+    final.style.display =
+        "none";
+
+    juego.style.display =
+        "block";
+
+    cuenta.textContent = "3";
+
+    cuenta.classList.remove(
+        "mostrar"
+    );
+
+    void cuenta.offsetWidth;
+
+    cuenta.classList.add(
+        "mostrar"
+    );
+
+
+    setTimeout(() => {
+
+        cuenta.textContent = "2";
+
+        cuenta.classList.remove(
+            "mostrar"
+        );
+
+        void cuenta.offsetWidth;
+
+        cuenta.classList.add(
+            "mostrar"
+        );
+
+    },750);
+
+
+    setTimeout(() => {
+
+        cuenta.textContent = "1";
+
+        cuenta.classList.remove(
+            "mostrar"
+        );
+
+        void cuenta.offsetWidth;
+
+        cuenta.classList.add(
+            "mostrar"
+        );
+
+    },1500);
+
+
+    setTimeout(() => {
+
+        cuenta.textContent = "🔥";
+
+        cuenta.classList.remove(
+            "mostrar"
+        );
+
+        void cuenta.offsetWidth;
+
+        cuenta.classList.add(
+            "mostrar"
+        );
+
+    },2250);
+
+
+    setTimeout(
+        iniciarJuego,
+        2900
+    );
+}
+
+
+/* =========================
+   INICIAR JUEGO
+========================= */
+
+function iniciarJuego(){
 
     puntos = 0;
     combo = 0;
@@ -988,60 +1218,83 @@ function iniciarJuego() {
     jugando = true;
 
     clearInterval(
-        intervaloTiempo
+        intervalo
     );
 
-    zonaJuego.innerHTML = "";
+    zona.innerHTML = "";
+
+    document.body.classList.remove(
+        "urgente"
+    );
 
     actualizarHUD();
 
-    inicio.style.display = "none";
-
-    final.style.display = "none";
-
-    juego.style.display = "block";
-
-    barra.style.width = "100%";
-
+    barra.style.width =
+        "100%";
 
     crearPancho();
 
 
-    intervaloTiempo =
+    intervalo =
         setInterval(
-            actualizarTiempo,
-            1000
+            tick,
+            100
         );
-
 }
 
 
 /* =========================
-   TIEMPO
+   RELOJ
 ========================= */
 
-function actualizarTiempo() {
+function tick(){
 
-    if (!jugando) return;
+    if(!jugando){
+        return;
+    }
 
-    tiempo--;
 
-    actualizarHUD();
+    tiempo -= .1;
+
+
+    if(tiempo < 0){
+        tiempo = 0;
+    }
+
+
+    tiempoTexto.textContent =
+        Math.ceil(tiempo);
 
 
     const porcentaje =
         (tiempo / DURACION) * 100;
 
+
     barra.style.width =
         porcentaje + "%";
 
 
-    if (tiempo <= 0) {
+    /*
+       ÚLTIMOS 5 SEGUNDOS
+    */
+
+    if(
+        tiempo <= 5 &&
+        tiempo > 0
+    ){
+
+        document.body.classList.add(
+            "urgente"
+        );
+
+    }
+
+
+    if(tiempo <= 0){
 
         terminarJuego();
 
     }
-
 }
 
 
@@ -1049,17 +1302,16 @@ function actualizarTiempo() {
    HUD
 ========================= */
 
-function actualizarHUD() {
+function actualizarHUD(){
 
     tiempoTexto.textContent =
-        tiempo;
+        Math.ceil(tiempo);
 
     puntosTexto.textContent =
         puntos;
 
     comboTexto.textContent =
         "x" + combo;
-
 }
 
 
@@ -1067,16 +1319,20 @@ function actualizarHUD() {
    CREAR PANCHO
 ========================= */
 
-function crearPancho() {
+function crearPancho(){
 
-    if (!jugando) return;
+    if(!jugando){
+        return;
+    }
 
 
-    zonaJuego.innerHTML = "";
+    zona.innerHTML = "";
 
 
     const pancho =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     pancho.className =
@@ -1088,21 +1344,17 @@ function crearPancho() {
 
 
     const rect =
-        zonaJuego.getBoundingClientRect();
+        zona.getBoundingClientRect();
 
 
-    const ancho = 95;
-
-    const alto = 95;
-
-    const margen = 15;
+    const margen = 12;
 
 
     const maxX =
         Math.max(
             margen,
             rect.width -
-            ancho -
+            TAMANO_PANCHO -
             margen
         );
 
@@ -1111,10 +1363,14 @@ function crearPancho() {
         Math.max(
             margen,
             rect.height -
-            alto -
+            TAMANO_PANCHO -
             margen
         );
 
+
+    /*
+       Posición aleatoria
+    */
 
     const x =
         margen +
@@ -1141,10 +1397,9 @@ function crearPancho() {
     );
 
 
-    zonaJuego.appendChild(
+    zona.appendChild(
         pancho
     );
-
 }
 
 
@@ -1152,9 +1407,12 @@ function crearPancho() {
    TOCAR PANCHO
 ========================= */
 
-function tocarPancho(event) {
+function tocarPancho(event){
 
-    if (!jugando) return;
+    if(!jugando){
+        return;
+    }
+
 
     event.preventDefault();
 
@@ -1177,49 +1435,60 @@ function tocarPancho(event) {
         rect.height / 2;
 
 
-    /* COMBO */
+    /*
+       COMBO
+    */
 
     combo++;
 
 
-    /* PUNTOS */
+    /*
+       SISTEMA DE PUNTOS
 
-    let puntosGanados = 1;
+       1-4 = 1 punto
+       5-9 = 2 puntos
+       10+ = 3 puntos
+    */
+
+    let ganado = 1;
 
 
-    if (combo >= 10) {
+    if(combo >= 10){
 
-        puntosGanados = 3;
+        ganado = 3;
 
-    } else if (combo >= 5) {
+    }
 
-        puntosGanados = 2;
+    else if(combo >= 5){
+
+        ganado = 2;
 
     }
 
 
-    puntos += puntosGanados;
+    puntos += ganado;
 
 
     actualizarHUD();
 
 
-    /* EFECTO */
-
-    mostrarPuntos(
+    mostrarPunto(
         x,
         y,
-        "+" + puntosGanados
+        "+" + ganado
     );
 
 
-    if (
+    /*
+       COMBOS IMPORTANTES
+    */
+
+    if(
         combo === 5 ||
         combo === 10 ||
         combo === 15 ||
-        combo === 20 ||
-        combo === 30
-    ) {
+        combo === 20
+    ){
 
         mostrarCombo(
             "¡COMBO x" + combo + "!"
@@ -1232,9 +1501,7 @@ function tocarPancho(event) {
         "golpe"
     );
 
-
     void document.body.offsetWidth;
-
 
     document.body.classList.add(
         "golpe"
@@ -1242,22 +1509,67 @@ function tocarPancho(event) {
 
 
     crearPancho();
-
 }
 
 
 /* =========================
-   PUNTOS FLOTANTES
+   TOQUE ERRADO
 ========================= */
 
-function mostrarPuntos(
+document.addEventListener(
+    "pointerdown",
+    function(event){
+
+        if(!jugando){
+            return;
+        }
+
+
+        /*
+           Si el toque no fue
+           sobre el pancho,
+           rompe el combo.
+        */
+
+        if(
+            !event.target.closest(
+                ".pancho"
+            )
+        ){
+
+            if(combo > 0){
+
+                combo = 0;
+
+                actualizarHUD();
+
+                mostrarMiss(
+                    event.clientX,
+                    event.clientY
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================
+   PUNTO
+========================= */
+
+function mostrarPunto(
     x,
     y,
     texto
-) {
+){
 
     const elemento =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     elemento.className =
@@ -1269,11 +1581,11 @@ function mostrarPuntos(
 
 
     elemento.style.left =
-        (x - 15) + "px";
+        (x - 12) + "px";
 
 
     elemento.style.top =
-        (y - 20) + "px";
+        (y - 18) + "px";
 
 
     document.body.appendChild(
@@ -1283,9 +1595,51 @@ function mostrarPuntos(
 
     setTimeout(
         () => elemento.remove(),
-        700
+        600
+    );
+}
+
+
+/* =========================
+   MISS
+========================= */
+
+function mostrarMiss(
+    x,
+    y
+){
+
+    const elemento =
+        document.createElement(
+            "div"
+        );
+
+
+    elemento.className =
+        "miss";
+
+
+    elemento.textContent =
+        "¡FALLASTE!";
+
+
+    elemento.style.left =
+        (x - 40) + "px";
+
+
+    elemento.style.top =
+        (y - 15) + "px";
+
+
+    document.body.appendChild(
+        elemento
     );
 
+
+    setTimeout(
+        () => elemento.remove(),
+        600
+    );
 }
 
 
@@ -1295,14 +1649,14 @@ function mostrarPuntos(
 
 function mostrarCombo(
     texto
-) {
+){
 
     comboGrande.textContent =
         texto;
 
 
     comboGrande.classList.remove(
-        "mostrar"
+        "show"
     );
 
 
@@ -1310,9 +1664,8 @@ function mostrarCombo(
 
 
     comboGrande.classList.add(
-        "mostrar"
+        "show"
     );
-
 }
 
 
@@ -1320,20 +1673,27 @@ function mostrarCombo(
    TERMINAR
 ========================= */
 
-function terminarJuego() {
+function terminarJuego(){
 
-    if (!jugando) return;
+    if(!jugando){
+        return;
+    }
 
 
     jugando = false;
 
 
     clearInterval(
-        intervaloTiempo
+        intervalo
     );
 
 
-    zonaJuego.innerHTML = "";
+    document.body.classList.remove(
+        "urgente"
+    );
+
+
+    zona.innerHTML = "";
 
 
     juego.style.display =
@@ -1344,11 +1704,11 @@ function terminarJuego() {
         puntos;
 
 
-    let esNuevoRecord =
+    let nuevoRecordReal =
         false;
 
 
-    if (puntos > record) {
+    if(puntos > record){
 
         record = puntos;
 
@@ -1359,7 +1719,8 @@ function terminarJuego() {
         );
 
 
-        esNuevoRecord = true;
+        nuevoRecordReal =
+            true;
 
     }
 
@@ -1369,99 +1730,65 @@ function terminarJuego() {
 
 
     nuevoRecord.style.display =
-        esNuevoRecord
+        nuevoRecordReal
             ? "block"
             : "none";
 
 
-    /* MENSAJE FINAL */
+    /*
+       MENSAJES
+    */
 
-    if (puntos >= 100) {
+    if(puntos >= 35){
 
-        mensajeFinal.textContent =
-            "🔥 ¡UNA BESTIA! Llegaste a 100.";
-
-    }
-
-    else if (puntos >= 70) {
-
-        mensajeFinal.textContent =
-            "🌭 ¡Tremendo nivel! Estás jugando en serio.";
+        mensaje.textContent =
+            "🔥 ¡UNA LOCURA! Tenés nivel de campeón.";
 
     }
 
-    else if (puntos >= 40) {
+    else if(puntos >= 25){
 
-        mensajeFinal.textContent =
-            "🔥 Muy buen puntaje. ¿Podés superarlo?";
-
-    }
-
-    else if (puntos >= 20) {
-
-        mensajeFinal.textContent =
-            "😎 Nada mal... pero sabemos que podés hacer más.";
+        mensaje.textContent =
+            "🌭 ¡Tremendo puntaje! Estás muy cerca.";
 
     }
 
-    else {
+    else if(puntos >= 18){
 
-        mensajeFinal.textContent =
-            "😂 Hay que practicar. ¡Probá de nuevo!";
+        mensaje.textContent =
+            "🔥 Muy bien. Ahora intentá romperlo.";
+
+    }
+
+    else if(puntos >= 10){
+
+        mensaje.textContent =
+            "😎 Nada mal... pero podés hacerlo mejor.";
+
+    }
+
+    else{
+
+        mensaje.textContent =
+            "😂 ¡Te faltó velocidad! Probá otra vez.";
 
     }
 
 
     final.style.display =
         "flex";
-
 }
 
 
 /* =========================
-   VOLVER AL INICIO
-========================= */
-
-function volverInicio() {
-
-    jugando = false;
-
-
-    clearInterval(
-        intervaloTiempo
-    );
-
-
-    zonaJuego.innerHTML = "";
-
-
-    final.style.display =
-        "none";
-
-
-    juego.style.display =
-        "none";
-
-
-    inicio.style.display =
-        "flex";
-
-
-    recordInicio.textContent =
-        record;
-
-}
-
-
-/* =========================
-   EVITAR SCROLL
+   PREVENIR SCROLL
 ========================= */
 
 document.addEventListener(
     "touchmove",
-    function(event) {
+    function(event){
 
-        if (jugando) {
+        if(jugando){
 
             event.preventDefault();
 
@@ -1469,7 +1796,7 @@ document.addEventListener(
 
     },
     {
-        passive: false
+        passive:false
     }
 );
 
@@ -1480,21 +1807,14 @@ document.addEventListener(
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function(event){
 
-        if (
+        if(
             event.code === "Space" &&
             !jugando
-        ) {
+        ){
 
-            if (
-                inicio.style.display !==
-                "none"
-            ) {
-
-                iniciarJuego();
-
-            }
+            comenzarCuenta();
 
         }
 
