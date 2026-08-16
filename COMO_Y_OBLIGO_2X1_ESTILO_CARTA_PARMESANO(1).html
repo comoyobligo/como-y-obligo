@@ -1,653 +1,1249 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="Como y Obligó — Promo 2x1">
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#090909">
+
 <title>Como y Obligó — 2×1</title>
 
 <style>
-:root{
-  --red:#e21b12;
-  --orange:#ff9d00;
-  --cream:#ffe5a5;
-  --muted:#b99658;
-}
 
 *{
-  box-sizing:border-box;
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+:root{
+
+--red:#e21b12;
+--orange:#ff9800;
+--yellow:#ffc247;
+--dark:#070707;
+--card:#111111;
+--cream:#fff0bd;
+--muted:#b69a62;
+
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-  background:
-    radial-gradient(
-      circle at 50% -10%,
-      #571500,
-      #150600 38%,
-      #050505 75%
-    );
-  color:var(--cream);
-  font-family:Arial,Helvetica,sans-serif;
-  display:flex;
-  justify-content:center;
-  padding:18px 12px;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:
+
+radial-gradient(
+circle at 50% -10%,
+#681900 0%,
+#210900 30%,
+#080808 70%
+);
+
+color:white;
+
+min-height:100vh;
+
+padding:18px 12px 35px;
+
+overflow-x:hidden;
+
 }
 
-main{
-  width:min(520px,100%);
+.container{
+
+width:100%;
+max-width:520px;
+margin:auto;
+
 }
 
-.brand{
-  text-align:center;
-  color:var(--red);
-  font:900 42px/.9 Georgia,serif;
-  text-shadow:
-    0 0 5px #ffcf00,
-    0 0 18px #ff7200,
-    0 0 32px #ff2400;
-  margin:12px 0 18px;
+.logo{
+
+text-align:center;
+
+font-family:
+Georgia,
+serif;
+
+font-size:43px;
+
+font-weight:900;
+
+line-height:.85;
+
+color:var(--red);
+
+text-shadow:
+
+0 0 5px #ffd000,
+0 0 15px #ff6500,
+0 0 30px #ff2400;
+
+margin:12px 0 15px;
+
 }
 
 .line{
-  height:3px;
-  width:160px;
-  margin:0 auto 18px;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      var(--orange),
-      transparent
-    );
+
+width:150px;
+height:3px;
+
+margin:auto;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+var(--orange),
+transparent
+);
+
 }
 
 .card{
-  background:
-    linear-gradient(
-      145deg,
-      #181818,
-      #080808
-    );
-  border:1.5px solid var(--orange);
-  border-radius:28px;
-  padding:24px 18px;
-  box-shadow:
-    0 0 40px #ff650025,
-    0 15px 40px #000;
-  text-align:center;
+
+margin-top:18px;
+
+background:
+
+linear-gradient(
+145deg,
+#191919,
+#090909
+);
+
+border:
+
+1px solid #ff9700;
+
+border-radius:28px;
+
+padding:25px 18px;
+
+box-shadow:
+
+0 0 40px #ff6a001c,
+0 15px 45px #000;
+
 }
 
-.tag{
-  display:inline-block;
-  background:
-    linear-gradient(
-      90deg,
-      var(--red),
-      #ff6500
-    );
-  color:#fff;
-  padding:8px 13px;
-  border-radius:999px;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:2px;
+.badge{
+
+display:inline-block;
+
+padding:8px 13px;
+
+border-radius:50px;
+
+font-size:11px;
+
+font-weight:900;
+
+letter-spacing:1.5px;
+
+background:
+
+linear-gradient(
+90deg,
+var(--red),
+#ff6900
+);
+
+box-shadow:
+0 0 15px #ff5c0035;
+
 }
 
 .hero{
-  font-size:28px;
-  font-weight:1000;
-  color:#fff;
-  margin-top:18px;
+
+text-align:center;
+
+margin-top:20px;
+
 }
 
-.big{
-  font-size:68px;
-  line-height:.95;
-  color:var(--orange);
-  font-weight:1000;
-  margin:7px 0;
-  text-shadow:0 0 24px #ff8c0040;
+.hero h1{
+
+font-size:30px;
+
+font-weight:1000;
+
 }
 
-.sub{
-  font-size:18px;
-  font-weight:900;
-  color:#fff0c2;
+.hero .two{
+
+font-size:75px;
+
+line-height:.9;
+
+font-weight:1000;
+
+color:var(--orange);
+
+text-shadow:
+0 0 25px #ff880044;
+
+margin:8px 0;
+
 }
 
-.copy{
-  font-size:13px;
-  line-height:1.5;
-  color:var(--muted);
-  margin:12px 0 20px;
+.hero h2{
+
+font-size:19px;
+
+color:var(--cream);
+
+}
+
+.hero p{
+
+font-size:13px;
+
+line-height:1.5;
+
+color:var(--muted);
+
+margin-top:12px;
+
 }
 
 
 /* INSTAGRAM */
 
-.social{
-  background:
-    linear-gradient(
-      145deg,
-      #1a0d07,
-      #090909
-    );
-  border:1px solid #7a300c;
-  border-radius:20px;
-  padding:18px 14px;
-  margin:16px 0;
+.instagram{
+
+margin-top:22px;
+
+padding:19px 15px;
+
+border-radius:21px;
+
+background:
+
+linear-gradient(
+145deg,
+#1b0c06,
+#0b0b0b
+);
+
+border:1px solid #70300c;
+
+text-align:center;
+
 }
 
-.social h3{
-  margin:0;
-  color:#fff;
-  font-size:18px;
+.instagram h3{
+
+font-size:19px;
+
+margin-bottom:7px;
+
 }
 
-.social p{
-  margin:7px 0;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
+.instagram p{
+
+font-size:12px;
+
+color:var(--muted);
+
+line-height:1.5;
+
 }
 
+.follow{
 
-/* BOTÓN INSTAGRAM */
+position:relative;
 
-.igbtn{
-  position:relative;
-  display:block;
-  overflow:hidden;
-  margin:14px auto 2px;
-  padding:17px 16px;
-  border-radius:999px;
-  text-decoration:none;
-  color:#fff;
-  font-size:16px;
-  font-weight:1000;
-  letter-spacing:.3px;
+overflow:hidden;
 
-  background:
-    linear-gradient(
-      90deg,
-      #e21b12,
-      #ff6200,
-      #ff9d00
-    );
+display:block;
 
-  box-shadow:
-    0 0 18px #ff650055,
-    0 7px 0 #9d180d;
+text-decoration:none;
 
-  transform:translateY(0);
-  transition:.15s;
+color:white;
+
+font-size:16px;
+
+font-weight:1000;
+
+margin-top:15px;
+
+padding:17px 12px;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+90deg,
+#d91810,
+#ff6200,
+#ff9e00
+);
+
+box-shadow:
+
+0 0 20px #ff650050,
+0 7px 0 #9e170e;
+
+transition:.15s;
+
 }
 
-.igbtn:hover{
-  transform:scale(1.03);
-  box-shadow:
-    0 0 28px #ff650088,
-    0 7px 0 #9d180d;
+.follow:hover{
+
+transform:scale(1.03);
+
+box-shadow:
+
+0 0 30px #ff650080,
+0 7px 0 #9e170e;
+
 }
 
-.igbtn:active{
-  transform:translateY(5px);
-  box-shadow:0 2px 0 #9d180d;
+.follow:active{
+
+transform:translateY(5px);
+
+box-shadow:
+
+0 2px 0 #9e170e;
+
 }
 
-.igbtn:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-80px;
-  width:45px;
-  height:100%;
-  background:#ffffff55;
-  transform:skewX(-20deg);
-  animation:shine 2.6s infinite;
+.follow::after{
+
+content:"";
+
+position:absolute;
+
+width:50px;
+
+height:100%;
+
+top:0;
+
+left:-80px;
+
+background:#ffffff55;
+
+transform:skewX(-20deg);
+
+animation:shine 2.7s infinite;
+
 }
 
 @keyframes shine{
 
-  0%{
-    left:-80px;
-  }
+0%{
+left:-80px;
+}
 
-  45%,100%{
-    left:115%;
-  }
+45%,100%{
+left:120%;
+}
 
 }
 
-.smallig{
-  color:#ffb52e;
-  font-weight:900;
-  font-size:11px;
+
+/* CTA */
+
+.cta{
+
+margin-top:18px;
+
+padding:20px 15px;
+
+border-radius:21px;
+
+background:#0b0b0b;
+
+border:1px dashed #77470e;
+
+text-align:center;
+
 }
 
+.cta h3{
 
-/* OBTENER VOUCHER */
+font-size:20px;
+
+}
+
+.cta p{
+
+font-size:12px;
+
+color:var(--muted);
+
+margin:7px 0 14px;
+
+}
 
 .get{
-  margin-top:18px;
-  padding:18px 14px;
-  border:1px dashed #71400c;
-  border-radius:20px;
-  background:#0b0b0b;
+
+width:100%;
+
+border:0;
+
+padding:17px;
+
+border-radius:50px;
+
+font-size:17px;
+
+font-weight:1000;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+90deg,
+#fff1bd,
+#ffb72c
+);
+
+color:#1b0900;
+
+box-shadow:
+0 0 25px #ffb22c40;
+
+transition:.15s;
+
 }
 
-.get h3{
-  margin:0;
-  color:#fff;
-  font-size:19px;
+.get:hover{
+
+transform:scale(1.02);
+
 }
 
-.get p{
-  margin:7px 0 12px;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
+.get:active{
+
+transform:scale(.98);
+
 }
 
-.getbtn{
-  width:100%;
-  padding:17px;
-  border:0;
-  border-radius:999px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #fff0b8,
-      #ffb72d
-    );
+/* COUNTDOWN INTRO */
 
-  color:#1a0900;
-  font-size:16px;
-  font-weight:1000;
-  cursor:pointer;
+.countdown{
 
-  box-shadow:
-    0 0 20px #ffad3340;
+display:none;
 
-  transition:.15s;
+text-align:center;
+
+padding:25px 0;
+
 }
 
-.getbtn:hover{
-  transform:scale(1.02);
-  box-shadow:
-    0 0 30px #ffad3370;
+.countdown.show{
+
+display:block;
+
+animation:fade .3s;
+
+}
+
+.countNumber{
+
+font-size:70px;
+
+font-weight:1000;
+
+color:var(--orange);
+
+text-shadow:
+0 0 25px #ff870055;
+
+}
+
+.countText{
+
+font-size:13px;
+
+color:var(--muted);
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:scale(.9);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
 }
 
 
 /* VOUCHER */
 
 .voucher{
-  display:none;
-  margin-top:18px;
 
-  border:2px dashed var(--orange);
-  border-radius:22px;
+display:none;
 
-  padding:20px 15px;
+margin-top:20px;
 
-  background:
-    radial-gradient(
-      circle at top right,
-      #3b1700,
-      #080808
-    );
+border:
+
+2px dashed
+var(--orange);
+
+border-radius:23px;
+
+padding:21px 15px;
+
+background:
+
+radial-gradient(
+circle at top right,
+#401800,
+#090909
+);
+
+text-align:center;
+
 }
 
 .voucher.show{
-  display:block;
-  animation:pop .35s ease;
-}
 
-@keyframes pop{
+display:block;
 
-  from{
-    opacity:0;
-    transform:scale(.96);
-  }
+animation:
 
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
+voucherIn
+.5s ease;
 
 }
 
-.success{
-  font-size:22px;
-  font-weight:1000;
-  color:#fff;
-  margin-bottom:5px;
+@keyframes voucherIn{
+
+from{
+
+opacity:0;
+
+transform:
+scale(.9)
+translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+scale(1)
+translateY(0);
+
+}
+
+}
+
+.activated{
+
+font-size:23px;
+
+font-weight:1000;
+
+margin-bottom:5px;
+
+}
+
+.activated span{
+
+color:var(--orange);
+
+}
+
+.reserved{
+
+font-size:11px;
+
+color:var(--muted);
+
+margin-bottom:8px;
+
 }
 
 .timer{
-  font-size:48px;
-  font-weight:1000;
-  color:var(--orange);
-  margin:5px 0;
+
+font-size:52px;
+
+font-weight:1000;
+
+color:var(--orange);
+
+margin:4px 0;
+
 }
 
-.timer.low{
-  color:var(--red);
-  animation:pulse .7s infinite alternate;
+.timer.warning{
+
+color:var(--red);
+
+animation:pulse .65s infinite alternate;
+
 }
 
 @keyframes pulse{
 
-  to{
-    transform:scale(1.05);
-  }
+to{
+
+transform:scale(1.08);
 
 }
 
-.timer-note{
-  font-size:11px;
-  color:var(--muted);
+}
+
+.codeLabel{
+
+font-size:9px;
+
+letter-spacing:2px;
+
+color:var(--muted);
+
+margin-top:8px;
+
 }
 
 .code{
-  font:900 22px monospace;
-  color:var(--orange);
-  letter-spacing:2px;
-  margin:15px 0;
+
+font-family:monospace;
+
+font-size:25px;
+
+font-weight:1000;
+
+letter-spacing:3px;
+
+color:var(--orange);
+
+margin:5px 0 15px;
+
 }
 
-.show{
-  font-size:17px;
-  font-weight:1000;
-  color:#fff;
-  background:#260d05;
-  border-radius:14px;
-  padding:13px;
-  margin:13px 0;
+.showPhone{
+
+background:#260c05;
+
+border-radius:15px;
+
+padding:15px;
+
+font-size:17px;
+
+font-weight:1000;
+
+border:1px solid #6d2309;
+
 }
 
-.rules{
-  font-size:11px;
-  line-height:1.6;
-  color:var(--muted);
+.showPhone small{
+
+display:block;
+
+font-size:10px;
+
+color:var(--muted);
+
+font-weight:normal;
+
+margin-top:5px;
+
 }
 
-.address{
-  margin-top:16px;
-  color:#fff;
-  font-weight:900;
+.location{
+
+margin-top:16px;
+
+font-size:14px;
+
+font-weight:900;
+
 }
 
-.close{
-  font-size:11px;
-  color:#8c6e42;
-  margin-top:13px;
+.note{
+
+font-size:10px;
+
+line-height:1.5;
+
+color:var(--muted);
+
+margin-top:12px;
+
+}
+
+
+/* AFTER */
+
+.after{
+
+display:none;
+
+margin-top:18px;
+
+text-align:center;
+
+}
+
+.after.show{
+
+display:block;
+
+animation:fade .5s;
+
+}
+
+.after p{
+
+font-size:12px;
+
+color:var(--muted);
+
+margin-bottom:10px;
+
+}
+
+.after a{
+
+display:block;
+
+text-decoration:none;
+
+color:var(--orange);
+
+font-weight:1000;
+
+font-size:14px;
+
+}
+
+
+.footer{
+
+text-align:center;
+
+font-size:10px;
+
+color:#765d37;
+
+margin-top:20px;
+
+line-height:1.5;
+
 }
 
 @media(max-width:380px){
 
-  .brand{
-    font-size:36px;
-  }
+.logo{
+font-size:36px;
+}
 
-  .big{
-    font-size:58px;
-  }
+.hero .two{
+font-size:62px;
+}
 
-  .hero{
-    font-size:25px;
-  }
+.hero h1{
+font-size:26px;
+}
+
+.timer{
+font-size:46px;
+}
 
 }
+
 </style>
+
 </head>
 
 
 <body>
 
-<main>
 
-<div class="brand">
-  COMO Y<br>OBLIGÓ
+<div class="container">
+
+
+<div class="logo">
+
+COMO Y<br>
+OBLIGÓ
+
 </div>
+
 
 <div class="line"></div>
 
 
-<section class="card">
+<div class="card">
 
 
-<div class="tag">
-  🔥 ENCONTRASTE EL 2×1
+<div class="badge">
+
+🔥 PROMO ESPECIAL
+
 </div>
 
 
 <div class="hero">
-  DOS PANCHOS.
+
+<h1>
+
+¡ENCONTRASTE EL
+
+</h1>
+
+
+<div class="two">
+
+2×1
+
 </div>
 
 
-<div class="big">
-  PAGÁS 1
+<h2>
+
+DOS PANCHOS · PAGÁS UNO 🌭
+
+</h2>
+
+
+<p>
+
+Sí, es real 😎
+
+Guardá esta página y disfrutá
+la promo en Como y Obligó.
+
+</p>
+
 </div>
 
-
-<div class="sub">
-  Y SÍ… ES REAL 🌭🔥
-</div>
-
-
-<div class="copy">
-  Guardá esta pantalla y vení a disfrutarlo.
-  Antes de irte, tenemos una pequeña
-  invitación para vos 👇
-</div>
 
 
 <!-- INSTAGRAM -->
 
-<div class="social">
+
+<div class="instagram">
+
 
 <h3>
-  ⭐ ¿Todavía no nos seguís?
+
+⭐ Antes de irte...
+
 </h3>
 
+
 <p>
-  Seguinos y enterate primero de las próximas
-  promos, sorteos y locuras de Como y Obligó.
+
+¿Todavía no nos seguís?
+
+Seguinos y enterate de las próximas
+promos, sorteos y locuras.
+
 </p>
 
 
 <a
-  class="igbtn"
-  href="https://www.instagram.com/comoyobligo/"
-  target="_blank"
-  rel="noopener"
+class="follow"
+href="https://www.instagram.com/comoyobligo/"
+target="_blank"
+rel="noopener"
 >
-  📲 SEGUIR A @COMOYOOBLIGO
+
+📲 SEGUIR A @COMOYOOBLIGO
+
 </a>
 
 
-<div class="smallig">
-  Un toque y ya estás adentro 🔥
-</div>
-
 </div>
 
 
-<!-- OBTENER VOUCHER -->
 
-<div class="get">
+<!-- CTA -->
+
+
+<div
+class="cta"
+id="cta"
+>
+
 
 <h3>
-  🎟️ ¿QUERÉS TU VOUCHER?
+
+🎟️ ¿Listo para tu 2×1?
+
 </h3>
 
+
 <p>
-  No hace falta completar datos.
-  Tocá el botón y se activa tu voucher.
+
+Activá tu voucher y tenés
+5 minutos para presentarlo.
+
 </p>
 
 
 <button
-  class="getbtn"
-  onclick="activar()"
+class="get"
+onclick="startVoucher()"
 >
-  QUIERO MI 2×1 🌭
+
+🔥 ACTIVAR MI 2×1
+
 </button>
 
+
 </div>
+
+
+
+<!-- COUNTDOWN -->
+
+
+<div
+class="countdown"
+id="countdown"
+>
+
+<div
+class="countNumber"
+id="countNumber"
+>
+
+3
+
+</div>
+
+
+<div class="countText">
+
+PREPARANDO TU VOUCHER...
+
+</div>
+
+</div>
+
 
 
 <!-- VOUCHER -->
 
-<div
-  id="voucher"
-  class="voucher"
->
-
-<div class="success">
-  🎉 ¡VOUCHER ACTIVADO!
-</div>
-
 
 <div
-  class="timer"
-  id="timer"
+class="voucher"
+id="voucher"
 >
-  05:00
+
+
+<div class="activated">
+
+🎉 ¡VOUCHER <span>ACTIVADO!</span>
+
 </div>
 
 
-<div class="timer-note">
-  Tenés 5 minutos para presentarlo.
+<div class="reserved">
+
+Tu beneficio está reservado durante:
+
 </div>
 
 
-<div class="code">
-  CYOB-2X1-482731
+<div
+class="timer"
+id="timer"
+>
+
+05:00
+
 </div>
 
 
-<div class="show">
-  📱 MOSTRÁ ESTA PANTALLA EN EL LOCAL
+<div class="codeLabel">
+
+CÓDIGO DE VOUCHER
+
 </div>
 
 
-<div class="rules">
+<div
+class="code"
+id="code"
+>
 
-<strong style="color:#fff">
-  ⚠️ IMPORTANTE
-</strong>
+CYOB-2X1
+
+</div>
+
+
+<div class="showPhone">
+
+📱 MOSTRÁ ESTA PANTALLA EN EL LOCAL
+
+<small>
+
+El voucher debe estar visible
+en tu teléfono para utilizar la promo.
+
+</small>
+
+</div>
+
+
+<div class="location">
+
+📍 Gorriti 5061 · Palermo
+
+</div>
+
+
+<div class="note">
+
+⚠️ Un voucher por persona.
+Válido únicamente presentando
+esta pantalla en el local.
+
+</div>
+
+
+</div>
+
+
+
+<!-- FOLLOW AGAIN -->
+
+
+<div
+class="after"
+id="after"
+>
+
+<p>
+
+❤️ ¿Todavía no nos seguís?
+
+</p>
+
+
+<a
+href="https://www.instagram.com/comoyobligo/"
+target="_blank"
+rel="noopener"
+>
+
+📲 @COMOYOOBLIGO · SEGUINOS 🔥
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+Como y Obligó · Palermo
 
 <br>
 
-El voucher es válido únicamente
-mostrándolo en el local.
-
-<br>
-
-Un voucher por persona y sujeto
-a las condiciones de la promo.
+🌭 Panchos · Papas · Promos
 
 </div>
 
 
-<div class="address">
-  📍 Gorriti 5061 · Palermo
 </div>
 
-
-<div class="close">
-  No cierres esta pantalla hasta usar
-  tu voucher 😉
-</div>
-
-</div>
-
-
-</section>
-
-</main>
 
 
 <script>
 
-let interval = null;
+
+let timerInterval = null;
 
 
-function activar(){
+/* GENERAR CÓDIGO */
 
-  const voucher =
-    document.getElementById("voucher");
+function generateCode(){
 
-  voucher.classList.add("show");
+const number =
+Math.floor(
+1000 +
+Math.random() * 9000
+);
 
-  voucher.scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
+return "CYOB • " + number;
 
-
-  if(interval){
-    return;
-  }
+}
 
 
-  let tiempo = 300;
 
-  const timer =
-    document.getElementById("timer");
+/* ACTIVAR */
 
-
-  function actualizar(){
-
-    const minutos =
-      Math.floor(tiempo / 60);
-
-    const segundos =
-      tiempo % 60;
+function startVoucher(){
 
 
-    timer.textContent =
-      String(minutos).padStart(2,"0")
-      + ":"
-      + String(segundos).padStart(2,"0");
+const cta =
+document.getElementById("cta");
+
+const countdown =
+document.getElementById("countdown");
+
+const number =
+document.getElementById("countNumber");
+
+const voucher =
+document.getElementById("voucher");
 
 
-    if(tiempo <= 30){
+cta.style.display="none";
 
-      timer.classList.add("low");
-
-    }
+countdown.classList.add("show");
 
 
-    if(tiempo <= 0){
-
-      clearInterval(interval);
-
-      timer.textContent = "VENCIDO";
-
-    }
+let count=3;
 
 
-    tiempo--;
-
-  }
+number.textContent=count;
 
 
-  actualizar();
+const animation=setInterval(()=>{
 
-  interval =
-    setInterval(actualizar,1000);
+count--;
+
+
+if(count>0){
+
+number.textContent=count;
+
+}
+
+
+else{
+
+clearInterval(animation);
+
+countdown.classList.remove("show");
+
+voucher.classList.add("show");
+
+document.getElementById("code")
+.textContent=generateCode();
+
+startTimer();
+
+document
+.getElementById("after")
+.classList.add("show");
+
+voucher.scrollIntoView({
+
+behavior:"smooth",
+
+block:"center"
+
+});
+
+}
+
+},700);
+
+}
+
+
+
+/* TIMER */
+
+function startTimer(){
+
+
+if(timerInterval)
+return;
+
+
+let seconds=300;
+
+
+const timer =
+document.getElementById("timer");
+
+
+function update(){
+
+
+const minutes =
+Math.floor(seconds/60);
+
+
+const secs =
+seconds%60;
+
+
+timer.textContent=
+
+String(minutes)
+.padStart(2,"0")
+
++
+
+":"
+
++
+
+String(secs)
+.padStart(2,"0");
+
+
+if(seconds<=30){
+
+timer.classList.add("warning");
+
+}
+
+
+if(seconds<=0){
+
+clearInterval(timerInterval);
+
+timer.textContent="VENCIDO";
+
+}
+
+seconds--;
+
+}
+
+
+update();
+
+
+timerInterval =
+setInterval(update,1000);
 
 }
 
 </script>
 
+
 </body>
+
 </html>
