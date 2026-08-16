@@ -8,11 +8,22 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#090909">
+<meta name="theme-color"
+content="#090909">
 
-<title>Como y Obligó — 2×1</title>
+<meta name="description"
+content="Como y Obligó — Voucher 2x1">
+
+<title>
+Como y Obligó — 2x1
+</title>
+
 
 <style>
+
+/* =========================
+   BASE
+========================= */
 
 *{
 box-sizing:border-box;
@@ -45,7 +56,7 @@ radial-gradient(
 circle at 50% -10%,
 #681900 0%,
 #210900 30%,
-#080808 70%
+#080808 72%
 );
 
 color:white;
@@ -61,10 +72,17 @@ overflow-x:hidden;
 .container{
 
 width:100%;
+
 max-width:520px;
+
 margin:auto;
 
 }
+
+
+/* =========================
+   LOGO
+========================= */
 
 .logo{
 
@@ -95,6 +113,7 @@ margin:12px 0 15px;
 .line{
 
 width:150px;
+
 height:3px;
 
 margin:auto;
@@ -109,6 +128,11 @@ transparent
 );
 
 }
+
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
 
 .card{
 
@@ -137,6 +161,11 @@ box-shadow:
 
 }
 
+
+/* =========================
+   BADGE
+========================= */
+
 .badge{
 
 display:inline-block;
@@ -160,9 +189,15 @@ var(--red),
 );
 
 box-shadow:
+
 0 0 15px #ff5c0035;
 
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
 
@@ -191,6 +226,7 @@ font-weight:1000;
 color:var(--orange);
 
 text-shadow:
+
 0 0 25px #ff880044;
 
 margin:8px 0;
@@ -218,7 +254,9 @@ margin-top:12px;
 }
 
 
-/* INSTAGRAM */
+/* =========================
+   INSTAGRAM
+========================= */
 
 .instagram{
 
@@ -236,7 +274,9 @@ linear-gradient(
 #0b0b0b
 );
 
-border:1px solid #70300c;
+border:
+
+1px solid #70300c;
 
 text-align:center;
 
@@ -259,6 +299,9 @@ color:var(--muted);
 line-height:1.5;
 
 }
+
+
+/* BOTON INSTAGRAM */
 
 .follow{
 
@@ -356,7 +399,9 @@ left:120%;
 }
 
 
-/* CTA */
+/* =========================
+   CTA
+========================= */
 
 .cta{
 
@@ -368,7 +413,9 @@ border-radius:21px;
 
 background:#0b0b0b;
 
-border:1px dashed #77470e;
+border:
+
+1px dashed #77470e;
 
 text-align:center;
 
@@ -417,6 +464,7 @@ linear-gradient(
 color:#1b0900;
 
 box-shadow:
+
 0 0 25px #ffb22c40;
 
 transition:.15s;
@@ -436,7 +484,9 @@ transform:scale(.98);
 }
 
 
-/* COUNTDOWN INTRO */
+/* =========================
+   CUENTA REGRESIVA
+========================= */
 
 .countdown{
 
@@ -452,7 +502,9 @@ padding:25px 0;
 
 display:block;
 
-animation:fade .3s;
+animation:
+
+fade .3s;
 
 }
 
@@ -465,6 +517,7 @@ font-weight:1000;
 color:var(--orange);
 
 text-shadow:
+
 0 0 25px #ff870055;
 
 }
@@ -480,19 +533,27 @@ color:var(--muted);
 @keyframes fade{
 
 from{
+
 opacity:0;
+
 transform:scale(.9);
+
 }
 
 to{
+
 opacity:1;
+
 transform:scale(1);
-}
 
 }
 
+}
 
-/* VOUCHER */
+
+/* =========================
+   VOUCHER
+========================= */
 
 .voucher{
 
@@ -500,75 +561,130 @@ display:none;
 
 margin-top:20px;
 
-border:
+position:relative;
 
-2px dashed
-var(--orange);
+overflow:hidden;
 
-border-radius:23px;
+background:#f8e7b0;
 
-padding:21px 15px;
+color:#160b02;
+
+border-radius:22px;
+
+padding:0;
+
+box-shadow:
+
+0 15px 40px #000;
+
+}
+
+
+/* agujeros laterales */
+
+.voucher::before,
+.voucher::after{
+
+content:"";
+
+position:absolute;
+
+top:105px;
+
+width:22px;
+
+height:22px;
+
+background:#0d0d0d;
+
+border-radius:50%;
+
+z-index:3;
+
+}
+
+.voucher::before{
+
+left:-11px;
+
+}
+
+.voucher::after{
+
+right:-11px;
+
+}
+
+
+/* parte superior */
+
+.ticketTop{
 
 background:
 
-radial-gradient(
-circle at top right,
-#401800,
-#090909
+linear-gradient(
+135deg,
+#b5120b,
+#ed4a0d
 );
+
+color:white;
+
+padding:22px 18px;
 
 text-align:center;
 
 }
 
-.voucher.show{
+.ticketSmall{
 
-display:block;
+font-size:10px;
 
-animation:
+letter-spacing:2px;
 
-voucherIn
-.5s ease;
+font-weight:900;
 
-}
-
-@keyframes voucherIn{
-
-from{
-
-opacity:0;
-
-transform:
-scale(.9)
-translateY(15px);
+opacity:.9;
 
 }
 
-to{
+.ticketTitle{
 
-opacity:1;
-
-transform:
-scale(1)
-translateY(0);
-
-}
-
-}
-
-.activated{
-
-font-size:23px;
+font-size:27px;
 
 font-weight:1000;
 
-margin-bottom:5px;
+margin-top:5px;
 
 }
 
-.activated span{
+.ticketSubtitle{
 
-color:var(--orange);
+font-size:12px;
+
+margin-top:4px;
+
+}
+
+
+/* cuerpo */
+
+.ticketBody{
+
+padding:20px 17px;
+
+text-align:center;
+
+}
+
+
+/* mensaje */
+
+.activated{
+
+font-size:20px;
+
+font-weight:1000;
 
 }
 
@@ -576,19 +692,22 @@ color:var(--orange);
 
 font-size:11px;
 
-color:var(--muted);
+color:#765c32;
 
-margin-bottom:8px;
+margin-top:4px;
 
 }
 
+
+/* TIMER */
+
 .timer{
 
-font-size:52px;
+font-size:51px;
 
 font-weight:1000;
 
-color:var(--orange);
+color:#d8430a;
 
 margin:4px 0;
 
@@ -596,9 +715,11 @@ margin:4px 0;
 
 .timer.warning{
 
-color:var(--red);
+color:#c40000;
 
-animation:pulse .65s infinite alternate;
+animation:
+
+pulse .65s infinite alternate;
 
 }
 
@@ -612,15 +733,18 @@ transform:scale(1.08);
 
 }
 
+
+/* CODIGO */
+
 .codeLabel{
 
 font-size:9px;
 
 letter-spacing:2px;
 
-color:var(--muted);
+color:#765c32;
 
-margin-top:8px;
+margin-top:6px;
 
 }
 
@@ -634,25 +758,28 @@ font-weight:1000;
 
 letter-spacing:3px;
 
-color:var(--orange);
-
 margin:5px 0 15px;
+
+color:#211006;
 
 }
 
+
+/* MOSTRAR */
+
 .showPhone{
 
-background:#260c05;
+background:#1b0904;
 
-border-radius:15px;
+color:white;
 
-padding:15px;
+border-radius:14px;
 
-font-size:17px;
+padding:15px 10px;
+
+font-size:16px;
 
 font-weight:1000;
-
-border:1px solid #6d2309;
 
 }
 
@@ -662,7 +789,7 @@ display:block;
 
 font-size:10px;
 
-color:var(--muted);
+color:#c7a878;
 
 font-weight:normal;
 
@@ -670,30 +797,64 @@ margin-top:5px;
 
 }
 
+
+/* INFO */
+
 .location{
 
 margin-top:16px;
 
 font-size:14px;
 
-font-weight:900;
+font-weight:1000;
 
 }
 
-.note{
+.rules{
 
 font-size:10px;
 
 line-height:1.5;
 
-color:var(--muted);
+color:#765c32;
 
 margin-top:12px;
 
 }
 
 
-/* AFTER */
+/* BOTON COMO LLEGAR */
+
+.maps{
+
+display:block;
+
+margin-top:15px;
+
+padding:14px;
+
+border-radius:50px;
+
+background:#160a03;
+
+color:#fff;
+
+text-decoration:none;
+
+font-size:14px;
+
+font-weight:1000;
+
+}
+
+.maps:hover{
+
+background:#2a1005;
+
+}
+
+
+/* SEGUIR DESPUES */
 
 .after{
 
@@ -709,7 +870,9 @@ text-align:center;
 
 display:block;
 
-animation:fade .5s;
+animation:
+
+fade .5s;
 
 }
 
@@ -738,6 +901,8 @@ font-size:14px;
 }
 
 
+/* FOOTER */
+
 .footer{
 
 text-align:center;
@@ -752,22 +917,33 @@ line-height:1.5;
 
 }
 
+
+/* MOBILE */
+
 @media(max-width:380px){
 
 .logo{
+
 font-size:36px;
+
 }
 
 .hero .two{
+
 font-size:62px;
+
 }
 
 .hero h1{
+
 font-size:26px;
+
 }
 
 .timer{
+
 font-size:46px;
+
 }
 
 }
@@ -842,9 +1018,7 @@ la promo en Como y Obligó.
 
 <!-- INSTAGRAM -->
 
-
 <div class="instagram">
-
 
 <h3>
 
@@ -852,48 +1026,48 @@ la promo en Como y Obligó.
 
 </h3>
 
-
 <p>
 
 ¿Todavía no nos seguís?
 
-Seguinos y enterate de las próximas
-promos, sorteos y locuras.
+Seguinos y enterate primero de
+las próximas promos y locuras.
 
 </p>
 
 
 <a
+
 class="follow"
+
 href="https://www.instagram.com/comoyobligo/"
+
 target="_blank"
+
 rel="noopener"
+
 >
 
 📲 SEGUIR A @COMOYOOBLIGO
 
 </a>
 
-
 </div>
 
 
 
-<!-- CTA -->
-
+<!-- ACTIVAR -->
 
 <div
 class="cta"
 id="cta"
 >
 
-
 <h3>
 
 🎟️ ¿Listo para tu 2×1?
 
 </h3>
-
 
 <p>
 
@@ -904,30 +1078,37 @@ Activá tu voucher y tenés
 
 
 <button
+
 class="get"
+
 onclick="startVoucher()"
+
 >
 
 🔥 ACTIVAR MI 2×1
 
 </button>
 
-
 </div>
 
 
 
-<!-- COUNTDOWN -->
-
+<!-- CUENTA -->
 
 <div
+
 class="countdown"
+
 id="countdown"
+
 >
 
 <div
+
 class="countNumber"
+
 id="countNumber"
+
 >
 
 3
@@ -947,30 +1128,61 @@ PREPARANDO TU VOUCHER...
 
 <!-- VOUCHER -->
 
-
 <div
+
 class="voucher"
+
 id="voucher"
+
 >
+
+
+<div class="ticketTop">
+
+<div class="ticketSmall">
+
+COMO Y OBLIGÓ · PROMO
+
+</div>
+
+<div class="ticketTitle">
+
+VOUCHER 2×1
+
+</div>
+
+<div class="ticketSubtitle">
+
+DOS PANCHOS · PAGÁS UNO 🌭
+
+</div>
+
+</div>
+
+
+<div class="ticketBody">
 
 
 <div class="activated">
 
-🎉 ¡VOUCHER <span>ACTIVADO!</span>
+🎉 ¡VOUCHER ACTIVADO!
 
 </div>
 
 
 <div class="reserved">
 
-Tu beneficio está reservado durante:
+Tu voucher está reservado durante:
 
 </div>
 
 
 <div
+
 class="timer"
+
 id="timer"
+
 >
 
 05:00
@@ -980,17 +1192,20 @@ id="timer"
 
 <div class="codeLabel">
 
-CÓDIGO DE VOUCHER
+CÓDIGO ÚNICO
 
 </div>
 
 
 <div
+
 class="code"
+
 id="code"
+
 >
 
-CYOB-2X1
+CYOB • 0000
 
 </div>
 
@@ -1016,9 +1231,27 @@ en tu teléfono para utilizar la promo.
 </div>
 
 
-<div class="note">
+<a
+
+class="maps"
+
+href="https://www.google.com/maps/search/?api=1&query=Gorriti%205061%20Palermo%20Buenos%20Aires"
+
+target="_blank"
+
+rel="noopener"
+
+>
+
+📍 CÓMO LLEGAR
+
+</a>
+
+
+<div class="rules">
 
 ⚠️ Un voucher por persona.
+
 Válido únicamente presentando
 esta pantalla en el local.
 
@@ -1027,14 +1260,18 @@ esta pantalla en el local.
 
 </div>
 
+</div>
 
 
-<!-- FOLLOW AGAIN -->
 
+<!-- INSTAGRAM FINAL -->
 
 <div
+
 class="after"
+
 id="after"
+
 >
 
 <p>
@@ -1045,9 +1282,13 @@ id="after"
 
 
 <a
+
 href="https://www.instagram.com/comoyobligo/"
+
 target="_blank"
+
 rel="noopener"
+
 >
 
 📲 @COMOYOOBLIGO · SEGUINOS 🔥
@@ -1081,14 +1322,21 @@ Como y Obligó · Palermo
 let timerInterval = null;
 
 
-/* GENERAR CÓDIGO */
+
+/* =========================
+   CODIGO ALEATORIO
+========================= */
 
 function generateCode(){
 
 const number =
+
 Math.floor(
+
 1000 +
+
 Math.random() * 9000
+
 );
 
 return "CYOB • " + number;
@@ -1097,25 +1345,41 @@ return "CYOB • " + number;
 
 
 
-/* ACTIVAR */
+/* =========================
+   ACTIVAR VOUCHER
+========================= */
 
 function startVoucher(){
 
 
 const cta =
+
 document.getElementById("cta");
 
+
 const countdown =
+
 document.getElementById("countdown");
 
+
 const number =
+
 document.getElementById("countNumber");
 
+
 const voucher =
+
 document.getElementById("voucher");
 
 
+const after =
+
+document.getElementById("after");
+
+
+
 cta.style.display="none";
+
 
 countdown.classList.add("show");
 
@@ -1126,7 +1390,11 @@ let count=3;
 number.textContent=count;
 
 
-const animation=setInterval(()=>{
+
+const animation =
+
+setInterval(()=>{
+
 
 count--;
 
@@ -1140,20 +1408,26 @@ number.textContent=count;
 
 else{
 
+
 clearInterval(animation);
+
 
 countdown.classList.remove("show");
 
-voucher.classList.add("show");
 
-document.getElementById("code")
+voucher.style.display="block";
+
+
+after.classList.add("show");
+
+
+document
+.getElementById("code")
 .textContent=generateCode();
+
 
 startTimer();
 
-document
-.getElementById("after")
-.classList.add("show");
 
 voucher.scrollIntoView({
 
@@ -1171,19 +1445,25 @@ block:"center"
 
 
 
-/* TIMER */
+/* =========================
+   TIMER 5 MINUTOS
+========================= */
 
 function startTimer(){
 
 
-if(timerInterval)
+if(timerInterval){
+
 return;
+
+}
 
 
 let seconds=300;
 
 
 const timer =
+
 document.getElementById("timer");
 
 
@@ -1191,14 +1471,16 @@ function update(){
 
 
 const minutes =
+
 Math.floor(seconds/60);
 
 
 const secs =
+
 seconds%60;
 
 
-timer.textContent=
+timer.textContent =
 
 String(minutes)
 .padStart(2,"0")
@@ -1213,11 +1495,13 @@ String(secs)
 .padStart(2,"0");
 
 
+
 if(seconds<=30){
 
 timer.classList.add("warning");
 
 }
+
 
 
 if(seconds<=0){
@@ -1228,6 +1512,7 @@ timer.textContent="VENCIDO";
 
 }
 
+
 seconds--;
 
 }
@@ -1237,6 +1522,7 @@ update();
 
 
 timerInterval =
+
 setInterval(update,1000);
 
 }
