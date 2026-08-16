@@ -4,915 +4,737 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
+<meta name="description" content="Como y Obligó — Voucher 2×1">
 
-<title>Como y Obligó — 2×1</title>
+<title>Como y Obligó | 2×1</title>
 
 <style>
-
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 :root{
---red:#e21b12;
---orange:#ff8c00;
---gold:#ffc247;
---cream:#fff0bd;
---dark:#070707;
---muted:#b99b63;
+  --bg:#080808;
+  --panel:#111111;
+  --panel2:#171717;
+  --red:#e21b12;
+  --orange:#ff7a00;
+  --gold:#ffb52e;
+  --cream:#fff3cf;
+  --white:#ffffff;
+  --gray:#aaa;
+  --line:#292929;
+  --success:#62d391;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-min-height:100vh;
-padding:18px 12px 35px;
+  min-height:100vh;
+  background:
+    radial-gradient(
+      circle at 50% -15%,
+      #5a1705 0%,
+      #1b0803 28%,
+      #080808 65%
+    );
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
 
-background:
-radial-gradient(
-circle at 50% -5%,
-#641800 0%,
-#230900 30%,
-#080808 72%
-);
-
-color:white;
-
-font-family:Arial,Helvetica,sans-serif;
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
 }
 
 .container{
-width:100%;
-max-width:520px;
-margin:auto;
+  width:100%;
+  max-width:520px;
+  margin:auto;
+  padding:18px 14px 40px;
 }
 
-.logo{
-text-align:center;
+/* =========================
+   BRAND
+========================= */
 
-font-family:Georgia,serif;
-
-font-size:43px;
-line-height:.85;
-font-weight:900;
-
-color:var(--red);
-
-text-shadow:
-0 0 5px #ffd000,
-0 0 15px #ff6500,
-0 0 30px #ff2400;
-
-margin:12px 0 15px;
+.brand{
+  text-align:center;
+  padding-top:4px;
 }
 
-.line{
-width:155px;
-height:3px;
-margin:auto;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-var(--orange),
-transparent
-);
+.brandName{
+  font-family:Georgia,serif;
+  font-size:38px;
+  line-height:.84;
+  font-weight:900;
+  color:var(--red);
+  text-shadow:
+    0 0 5px #ffbd00,
+    0 0 16px #ff5200;
 }
 
-.card{
-margin-top:18px;
-
-padding:25px 18px;
-
-background:
-linear-gradient(
-145deg,
-#191919,
-#090909
-);
-
-border:1px solid var(--orange);
-
-border-radius:28px;
-
-box-shadow:
-0 0 45px #ff6a0020,
-0 15px 45px #000;
+.brandTag{
+  margin-top:13px;
+  color:#bda777;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
 }
 
-
-/* PROMO */
-
-.secret{
-text-align:center;
+.brandLine{
+  width:95px;
+  height:2px;
+  margin:14px auto 0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--orange),
+    transparent
+  );
 }
 
-.secretBadge{
-display:inline-block;
+/* =========================
+   HERO
+========================= */
 
-padding:8px 13px;
-
-border-radius:50px;
-
-background:
-linear-gradient(
-90deg,
-var(--red),
-#ff6900
-);
-
-font-size:11px;
-font-weight:900;
-letter-spacing:1.5px;
-
-box-shadow:
-0 0 20px #ff650040;
+.hero{
+  margin-top:25px;
+  text-align:center;
 }
 
-.secret h1{
-margin-top:18px;
-
-font-size:28px;
-font-weight:1000;
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 11px;
+  border:1px solid #63300e;
+  border-radius:30px;
+  background:#170d08;
+  color:#ffb64a;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.5px;
 }
 
-.secret .number{
-margin:7px 0;
-
-font-size:82px;
-line-height:.85;
-
-font-weight:1000;
-
-color:var(--orange);
-
-text-shadow:
-0 0 30px #ff8c0050;
+.hero h1{
+  margin-top:18px;
+  font-size:28px;
+  line-height:1.08;
+  font-weight:900;
+  letter-spacing:-.5px;
 }
 
-.secret h2{
-font-size:18px;
-color:var(--cream);
+.hero h1 span{
+  color:var(--gold);
 }
 
-.secret p{
-margin:12px auto 0;
-
-max-width:390px;
-
-font-size:13px;
-line-height:1.55;
-
-color:var(--muted);
+.heroOffer{
+  margin-top:5px;
+  font-size:78px;
+  line-height:.9;
+  font-weight:1000;
+  color:var(--orange);
+  text-shadow:0 0 35px #ff760040;
 }
 
-
-/* CONTADOR GENERAL */
-
-.stock{
-
-margin-top:22px;
-
-padding:18px 15px;
-
-border-radius:21px;
-
-background:
-linear-gradient(
-145deg,
-#1b0c06,
-#090909
-);
-
-border:1px solid #70300c;
-
-text-align:center;
+.heroSub{
+  margin-top:9px;
+  color:var(--cream);
+  font-size:16px;
+  font-weight:800;
 }
 
-.stockTitle{
-
-font-size:15px;
-font-weight:1000;
-
+.heroDescription{
+  max-width:390px;
+  margin:12px auto 0;
+  color:#a99573;
+  font-size:12px;
+  line-height:1.55;
 }
 
-.stockNumber{
+/* =========================
+   AVAILABILITY
+========================= */
 
-margin-top:6px;
-
-font-size:34px;
-
-font-weight:1000;
-
-color:var(--orange);
-
+.availability{
+  margin-top:22px;
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #0d0d0d
+    );
 }
 
-.stockNumber span{
-
-font-size:17px;
-
-color:var(--muted);
-
+.availabilityTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
 }
 
-.bar{
-
-height:12px;
-
-margin-top:12px;
-
-background:#2b160b;
-
-border-radius:20px;
-
-overflow:hidden;
-
+.availabilityTitle{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.5px;
 }
 
-.barFill{
-
-height:100%;
-
-width:100%;
-
-background:
-linear-gradient(
-90deg,
-var(--red),
-var(--orange),
-var(--gold)
-);
-
-border-radius:20px;
-
-transition:
-width .7s ease;
+.availabilityCount{
+  color:var(--gold);
+  font-size:19px;
+  font-weight:1000;
 }
 
-.stockText{
-
-margin-top:8px;
-
-font-size:10px;
-
-color:var(--muted);
-
+.availabilityBar{
+  height:8px;
+  margin-top:13px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#28201a;
 }
 
-.stockAlert{
-
-margin-top:6px;
-
-font-size:11px;
-
-font-weight:900;
-
-color:#ffb52e;
-
+.availabilityFill{
+  width:100%;
+  height:100%;
+  border-radius:20px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--red),
+      var(--orange),
+      var(--gold)
+    );
+  transition:width .7s ease;
 }
 
-
-/* INSTAGRAM */
-
-.instagram{
-
-margin-top:22px;
-
-padding:20px 15px;
-
-text-align:center;
-
-border-radius:22px;
-
-background:
-linear-gradient(
-145deg,
-#1b0c06,
-#090909
-);
-
-border:1px solid #78300c;
+.availabilityBottom{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:9px;
+  color:#8f816c;
+  font-size:9px;
 }
 
-.instagram .star{
-font-size:25px;
+.stockStatus{
+  color:#ffb64a;
+  font-weight:900;
 }
 
-.instagram h3{
+/* =========================
+   INSTAGRAM
+========================= */
 
-margin-top:4px;
-
-font-size:19px;
-
+.socialCard{
+  margin-top:14px;
+  padding:17px;
+  border:1px solid #252525;
+  border-radius:20px;
+  background:#0e0e0e;
 }
 
-.instagram p{
-
-margin-top:7px;
-
-font-size:12px;
-
-line-height:1.5;
-
-color:var(--muted);
+.socialHeader{
+  display:flex;
+  align-items:center;
+  gap:11px;
 }
 
-.follow{
-
-position:relative;
-
-overflow:hidden;
-
-display:block;
-
-margin-top:15px;
-
-padding:18px 12px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-color:#fff;
-
-font-size:16px;
-
-font-weight:1000;
-
-background:
-linear-gradient(
-90deg,
-#d91810,
-#ff6200,
-#ff9e00
-);
-
-box-shadow:
-0 0 25px #ff650055,
-0 7px 0 #99170e;
-
-transition:.15s;
+.socialIcon{
+  width:37px;
+  height:37px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:
+    linear-gradient(
+      135deg,
+      #6f1d83,
+      #e1306c,
+      #ff9a00
+    );
+  font-size:18px;
 }
 
-.follow:hover{
-transform:scale(1.03);
+.socialText strong{
+  display:block;
+  font-size:13px;
 }
 
-.follow:active{
-
-transform:translateY(5px);
-
-box-shadow:
-0 2px 0 #99170e;
+.socialText span{
+  display:block;
+  margin-top:3px;
+  color:#8f816c;
+  font-size:10px;
 }
 
-.follow:after{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-90px;
-
-width:50px;
-
-height:100%;
-
-background:#ffffff55;
-
-transform:skewX(-20deg);
-
-animation:
-shine 2.5s infinite;
+.instagramButton{
+  display:block;
+  margin-top:14px;
+  padding:14px;
+  border-radius:13px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  background:#1c1c1c;
+  border:1px solid #333;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
 }
 
-@keyframes shine{
-
-0%{
-left:-90px;
+.instagramButton:hover{
+  background:#252525;
+  transform:translateY(-1px);
 }
 
-45%,100%{
-left:120%;
+.optional{
+  margin-top:7px;
+  text-align:center;
+  color:#665e51;
+  font-size:9px;
 }
 
+/* =========================
+   MAIN CTA
+========================= */
+
+.actionCard{
+  margin-top:14px;
+  padding:20px 17px;
+  border:1px solid #7a3c0d;
+  border-radius:22px;
+  background:
+    linear-gradient(
+      145deg,
+      #19110c,
+      #0d0d0d
+    );
 }
 
-.followNote{
-
-margin-top:9px;
-
-font-size:10px;
-
-color:#d09b43;
-
-font-weight:800;
+.actionTitle{
+  text-align:center;
+  font-size:18px;
+  font-weight:1000;
 }
 
-
-/* CTA */
-
-.cta{
-
-margin-top:19px;
-
-padding:20px 15px;
-
-text-align:center;
-
-border-radius:22px;
-
-background:#0b0b0b;
-
-border:1px dashed #80500e;
-}
-
-.cta h3{
-font-size:20px;
-}
-
-.cta p{
-
-margin:7px 0 14px;
-
-color:var(--muted);
-
-font-size:12px;
-
-line-height:1.5;
+.actionText{
+  max-width:350px;
+  margin:7px auto 15px;
+  text-align:center;
+  color:#9e8c70;
+  font-size:11px;
+  line-height:1.5;
 }
 
 .activate{
-
-width:100%;
-
-padding:18px;
-
-border:0;
-
-border-radius:50px;
-
-cursor:pointer;
-
-font-size:17px;
-
-font-weight:1000;
-
-color:#1b0900;
-
-background:
-linear-gradient(
-90deg,
-#fff1bd,
-#ffb72c
-);
-
-box-shadow:
-0 0 25px #ffb22c45;
-
-transition:.15s;
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:17px;
+  cursor:pointer;
+  color:#1a0b02;
+  background:
+    linear-gradient(
+      135deg,
+      #fff0b8,
+      #ffc13d
+    );
+  box-shadow:
+    0 8px 25px #ff970030;
+  font-size:15px;
+  font-weight:1000;
+  transition:.15s;
 }
 
 .activate:hover{
-
-transform:scale(1.025);
-
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px #ff970040;
 }
 
 .activate:active{
-
-transform:scale(.98);
-
+  transform:translateY(1px);
 }
 
+.activate:after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100px;
+  width:55px;
+  height:100%;
+  background:#fff9;
+  transform:skewX(-20deg);
+  animation:buttonShine 3s infinite;
+}
 
-/* CUENTA */
+@keyframes buttonShine{
+  0%,40%{left:-100px}
+  65%,100%{left:120%}
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown{
-
-display:none;
-
-text-align:center;
-
-padding:30px 0 15px;
+  display:none;
+  padding:28px 0 10px;
+  text-align:center;
 }
 
 .countdown.show{
-
-display:block;
-
-animation:
-appear .3s ease;
+  display:block;
+  animation:fadeIn .3s ease;
 }
 
 .countNumber{
-
-font-size:78px;
-
-font-weight:1000;
-
-color:var(--orange);
-
-text-shadow:
-0 0 30px #ff870060;
+  font-size:74px;
+  line-height:1;
+  font-weight:1000;
+  color:var(--gold);
+  text-shadow:0 0 30px #ff9d0038;
 }
 
-.countText{
-
-font-size:12px;
-
-letter-spacing:1px;
-
-color:var(--muted);
+.countLabel{
+  margin-top:8px;
+  color:#9d8b6d;
+  font-size:9px;
+  letter-spacing:2px;
+  font-weight:900;
 }
 
-@keyframes appear{
-
-from{
-
-opacity:0;
-
-transform:scale(.8);
-
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:scale(.92);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
 }
 
-to{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
-}
-
-
-/* DESBLOQUEADO */
+/* =========================
+   UNLOCK
+========================= */
 
 .unlock{
-
-display:none;
-
-text-align:center;
-
-padding:20px 0 5px;
+  display:none;
+  text-align:center;
+  padding:18px 0 5px;
 }
 
 .unlock.show{
-
-display:block;
-
-animation:
-appear .4s ease;
+  display:block;
+  animation:fadeIn .35s ease;
 }
 
 .unlockIcon{
-
-font-size:50px;
+  font-size:45px;
 }
 
 .unlock h2{
-
-margin-top:5px;
-
-font-size:25px;
+  margin-top:7px;
+  font-size:23px;
 }
 
 .unlock p{
-
-margin-top:5px;
-
-font-size:11px;
-
-color:var(--muted);
+  margin-top:5px;
+  color:#9d8b6d;
+  font-size:10px;
 }
 
-
-/* VOUCHER */
+/* =========================
+   VOUCHER
+========================= */
 
 .voucher{
-
-display:none;
-
-margin-top:20px;
-
-overflow:hidden;
-
-color:#160b02;
-
-background:#f8e7b0;
-
-border-radius:23px;
-
-box-shadow:
-0 18px 45px #000;
+  display:none;
+  margin-top:18px;
+  overflow:hidden;
+  color:#170d06;
+  border-radius:22px;
+  background:#f8e9bd;
+  box-shadow:0 20px 50px #000;
 }
 
 .voucher.show{
-
-display:block;
-
-animation:
-ticketIn .6s ease;
+  display:block;
+  animation:voucherIn .55s ease;
 }
 
-@keyframes ticketIn{
-
-from{
-
-opacity:0;
-
-transform:
-translateY(25px)
-scale(.95);
-
+@keyframes voucherIn{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.96);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
 }
 
-to{
-
-opacity:1;
-
-transform:
-translateY(0)
-scale(1);
-
+.voucherHeader{
+  padding:20px 18px;
+  text-align:center;
+  color:white;
+  background:
+    linear-gradient(
+      135deg,
+      #a80e09,
+      #e83f0b
+    );
 }
 
+.voucherBrand{
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+  opacity:.8;
 }
 
-.ticketTop{
-
-padding:22px 18px;
-
-text-align:center;
-
-color:#fff;
-
-background:
-linear-gradient(
-135deg,
-#b5120b,
-#ed4a0d
-);
+.voucherTitle{
+  margin-top:5px;
+  font-size:29px;
+  font-weight:1000;
 }
 
-.ticketTiny{
-
-font-size:9px;
-
-font-weight:900;
-
-letter-spacing:2px;
+.voucherSubtitle{
+  margin-top:4px;
+  font-size:11px;
 }
 
-.ticketTitle{
-
-margin-top:5px;
-
-font-size:29px;
-
-font-weight:1000;
+.voucherContent{
+  padding:19px 16px 20px;
+  text-align:center;
 }
 
-.ticketSub{
-
-margin-top:4px;
-
-font-size:12px;
-}
-
-.ticketBody{
-
-position:relative;
-
-padding:20px 16px;
-
-text-align:center;
-}
-
-.activeTitle{
-
-font-size:20px;
-
-font-weight:1000;
-}
-
-.activeText{
-
-margin-top:4px;
-
-font-size:11px;
-
-color:#765c32;
+.validBadge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:20px;
+  background:#e2f5e8;
+  color:#19703b;
+  font-size:9px;
+  font-weight:1000;
+  letter-spacing:1px;
 }
 
 .timer{
-
-margin:4px 0;
-
-font-size:54px;
-
-font-weight:1000;
-
-color:#d8430a;
-}
-
-.timer.warning{
-
-color:#c40000;
-
-animation:
-pulse .65s infinite alternate;
-}
-
-@keyframes pulse{
-
-to{
-transform:scale(1.08);
-}
-
+  margin-top:8px;
+  color:#c43a0a;
+  font-size:51px;
+  font-weight:1000;
+  letter-spacing:-1px;
 }
 
 .timerLabel{
+  color:#7d6948;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
 
-font-size:9px;
+.timer.warning{
+  color:#c00000;
+  animation:timerPulse .65s infinite alternate;
+}
 
-letter-spacing:2px;
+@keyframes timerPulse{
+  to{
+    transform:scale(1.06);
+  }
+}
 
-color:#765c32;
+.codeLabel{
+  margin-top:14px;
+  color:#806d4c;
+  font-size:8px;
+  letter-spacing:2px;
+  font-weight:900;
 }
 
 .code{
-
-margin:5px 0 16px;
-
-font-family:monospace;
-
-font-size:25px;
-
-font-weight:1000;
-
-letter-spacing:3px;
+  margin-top:5px;
+  font-family:monospace;
+  font-size:24px;
+  font-weight:1000;
+  letter-spacing:2px;
 }
 
-.showPhone{
-
-padding:16px 10px;
-
-color:#fff;
-
-background:#1b0904;
-
-border-radius:15px;
-
-font-size:17px;
-
-font-weight:1000;
+.showVoucher{
+  margin-top:17px;
+  padding:16px 10px;
+  border-radius:14px;
+  background:#180c05;
+  color:white;
+  font-size:15px;
+  font-weight:1000;
 }
 
-.showPhone small{
-
-display:block;
-
-margin-top:6px;
-
-color:#c7a878;
-
-font-size:10px;
-
-font-weight:normal;
-
-line-height:1.4;
+.showVoucher small{
+  display:block;
+  margin-top:5px;
+  color:#b9a17a;
+  font-size:9px;
+  font-weight:normal;
+  line-height:1.4;
 }
 
 .location{
-
-margin-top:16px;
-
-font-size:14px;
-
-font-weight:1000;
+  margin-top:15px;
+  font-size:12px;
+  font-weight:1000;
 }
 
 .maps{
-
-display:block;
-
-margin-top:14px;
-
-padding:14px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-color:#fff;
-
-background:#160a03;
-
-font-size:14px;
-
-font-weight:1000;
+  display:block;
+  margin-top:11px;
+  padding:13px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  background:#231106;
+  font-size:11px;
+  font-weight:1000;
 }
 
-.rules{
-
-margin-top:12px;
-
-font-size:10px;
-
-line-height:1.5;
-
-color:#765c32;
+.terms{
+  margin-top:12px;
+  color:#806d4c;
+  font-size:8px;
+  line-height:1.5;
 }
 
-
-/* FINAL */
+/* =========================
+   AFTER VOUCHER
+========================= */
 
 .after{
-
-display:none;
-
-margin-top:20px;
-
-text-align:center;
+  display:none;
+  margin-top:15px;
+  padding:17px;
+  text-align:center;
+  border:1px solid #242424;
+  border-radius:19px;
+  background:#0e0e0e;
 }
 
 .after.show{
-
-display:block;
-
-animation:
-appear .5s ease;
+  display:block;
+  animation:fadeIn .45s ease;
 }
 
-.after .heart{
-
-font-size:23px;
+.afterTitle{
+  font-size:13px;
+  font-weight:900;
 }
 
-.after p{
-
-margin-top:5px;
-
-font-size:12px;
-
-color:var(--muted);
+.afterText{
+  margin-top:5px;
+  color:#8e806b;
+  font-size:10px;
 }
 
-.after a{
-
-display:block;
-
-margin-top:8px;
-
-text-decoration:none;
-
-color:var(--orange);
-
-font-size:14px;
-
-font-weight:1000;
+.afterButton{
+  display:block;
+  margin-top:12px;
+  padding:13px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#fff;
+  background:#1d1d1d;
+  border:1px solid #333;
+  font-size:11px;
+  font-weight:900;
 }
+
+/* =========================
+   SOLD OUT
+========================= */
+
+.soldOut{
+  display:none;
+  margin-top:18px;
+  padding:22px 15px;
+  text-align:center;
+  border:1px solid #5a1914;
+  border-radius:20px;
+  background:#160a09;
+}
+
+.soldOut.show{
+  display:block;
+}
+
+.soldOutIcon{
+  font-size:38px;
+}
+
+.soldOut h2{
+  margin-top:7px;
+  font-size:20px;
+}
+
+.soldOut p{
+  margin-top:6px;
+  color:#9e8873;
+  font-size:10px;
+  line-height:1.5;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
-
-margin-top:20px;
-
-text-align:center;
-
-color:#765d37;
-
-font-size:10px;
-
-line-height:1.5;
+  margin-top:22px;
+  text-align:center;
+  color:#5e5548;
+  font-size:8px;
+  line-height:1.6;
 }
 
+.footer strong{
+  color:#88785e;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:380px){
 
-.logo{
-font-size:36px;
-}
+  .brandName{
+    font-size:34px;
+  }
 
-.secret .number{
-font-size:68px;
-}
+  .hero h1{
+    font-size:25px;
+  }
 
-.secret h1{
-font-size:25px;
-}
+  .heroOffer{
+    font-size:68px;
+  }
 
-.timer{
-font-size:47px;
-}
+  .timer{
+    font-size:46px;
+  }
 
 }
-
 </style>
 </head>
 
@@ -921,792 +743,661 @@ font-size:47px;
 
 <div class="container">
 
+  <!-- BRAND -->
 
-<div class="logo">
+  <header class="brand">
 
-COMO Y<br>
-OBLIGÓ
+    <div class="brandName">
+      COMO Y<br>OBLIGÓ
+    </div>
+
+    <div class="brandTag">
+      PANCHERÍA · PALERMO
+    </div>
+
+    <div class="brandLine"></div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="eyebrow">
+      🔥 EDICIÓN LIMITADA
+    </div>
+
+    <h1>
+      <span>Una promo.</span><br>
+      100 oportunidades.
+    </h1>
+
+    <div class="heroOffer">
+      2×1
+    </div>
+
+    <div class="heroSub">
+      DOS PANCHOS · PAGÁS UNO 🌭
+    </div>
+
+    <p class="heroDescription">
+      Una promo especial de Como y Obligó.
+      Activala solamente cuando estés listo
+      para venir al local.
+    </p>
+
+  </section>
+
+
+  <!-- DISPONIBILIDAD -->
+
+  <section class="availability">
+
+    <div class="availabilityTop">
+
+      <div class="availabilityTitle">
+        DISPONIBILIDAD
+      </div>
+
+      <div
+        class="availabilityCount"
+        id="stockNumber"
+      >
+        100 / 100
+      </div>
+
+    </div>
+
+
+    <div class="availabilityBar">
+
+      <div
+        class="availabilityFill"
+        id="barFill"
+      ></div>
+
+    </div>
+
+
+    <div class="availabilityBottom">
+
+      <span id="stockText">
+        La promo está disponible
+      </span>
+
+      <span
+        class="stockStatus"
+        id="stockStatus"
+      >
+        DISPONIBLE
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- INSTAGRAM -->
+
+  <section class="socialCard">
+
+    <div class="socialHeader">
+
+      <div class="socialIcon">
+        ◎
+      </div>
+
+      <div class="socialText">
+
+        <strong>
+          @comoyobligo
+        </strong>
+
+        <span>
+          Promos, novedades y panchos 🌭
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <a
+      class="instagramButton"
+      href="https://www.instagram.com/comoyobligo/"
+      target="_blank"
+      rel="noopener"
+    >
+      📲 VISITAR INSTAGRAM
+    </a>
+
+
+    <div class="optional">
+      Seguirnos es opcional. La promo no depende de esto.
+    </div>
+
+  </section>
+
+
+  <!-- ACTIVACIÓN -->
+
+  <section
+    class="actionCard"
+    id="actionCard"
+  >
+
+    <div class="actionTitle">
+      ¿LISTO PARA TU 2×1?
+    </div>
+
+    <p class="actionText">
+      Activá el voucher cuando estés
+      listo para presentarlo en el local.
+      Una vez activado, tenés 5 minutos.
+    </p>
+
+
+    <button
+      class="activate"
+      onclick="startVoucher()"
+    >
+      🔥 ACTIVAR MI 2×1
+    </button>
+
+  </section>
+
+
+  <!-- CUENTA REGRESIVA -->
+
+  <section
+    class="countdown"
+    id="countdown"
+  >
+
+    <div
+      class="countNumber"
+      id="countNumber"
+    >
+      3
+    </div>
+
+    <div class="countLabel">
+      PREPARANDO TU BENEFICIO
+    </div>
+
+  </section>
+
+
+  <!-- DESBLOQUEADO -->
+
+  <section
+    class="unlock"
+    id="unlock"
+  >
+
+    <div class="unlockIcon">
+      ✨
+    </div>
+
+    <h2>
+      VOUCHER DESBLOQUEADO
+    </h2>
+
+    <p>
+      Tu beneficio está listo para presentar.
+    </p>
+
+  </section>
+
+
+  <!-- VOUCHER -->
+
+  <section
+    class="voucher"
+    id="voucher"
+  >
+
+    <div class="voucherHeader">
+
+      <div class="voucherBrand">
+        COMO Y OBLIGÓ · DIGITAL PASS
+      </div>
+
+      <div class="voucherTitle">
+        2×1
+      </div>
+
+      <div class="voucherSubtitle">
+        DOS PANCHOS · PAGÁS UNO
+      </div>
+
+    </div>
+
+
+    <div class="voucherContent">
+
+      <div class="validBadge">
+        ● VOUCHER ACTIVO
+      </div>
+
+
+      <div
+        class="timer"
+        id="timer"
+      >
+        05:00
+      </div>
+
+
+      <div class="timerLabel">
+        TIEMPO RESTANTE
+      </div>
+
+
+      <div class="codeLabel">
+        CÓDIGO DE BENEFICIO
+      </div>
+
+
+      <div
+        class="code"
+        id="code"
+      >
+        CYOB • 0000
+      </div>
+
+
+      <div class="showVoucher">
+
+        📱 MOSTRÁ ESTE VOUCHER EN EL LOCAL
+
+        <small>
+          El equipo verificará el código
+          directamente desde esta pantalla.
+        </small>
+
+      </div>
+
+
+      <div class="location">
+        📍 Gorriti 5061 · Palermo
+      </div>
+
+
+      <a
+        class="maps"
+        href="https://www.google.com/maps/search/?api=1&query=Gorriti%205061%20Palermo%20Buenos%20Aires"
+        target="_blank"
+        rel="noopener"
+      >
+        📍 CÓMO LLEGAR
+      </a>
+
+
+      <div class="terms">
+        Un voucher por persona.
+        Válido únicamente presentando
+        esta pantalla en el local.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INSTAGRAM POST-VOUCHER -->
+
+  <section
+    class="after"
+    id="after"
+  >
+
+    <div class="afterTitle">
+      ❤️ ¿TE GUSTÓ LA PROMO?
+    </div>
+
+    <div class="afterText">
+      Seguinos para enterarte antes que nadie
+      de las próximas experiencias.
+    </div>
+
+    <a
+      class="afterButton"
+      href="https://www.instagram.com/comoyobligo/"
+      target="_blank"
+      rel="noopener"
+    >
+      📲 @COMOYOOBLIGO
+    </a>
+
+  </section>
+
+
+  <!-- AGOTADO -->
+
+  <section
+    class="soldOut"
+    id="soldOut"
+  >
+
+    <div class="soldOutIcon">
+      🌭
+    </div>
+
+    <h2>
+      PROMO AGOTADA
+    </h2>
+
+    <p>
+      Los 100 vouchers disponibles
+      ya fueron activados.
+      Seguinos en Instagram para
+      enterarte de la próxima promo.
+    </p>
+
+  </section>
+
+
+  <footer class="footer">
+
+    <strong>
+      COMO Y OBLIGÓ
+    </strong>
+
+    <br>
+
+    Gorriti 5061 · Palermo · Buenos Aires
+
+    <br>
+
+    Voucher digital promocional
+
+  </footer>
 
 </div>
-
-
-<div class="line"></div>
-
-
-<div class="card">
-
-
-<!-- PROMO -->
-
-<section class="secret">
-
-<div class="secretBadge">
-
-🔥 PROMO LIMITADA
-
-</div>
-
-
-<h1>
-
-ENCONTRASTE EL
-
-</h1>
-
-
-<div class="number">
-
-2×1
-
-</div>
-
-
-<h2>
-
-DOS PANCHOS · PAGÁS UNO 🌭
-
-</h2>
-
-
-<p>
-
-Sí, encontraste la promo 😎
-
-Pero ojo...
-
-<strong style="color:#fff">
-son solamente 100 vouchers.
-</strong>
-
-</p>
-
-</section>
-
-
-
-<!-- STOCK -->
-
-<section class="stock">
-
-<div class="stockTitle">
-
-🌭 2×1 DISPONIBLES
-
-</div>
-
-
-<div
-class="stockNumber"
-id="stockNumber"
->
-
-100
-<span>
-/ 100
-</span>
-
-</div>
-
-
-<div class="bar">
-
-<div
-class="barFill"
-id="barFill"
-></div>
-
-</div>
-
-
-<div
-class="stockText"
-id="stockText"
->
-
-La promo está recién comenzando 🔥
-
-</div>
-
-
-<div
-class="stockAlert"
-id="stockAlert"
->
-
-⚡ ¡Aprovechala antes de que se termine!
-
-</div>
-
-</section>
-
-
-
-<!-- INSTAGRAM -->
-
-<section class="instagram">
-
-<div class="star">
-
-⭐
-
-</div>
-
-
-<h3>
-
-Antes de irte...
-
-</h3>
-
-
-<p>
-
-¿Todavía no nos seguís?
-
-Seguinos y enterate de las próximas
-promos, sorteos y locuras.
-
-</p>
-
-
-<a
-
-class="follow"
-
-href="https://www.instagram.com/comoyobligo/"
-
-target="_blank"
-
-rel="noopener"
-
->
-
-📲 SEGUIR A @COMOYOOBLIGO
-
-</a>
-
-
-<div class="followNote">
-
-Tu feed nos lo va a agradecer 🌭😂
-
-</div>
-
-</section>
-
-
-
-<!-- ACTIVAR -->
-
-<section
-class="cta"
-id="cta"
->
-
-<h3>
-
-🎟️ ¿LISTO PARA EL 2×1?
-
-</h3>
-
-
-<p>
-
-Activá tu voucher cuando estés listo.
-
-Tenés 5 minutos para presentarlo.
-
-</p>
-
-
-<button
-class="activate"
-onclick="startVoucher()"
->
-
-🔥 ACTIVAR MI 2×1
-
-</button>
-
-</section>
-
-
-
-<!-- CUENTA -->
-
-<section
-class="countdown"
-id="countdown"
->
-
-<div
-class="countNumber"
-id="countNumber"
->
-
-3
-
-</div>
-
-
-<div class="countText">
-
-PREPARANDO TU VOUCHER...
-
-</div>
-
-</section>
-
-
-
-<!-- DESBLOQUEADO -->
-
-<section
-class="unlock"
-id="unlock"
->
-
-<div class="unlockIcon">
-
-🔓
-
-</div>
-
-
-<h2>
-
-¡DESBLOQUEADO!
-
-</h2>
-
-
-<p>
-
-Tu beneficio ya está listo.
-
-</p>
-
-</section>
-
-
-
-<!-- VOUCHER -->
-
-<section
-class="voucher"
-id="voucher"
->
-
-
-<div class="ticketTop">
-
-<div class="ticketTiny">
-
-COMO Y OBLIGÓ · PROMO ESPECIAL
-
-</div>
-
-
-<div class="ticketTitle">
-
-VOUCHER 2×1
-
-</div>
-
-
-<div class="ticketSub">
-
-DOS PANCHOS · PAGÁS UNO 🌭
-
-</div>
-
-</div>
-
-
-
-<div class="ticketBody">
-
-
-<div class="activeTitle">
-
-🎉 ¡VOUCHER ACTIVADO!
-
-</div>
-
-
-<div class="activeText">
-
-Tu voucher está reservado durante:
-
-</div>
-
-
-<div
-class="timer"
-id="timer"
->
-
-05:00
-
-</div>
-
-
-<div class="timerLabel">
-
-TIEMPO RESTANTE
-
-</div>
-
-
-<div
-class="code"
-id="code"
->
-
-CYOB • 0000
-
-</div>
-
-
-<div class="showPhone">
-
-📱 MOSTRÁ ESTA PANTALLA EN EL LOCAL
-
-<small>
-
-El voucher debe estar visible
-en tu teléfono para utilizar la promo.
-
-</small>
-
-</div>
-
-
-<div class="location">
-
-📍 Gorriti 5061 · Palermo
-
-</div>
-
-
-<a
-class="maps"
-href="https://www.google.com/maps/search/?api=1&query=Gorriti%205061%20Palermo%20Buenos%20Aires"
-target="_blank"
-rel="noopener"
->
-
-📍 CÓMO LLEGAR
-
-</a>
-
-
-<div class="rules">
-
-⚠️ Un voucher por persona.
-
-Válido únicamente presentando
-esta pantalla en el local.
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- FINAL -->
-
-<section
-class="after"
-id="after"
->
-
-<div class="heart">
-
-❤️
-
-</div>
-
-
-<p>
-
-¿Todavía no nos seguís?
-
-</p>
-
-
-<a
-href="https://www.instagram.com/comoyobligo/"
-target="_blank"
-rel="noopener"
->
-
-📲 @COMOYOOBLIGO · SEGUINOS 🔥
-
-</a>
-
-</section>
-
-
-</div>
-
-
-<div class="footer">
-
-Como y Obligó · Palermo
-
-<br>
-
-🌭 Panchos · Papas · Promos
-
-</div>
-
-
-</div>
-
 
 
 <script>
 
-
+let disponibles = 100;
 let timerInterval = null;
 
 
-/* =========================
-   CONTADOR DE 100
-========================= */
-
-let disponibles = 100;
-
-
 /*
-   IMPORTANTE:
+=================================================
+  IMPORTANTE
+=================================================
 
-   Este contador es local.
-   Todavía no es global.
+Este contador de 100 todavía es LOCAL.
 
-   En la siguiente versión
-   podemos conectarlo a una
-   base de datos real.
+Cuando activás un voucher en este dispositivo:
+100 → 99
+
+Pero otro teléfono todavía verá 100.
+
+Para que los 100 sean compartidos entre todos
+los clientes necesitamos conectar una base de
+datos/backend.
+
+=================================================
 */
 
 
-function actualizarStock(){
+function updateStock(){
 
-const number =
-document.getElementById("stockNumber");
+  const number =
+    document.getElementById("stockNumber");
 
-const bar =
-document.getElementById("barFill");
+  const bar =
+    document.getElementById("barFill");
 
-const text =
-document.getElementById("stockText");
+  const text =
+    document.getElementById("stockText");
 
-const alert =
-document.getElementById("stockAlert");
-
-
-number.innerHTML =
-disponibles +
-' <span>/ 100</span>';
+  const status =
+    document.getElementById("stockStatus");
 
 
-bar.style.width =
-disponibles + "%";
+  number.textContent =
+    disponibles + " / 100";
 
 
-if(disponibles > 70){
+  bar.style.width =
+    disponibles + "%";
 
-text.textContent =
-"La promo está recién comenzando 🔥";
 
-}
+  if(disponibles >= 70){
 
-else if(disponibles > 40){
+    text.textContent =
+      "La promo está disponible";
 
-text.textContent =
-"Ya se están llevando algunos 2×1 👀";
+    status.textContent =
+      "DISPONIBLE";
 
-}
+  }
 
-else if(disponibles > 15){
+  else if(disponibles >= 30){
 
-text.textContent =
-"🔥 ¡Quedan pocos! Aprovechala.";
+    text.textContent =
+      "La promo ya está en movimiento";
 
-}
+    status.textContent =
+      "QUEDAN VARIOS";
 
-else if(disponibles > 0){
+  }
 
-text.textContent =
-"🚨 ¡ÚLTIMOS 2×1!";
+  else if(disponibles > 0){
 
-alert.textContent =
-"⚡ ¡Se está terminando!";
+    text.textContent =
+      "Últimos vouchers disponibles";
 
-}
+    status.textContent =
+      "ÚLTIMOS";
 
-else{
+  }
 
-text.textContent =
-"PROMO TERMINADA";
+  else{
 
-alert.textContent =
-"❌ Ya no quedan vouchers.";
+    text.textContent =
+      "Los vouchers se agotaron";
 
-}
+    status.textContent =
+      "AGOTADO";
+
+  }
 
 }
 
-
-
-/* =========================
-   ACTIVAR
-========================= */
-
-function startVoucher(){
-
-
-if(disponibles <= 0){
-
-alert(
-"Lo sentimos 😢 La promo 2×1 ya se agotó."
-);
-
-return;
-
-}
-
-
-/*
-   Descontamos uno
-*/
-
-disponibles--;
-
-actualizarStock();
-
-
-const cta =
-document.getElementById("cta");
-
-const countdown =
-document.getElementById("countdown");
-
-const number =
-document.getElementById("countNumber");
-
-const unlock =
-document.getElementById("unlock");
-
-const voucher =
-document.getElementById("voucher");
-
-const after =
-document.getElementById("after");
-
-
-cta.style.display =
-"none";
-
-
-countdown.classList.add("show");
-
-
-let count = 3;
-
-
-number.textContent =
-count;
-
-
-const animation =
-setInterval(function(){
-
-
-count--;
-
-
-if(count > 0){
-
-number.textContent =
-count;
-
-}
-
-else{
-
-clearInterval(animation);
-
-
-countdown.classList.remove(
-"show"
-);
-
-
-unlock.classList.add(
-"show"
-);
-
-
-document.getElementById("code")
-.textContent =
-generateCode();
-
-
-setTimeout(function(){
-
-
-unlock.classList.remove(
-"show"
-);
-
-
-voucher.classList.add(
-"show"
-);
-
-
-after.classList.add(
-"show"
-);
-
-
-startTimer();
-
-
-voucher.scrollIntoView({
-
-behavior:"smooth",
-
-block:"center"
-
-});
-
-
-},900);
-
-}
-
-},700);
-
-}
-
-
-
-/* =========================
-   CODIGO
-========================= */
 
 function generateCode(){
 
-const number =
-Math.floor(
-1000 +
-Math.random() * 9000
-);
+  const number =
+    Math.floor(
+      1000 + Math.random() * 9000
+    );
 
-return "CYOB • " + number;
+  return "CYOB • " + number;
 
 }
 
 
+function startVoucher(){
 
-/* =========================
-   TIMER
-========================= */
+  if(disponibles <= 0){
+
+    document
+      .getElementById("soldOut")
+      .classList.add("show");
+
+    return;
+
+  }
+
+
+  /*
+    Descuento local.
+  */
+
+  disponibles--;
+
+  updateStock();
+
+
+  const actionCard =
+    document.getElementById("actionCard");
+
+  const countdown =
+    document.getElementById("countdown");
+
+  const number =
+    document.getElementById("countNumber");
+
+  const unlock =
+    document.getElementById("unlock");
+
+  const voucher =
+    document.getElementById("voucher");
+
+  const after =
+    document.getElementById("after");
+
+
+  actionCard.style.display =
+    "none";
+
+
+  countdown.classList.add("show");
+
+
+  let count = 3;
+
+  number.textContent =
+    count;
+
+
+  const animation =
+    setInterval(function(){
+
+      count--;
+
+
+      if(count > 0){
+
+        number.textContent =
+          count;
+
+      }
+
+      else{
+
+        clearInterval(animation);
+
+
+        countdown.classList.remove("show");
+
+
+        unlock.classList.add("show");
+
+
+        document.getElementById("code")
+          .textContent =
+          generateCode();
+
+
+        setTimeout(function(){
+
+          unlock.classList.remove("show");
+
+
+          voucher.classList.add("show");
+
+
+          after.classList.add("show");
+
+
+          startTimer();
+
+
+          voucher.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+          });
+
+
+        },900);
+
+      }
+
+    },700);
+
+}
+
 
 function startTimer(){
 
-
-if(timerInterval){
-
-return;
-
-}
+  if(timerInterval){
+    return;
+  }
 
 
-let seconds = 300;
+  let seconds = 300;
 
 
-const timer =
-document.getElementById("timer");
+  const timer =
+    document.getElementById("timer");
 
 
-function update(){
+  function updateTimer(){
+
+    const minutes =
+      Math.floor(seconds / 60);
 
 
-const minutes =
-Math.floor(seconds / 60);
+    const secs =
+      seconds % 60;
 
 
-const secs =
-seconds % 60;
+    timer.textContent =
+      String(minutes).padStart(2,"0")
+      + ":"
+      + String(secs).padStart(2,"0");
 
 
-timer.textContent =
+    if(seconds <= 30){
 
-String(minutes)
-.padStart(2,"0")
+      timer.classList.add("warning");
 
-+
-
-":"
-
-+
-
-String(secs)
-.padStart(2,"0");
+    }
 
 
-if(seconds <= 30){
+    if(seconds <= 0){
 
-timer.classList.add(
-"warning"
-);
+      clearInterval(timerInterval);
 
-}
+      timer.textContent =
+        "VENCIDO";
+
+    }
 
 
-if(seconds <= 0){
+    seconds--;
 
-clearInterval(
-timerInterval
-);
+  }
 
-timer.textContent =
-"VENCIDO";
+
+  updateTimer();
+
+
+  timerInterval =
+    setInterval(updateTimer,1000);
 
 }
 
 
-seconds--;
-
-}
-
-
-update();
-
-
-timerInterval =
-setInterval(
-update,
-1000
-);
-
-}
-
-
-
-/* INICIAL */
-
-actualizarStock();
+updateStock();
 
 </script>
-
 
 </body>
 </html>
