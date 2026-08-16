@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="Como y Obligó — Voucher 2×1">
 
 <title>Como y Obligó | 2×1</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -26,7 +26,6 @@
   --white:#ffffff;
   --gray:#aaa;
   --line:#292929;
-  --success:#62d391;
 }
 
 html{
@@ -42,7 +41,7 @@ body{
       #1b0803 28%,
       #080808 65%
     );
-  color:var(--white);
+  color:white;
   font-family:Arial,Helvetica,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
@@ -60,7 +59,7 @@ a{
 }
 
 /* =========================
-   BRAND
+   MARCA
 ========================= */
 
 .brand{
@@ -128,7 +127,6 @@ a{
   font-size:28px;
   line-height:1.08;
   font-weight:900;
-  letter-spacing:-.5px;
 }
 
 .hero h1 span{
@@ -160,7 +158,7 @@ a{
 }
 
 /* =========================
-   AVAILABILITY
+   DISPONIBILIDAD
 ========================= */
 
 .availability{
@@ -186,7 +184,6 @@ a{
 .availabilityTitle{
   font-size:12px;
   font-weight:900;
-  letter-spacing:.5px;
 }
 
 .availabilityCount{
@@ -290,12 +287,6 @@ a{
   border:1px solid #333;
   font-size:12px;
   font-weight:900;
-  transition:.2s;
-}
-
-.instagramButton:hover{
-  background:#252525;
-  transform:translateY(-1px);
 }
 
 .optional{
@@ -306,7 +297,7 @@ a{
 }
 
 /* =========================
-   MAIN CTA
+   CTA
 ========================= */
 
 .actionCard{
@@ -352,8 +343,7 @@ a{
       #fff0b8,
       #ffc13d
     );
-  box-shadow:
-    0 8px 25px #ff970030;
+  box-shadow:0 8px 25px #ff970030;
   font-size:15px;
   font-weight:1000;
   transition:.15s;
@@ -361,32 +351,14 @@ a{
 
 .activate:hover{
   transform:translateY(-2px);
-  box-shadow:0 12px 30px #ff970040;
 }
 
 .activate:active{
   transform:translateY(1px);
 }
 
-.activate:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100px;
-  width:55px;
-  height:100%;
-  background:#fff9;
-  transform:skewX(-20deg);
-  animation:buttonShine 3s infinite;
-}
-
-@keyframes buttonShine{
-  0%,40%{left:-100px}
-  65%,100%{left:120%}
-}
-
 /* =========================
-   COUNTDOWN
+   CUENTA
 ========================= */
 
 .countdown{
@@ -405,7 +377,6 @@ a{
   line-height:1;
   font-weight:1000;
   color:var(--gold);
-  text-shadow:0 0 30px #ff9d0038;
 }
 
 .countLabel{
@@ -538,7 +509,6 @@ a{
   color:#c43a0a;
   font-size:51px;
   font-weight:1000;
-  letter-spacing:-1px;
 }
 
 .timerLabel{
@@ -620,7 +590,119 @@ a{
 }
 
 /* =========================
-   AFTER VOUCHER
+   CORAZON
+========================= */
+
+.likeCard{
+  display:none;
+  margin-top:15px;
+  padding:21px 16px;
+  text-align:center;
+  border:1px solid #342020;
+  border-radius:21px;
+  background:
+    linear-gradient(
+      145deg,
+      #171010,
+      #0d0d0d
+    );
+}
+
+.likeCard.show{
+  display:block;
+  animation:fadeIn .45s ease;
+}
+
+.likeTitle{
+  font-size:15px;
+  font-weight:1000;
+}
+
+.likeSubtitle{
+  margin-top:5px;
+  color:#8f806d;
+  font-size:10px;
+}
+
+.heartButton{
+  position:relative;
+  width:82px;
+  height:82px;
+  margin:14px auto 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #4b2525;
+  border-radius:50%;
+  background:#160b0b;
+  cursor:pointer;
+  font-size:42px;
+  line-height:1;
+  color:#6c5555;
+  transition:.2s;
+}
+
+.heartButton:hover{
+  transform:scale(1.05);
+  border-color:#a93232;
+}
+
+.heartButton.liked{
+  color:#ff304f;
+  background:#230b0e;
+  border-color:#ff304f;
+  box-shadow:
+    0 0 25px #ff304040,
+    0 0 55px #ff304015;
+  animation:heartPop .45s ease;
+}
+
+@keyframes heartPop{
+  0%{
+    transform:scale(.75);
+  }
+  55%{
+    transform:scale(1.2);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+
+.likeMessage{
+  min-height:15px;
+  color:#a98d72;
+  font-size:10px;
+  font-weight:700;
+}
+
+.heartParticle{
+  position:fixed;
+  pointer-events:none;
+  z-index:9999;
+  font-size:20px;
+  animation:heartFloat 1s ease-out forwards;
+}
+
+@keyframes heartFloat{
+  0%{
+    opacity:1;
+    transform:
+      translate(0,0)
+      scale(.7);
+  }
+
+  100%{
+    opacity:0;
+    transform:
+      translate(var(--x),-130px)
+      scale(1.3)
+      rotate(var(--r));
+  }
+}
+
+/* =========================
+   AFTER
 ========================= */
 
 .after{
@@ -663,7 +745,7 @@ a{
 }
 
 /* =========================
-   SOLD OUT
+   AGOTADO
 ========================= */
 
 .soldOut{
@@ -712,10 +794,6 @@ a{
   color:#88785e;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:380px){
 
   .brandName{
@@ -735,6 +813,7 @@ a{
   }
 
 }
+
 </style>
 </head>
 
@@ -743,406 +822,451 @@ a{
 
 <div class="container">
 
-  <!-- BRAND -->
 
-  <header class="brand">
+<!-- MARCA -->
 
-    <div class="brandName">
-      COMO Y<br>OBLIGÓ
+<header class="brand">
+
+  <div class="brandName">
+    COMO Y<br>OBLIGÓ
+  </div>
+
+  <div class="brandTag">
+    PANCHERÍA · PALERMO
+  </div>
+
+  <div class="brandLine"></div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="eyebrow">
+    🔥 EDICIÓN LIMITADA
+  </div>
+
+  <h1>
+    <span>Una promo.</span><br>
+    100 oportunidades.
+  </h1>
+
+  <div class="heroOffer">
+    2×1
+  </div>
+
+  <div class="heroSub">
+    DOS PANCHOS · PAGÁS UNO 🌭
+  </div>
+
+  <p class="heroDescription">
+    Una promo especial de Como y Obligó.
+    Activala solamente cuando estés
+    listo para venir al local.
+  </p>
+
+</section>
+
+
+<!-- DISPONIBILIDAD -->
+
+<section class="availability">
+
+  <div class="availabilityTop">
+
+    <div class="availabilityTitle">
+      DISPONIBILIDAD
     </div>
 
-    <div class="brandTag">
-      PANCHERÍA · PALERMO
+    <div
+      class="availabilityCount"
+      id="stockNumber"
+    >
+      100 / 100
     </div>
 
-    <div class="brandLine"></div>
-
-  </header>
+  </div>
 
 
-  <!-- HERO -->
+  <div class="availabilityBar">
 
-  <section class="hero">
+    <div
+      class="availabilityFill"
+      id="barFill"
+    ></div>
 
-    <div class="eyebrow">
-      🔥 EDICIÓN LIMITADA
+  </div>
+
+
+  <div class="availabilityBottom">
+
+    <span id="stockText">
+      La promo está disponible
+    </span>
+
+    <span
+      class="stockStatus"
+      id="stockStatus"
+    >
+      DISPONIBLE
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- INSTAGRAM -->
+
+<section class="socialCard">
+
+  <div class="socialHeader">
+
+    <div class="socialIcon">
+      ◎
     </div>
 
-    <h1>
-      <span>Una promo.</span><br>
-      100 oportunidades.
-    </h1>
+    <div class="socialText">
 
-    <div class="heroOffer">
+      <strong>
+        @comoyobligo
+      </strong>
+
+      <span>
+        Promos, novedades y panchos 🌭
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <a
+    class="instagramButton"
+    href="https://www.instagram.com/comoyobligo/"
+    target="_blank"
+    rel="noopener"
+  >
+    📲 VISITAR INSTAGRAM
+  </a>
+
+
+  <div class="optional">
+    Seguirnos es opcional. La promo no depende de esto.
+  </div>
+
+</section>
+
+
+<!-- ACTIVAR -->
+
+<section
+  class="actionCard"
+  id="actionCard"
+>
+
+  <div class="actionTitle">
+    ¿LISTO PARA TU 2×1?
+  </div>
+
+  <p class="actionText">
+    Activá el voucher cuando estés
+    listo para presentarlo en el local.
+    Una vez activado, tenés 5 minutos.
+  </p>
+
+
+  <button
+    class="activate"
+    onclick="startVoucher()"
+  >
+    🔥 ACTIVAR MI 2×1
+  </button>
+
+</section>
+
+
+<!-- CUENTA -->
+
+<section
+  class="countdown"
+  id="countdown"
+>
+
+  <div
+    class="countNumber"
+    id="countNumber"
+  >
+    3
+  </div>
+
+  <div class="countLabel">
+    PREPARANDO TU BENEFICIO
+  </div>
+
+</section>
+
+
+<!-- DESBLOQUEADO -->
+
+<section
+  class="unlock"
+  id="unlock"
+>
+
+  <div class="unlockIcon">
+    ✨
+  </div>
+
+  <h2>
+    VOUCHER DESBLOQUEADO
+  </h2>
+
+  <p>
+    Tu beneficio está listo para presentar.
+  </p>
+
+</section>
+
+
+<!-- VOUCHER -->
+
+<section
+  class="voucher"
+  id="voucher"
+>
+
+  <div class="voucherHeader">
+
+    <div class="voucherBrand">
+      COMO Y OBLIGÓ · DIGITAL PASS
+    </div>
+
+    <div class="voucherTitle">
       2×1
     </div>
 
-    <div class="heroSub">
-      DOS PANCHOS · PAGÁS UNO 🌭
+    <div class="voucherSubtitle">
+      DOS PANCHOS · PAGÁS UNO
     </div>
 
-    <p class="heroDescription">
-      Una promo especial de Como y Obligó.
-      Activala solamente cuando estés listo
-      para venir al local.
-    </p>
-
-  </section>
+  </div>
 
 
-  <!-- DISPONIBILIDAD -->
+  <div class="voucherContent">
 
-  <section class="availability">
-
-    <div class="availabilityTop">
-
-      <div class="availabilityTitle">
-        DISPONIBILIDAD
-      </div>
-
-      <div
-        class="availabilityCount"
-        id="stockNumber"
-      >
-        100 / 100
-      </div>
-
+    <div class="validBadge">
+      ● VOUCHER ACTIVO
     </div>
 
-
-    <div class="availabilityBar">
-
-      <div
-        class="availabilityFill"
-        id="barFill"
-      ></div>
-
-    </div>
-
-
-    <div class="availabilityBottom">
-
-      <span id="stockText">
-        La promo está disponible
-      </span>
-
-      <span
-        class="stockStatus"
-        id="stockStatus"
-      >
-        DISPONIBLE
-      </span>
-
-    </div>
-
-  </section>
-
-
-  <!-- INSTAGRAM -->
-
-  <section class="socialCard">
-
-    <div class="socialHeader">
-
-      <div class="socialIcon">
-        ◎
-      </div>
-
-      <div class="socialText">
-
-        <strong>
-          @comoyobligo
-        </strong>
-
-        <span>
-          Promos, novedades y panchos 🌭
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <a
-      class="instagramButton"
-      href="https://www.instagram.com/comoyobligo/"
-      target="_blank"
-      rel="noopener"
-    >
-      📲 VISITAR INSTAGRAM
-    </a>
-
-
-    <div class="optional">
-      Seguirnos es opcional. La promo no depende de esto.
-    </div>
-
-  </section>
-
-
-  <!-- ACTIVACIÓN -->
-
-  <section
-    class="actionCard"
-    id="actionCard"
-  >
-
-    <div class="actionTitle">
-      ¿LISTO PARA TU 2×1?
-    </div>
-
-    <p class="actionText">
-      Activá el voucher cuando estés
-      listo para presentarlo en el local.
-      Una vez activado, tenés 5 minutos.
-    </p>
-
-
-    <button
-      class="activate"
-      onclick="startVoucher()"
-    >
-      🔥 ACTIVAR MI 2×1
-    </button>
-
-  </section>
-
-
-  <!-- CUENTA REGRESIVA -->
-
-  <section
-    class="countdown"
-    id="countdown"
-  >
 
     <div
-      class="countNumber"
-      id="countNumber"
+      class="timer"
+      id="timer"
     >
-      3
+      05:00
     </div>
 
-    <div class="countLabel">
-      PREPARANDO TU BENEFICIO
+
+    <div class="timerLabel">
+      TIEMPO RESTANTE
     </div>
 
-  </section>
 
-
-  <!-- DESBLOQUEADO -->
-
-  <section
-    class="unlock"
-    id="unlock"
-  >
-
-    <div class="unlockIcon">
-      ✨
+    <div class="codeLabel">
+      CÓDIGO DE BENEFICIO
     </div>
 
-    <h2>
-      VOUCHER DESBLOQUEADO
-    </h2>
 
-    <p>
-      Tu beneficio está listo para presentar.
-    </p>
-
-  </section>
+    <div
+      class="code"
+      id="code"
+    >
+      CYOB • 0000
+    </div>
 
 
-  <!-- VOUCHER -->
+    <div class="showVoucher">
 
-  <section
-    class="voucher"
-    id="voucher"
-  >
+      📱 MOSTRÁ ESTE VOUCHER EN EL LOCAL
 
-    <div class="voucherHeader">
-
-      <div class="voucherBrand">
-        COMO Y OBLIGÓ · DIGITAL PASS
-      </div>
-
-      <div class="voucherTitle">
-        2×1
-      </div>
-
-      <div class="voucherSubtitle">
-        DOS PANCHOS · PAGÁS UNO
-      </div>
+      <small>
+        El equipo verificará el código
+        directamente desde esta pantalla.
+      </small>
 
     </div>
 
 
-    <div class="voucherContent">
-
-      <div class="validBadge">
-        ● VOUCHER ACTIVO
-      </div>
-
-
-      <div
-        class="timer"
-        id="timer"
-      >
-        05:00
-      </div>
-
-
-      <div class="timerLabel">
-        TIEMPO RESTANTE
-      </div>
-
-
-      <div class="codeLabel">
-        CÓDIGO DE BENEFICIO
-      </div>
-
-
-      <div
-        class="code"
-        id="code"
-      >
-        CYOB • 0000
-      </div>
-
-
-      <div class="showVoucher">
-
-        📱 MOSTRÁ ESTE VOUCHER EN EL LOCAL
-
-        <small>
-          El equipo verificará el código
-          directamente desde esta pantalla.
-        </small>
-
-      </div>
-
-
-      <div class="location">
-        📍 Gorriti 5061 · Palermo
-      </div>
-
-
-      <a
-        class="maps"
-        href="https://www.google.com/maps/search/?api=1&query=Gorriti%205061%20Palermo%20Buenos%20Aires"
-        target="_blank"
-        rel="noopener"
-      >
-        📍 CÓMO LLEGAR
-      </a>
-
-
-      <div class="terms">
-        Un voucher por persona.
-        Válido únicamente presentando
-        esta pantalla en el local.
-      </div>
-
+    <div class="location">
+      📍 Gorriti 5061 · Palermo
     </div>
 
-  </section>
-
-
-  <!-- INSTAGRAM POST-VOUCHER -->
-
-  <section
-    class="after"
-    id="after"
-  >
-
-    <div class="afterTitle">
-      ❤️ ¿TE GUSTÓ LA PROMO?
-    </div>
-
-    <div class="afterText">
-      Seguinos para enterarte antes que nadie
-      de las próximas experiencias.
-    </div>
 
     <a
-      class="afterButton"
-      href="https://www.instagram.com/comoyobligo/"
+      class="maps"
+      href="https://www.google.com/maps/search/?api=1&query=Gorriti%205061%20Palermo%20Buenos%20Aires"
       target="_blank"
       rel="noopener"
     >
-      📲 @COMOYOOBLIGO
+      📍 CÓMO LLEGAR
     </a>
 
-  </section>
 
-
-  <!-- AGOTADO -->
-
-  <section
-    class="soldOut"
-    id="soldOut"
-  >
-
-    <div class="soldOutIcon">
-      🌭
+    <div class="terms">
+      Un voucher por persona.
+      Válido únicamente presentando
+      esta pantalla en el local.
     </div>
 
-    <h2>
-      PROMO AGOTADA
-    </h2>
+  </div>
 
-    <p>
-      Los 100 vouchers disponibles
-      ya fueron activados.
-      Seguinos en Instagram para
-      enterarte de la próxima promo.
-    </p>
-
-  </section>
+</section>
 
 
-  <footer class="footer">
+<!-- ❤️ LIKE -->
 
-    <strong>
-      COMO Y OBLIGÓ
-    </strong>
+<section
+  class="likeCard"
+  id="likeCard"
+>
 
-    <br>
+  <div class="likeTitle">
+    ¿TE GUSTÓ LA PROMO?
+  </div>
 
-    Gorriti 5061 · Palermo · Buenos Aires
+  <div class="likeSubtitle">
+    Dejanos un ❤️ y ayudanos a saber
+    si querés más promos como esta.
+  </div>
 
-    <br>
 
-    Voucher digital promocional
+  <button
+    class="heartButton"
+    id="heartButton"
+    onclick="likePromo()"
+    aria-label="Me gusta la promo"
+  >
+    ♡
+  </button>
 
-  </footer>
+
+  <div
+    class="likeMessage"
+    id="likeMessage"
+  >
+    Tu ❤️ es opcional.
+  </div>
+
+</section>
+
+
+<!-- INSTAGRAM FINAL -->
+
+<section
+  class="after"
+  id="after"
+>
+
+  <div class="afterTitle">
+    ❤️ ¿TE GUSTÓ LA EXPERIENCIA?
+  </div>
+
+  <div class="afterText">
+    Seguinos para enterarte antes que nadie
+    de las próximas promos.
+  </div>
+
+  <a
+    class="afterButton"
+    href="https://www.instagram.com/comoyobligo/"
+    target="_blank"
+    rel="noopener"
+  >
+    📲 @COMOYOOBLIGO
+  </a>
+
+</section>
+
+
+<!-- AGOTADO -->
+
+<section
+  class="soldOut"
+  id="soldOut"
+>
+
+  <div class="soldOutIcon">
+    🌭
+  </div>
+
+  <h2>
+    PROMO AGOTADA
+  </h2>
+
+  <p>
+    Los 100 vouchers disponibles
+    ya fueron activados.
+    Seguinos en Instagram para
+    enterarte de la próxima promo.
+  </p>
+
+</section>
+
+
+<footer class="footer">
+
+  <strong>
+    COMO Y OBLIGÓ
+  </strong>
+
+  <br>
+
+  Gorriti 5061 · Palermo · Buenos Aires
+
+  <br>
+
+  Voucher digital promocional
+
+</footer>
+
 
 </div>
 
 
 <script>
 
-let disponibles = 100;
-let timerInterval = null;
-
-
 /*
-=================================================
-  IMPORTANTE
-=================================================
+====================================================
+  CONFIGURACIÓN
+====================================================
 
-Este contador de 100 todavía es LOCAL.
+  IMPORTANTE:
 
-Cuando activás un voucher en este dispositivo:
-100 → 99
+  El contador de 100 todavía es LOCAL.
 
-Pero otro teléfono todavía verá 100.
+  Esta versión sirve para probar la experiencia.
 
-Para que los 100 sean compartidos entre todos
-los clientes necesitamos conectar una base de
-datos/backend.
+  Para que los 100 vouchers sean compartidos
+  realmente entre todos los celulares tendremos
+  que conectar una base de datos/backend.
 
-=================================================
+====================================================
 */
 
+
+let disponibles = 100;
+
+let timerInterval = null;
+
+let yaLikeo = false;
+
+
+/* =========================
+   STOCK
+========================= */
 
 function updateStock(){
 
@@ -1210,6 +1334,10 @@ function updateStock(){
 }
 
 
+/* =========================
+   CÓDIGO
+========================= */
+
 function generateCode(){
 
   const number =
@@ -1221,6 +1349,10 @@ function generateCode(){
 
 }
 
+
+/* =========================
+   ACTIVAR VOUCHER
+========================= */
 
 function startVoucher(){
 
@@ -1234,10 +1366,6 @@ function startVoucher(){
 
   }
 
-
-  /*
-    Descuento local.
-  */
 
   disponibles--;
 
@@ -1259,6 +1387,9 @@ function startVoucher(){
   const voucher =
     document.getElementById("voucher");
 
+  const likeCard =
+    document.getElementById("likeCard");
+
   const after =
     document.getElementById("after");
 
@@ -1271,6 +1402,7 @@ function startVoucher(){
 
 
   let count = 3;
+
 
   number.textContent =
     count;
@@ -1313,6 +1445,18 @@ function startVoucher(){
           voucher.classList.add("show");
 
 
+          /*
+             MOSTRAMOS EL LIKE DESPUÉS
+             DE QUE EL VOUCHER APARECE.
+          */
+
+          setTimeout(function(){
+
+            likeCard.classList.add("show");
+
+          },500);
+
+
           after.classList.add("show");
 
 
@@ -1320,8 +1464,11 @@ function startVoucher(){
 
 
           voucher.scrollIntoView({
+
             behavior:"smooth",
+
             block:"center"
+
           });
 
 
@@ -1333,6 +1480,10 @@ function startVoucher(){
 
 }
 
+
+/* =========================
+   TIMER 5 MINUTOS
+========================= */
 
 function startTimer(){
 
@@ -1359,9 +1510,16 @@ function startTimer(){
 
 
     timer.textContent =
+
       String(minutes).padStart(2,"0")
-      + ":"
-      + String(secs).padStart(2,"0");
+
+      +
+
+      ":"
+
+      +
+
+      String(secs).padStart(2,"0");
 
 
     if(seconds <= 30){
@@ -1394,6 +1552,123 @@ function startTimer(){
 
 }
 
+
+/* =========================
+   ❤️ LIKE
+========================= */
+
+function likePromo(){
+
+  if(yaLikeo){
+    return;
+  }
+
+
+  yaLikeo = true;
+
+
+  const button =
+    document.getElementById("heartButton");
+
+  const message =
+    document.getElementById("likeMessage");
+
+
+  button.classList.add("liked");
+
+
+  button.textContent =
+    "♥";
+
+
+  message.textContent =
+    "❤️ ¡Gracias! Nos encanta saber que te gustó.";
+
+
+  createHeartExplosion();
+
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+function createHeartExplosion(){
+
+  const button =
+    document.getElementById("heartButton");
+
+
+  const rect =
+    button.getBoundingClientRect();
+
+
+  for(let i = 0; i < 9; i++){
+
+    const heart =
+      document.createElement("div");
+
+
+    heart.className =
+      "heartParticle";
+
+
+    heart.textContent =
+      Math.random() > .5
+        ? "❤️"
+        : "♥";
+
+
+    heart.style.left =
+      (
+        rect.left +
+        rect.width / 2
+      ) + "px";
+
+
+    heart.style.top =
+      (
+        rect.top +
+        rect.height / 2
+      ) + "px";
+
+
+    heart.style.setProperty(
+      "--x",
+      (
+        Math.random() * 150 - 75
+      ) + "px"
+    );
+
+
+    heart.style.setProperty(
+      "--r",
+      (
+        Math.random() * 80 - 40
+      ) + "deg"
+    );
+
+
+    document.body.appendChild(
+      heart
+    );
+
+
+    setTimeout(function(){
+
+      heart.remove();
+
+    },1000);
+
+  }
+
+}
+
+
+/* =========================
+   INICIO
+========================= */
 
 updateStock();
 
