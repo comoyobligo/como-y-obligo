@@ -1,1 +1,1507 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Récord Como y Obligo 🌭</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 50% 15%, #4b1207 0%, #1c0502 42%, #070101 100%);
+    color: white;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+/* =========================
+   INICIO
+========================= */
+
+#inicio {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.inicio-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 30px 22px;
+    text-align: center;
+
+    background: rgba(18, 3, 2, .90);
+    border: 2px solid rgba(255, 92, 25, .45);
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 50px rgba(255, 55, 0, .20),
+        inset 0 0 30px rgba(255, 70, 0, .05);
+}
+
+.logo {
+    font-size: 70px;
+    line-height: 1;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 14px rgba(255, 90, 0, .55));
+}
+
+.marca {
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 900;
+    color: #ff8b45;
+    margin-bottom: 10px;
+}
+
+.titulo {
+    font-size: 40px;
+    line-height: .92;
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-shadow: 0 4px 0 #711805;
+    margin-bottom: 18px;
+}
+
+.titulo span {
+    color: #ff5b16;
+}
+
+.descripcion {
+    color: #e7ccc5;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.record-inicio {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-bottom: 24px;
+
+    border-radius: 100px;
+
+    background: linear-gradient(135deg, #ff6b1a, #d92a06);
+
+    font-size: 15px;
+    font-weight: 1000;
+
+    box-shadow:
+        0 0 25px rgba(255, 70, 0, .30);
+}
+
+.btn {
+    width: 100%;
+    border: 0;
+    border-radius: 15px;
+
+    padding: 17px 20px;
+
+    color: white;
+    background: linear-gradient(135deg, #ff6b1a, #e22d07);
+
+    font-size: 19px;
+    font-weight: 1000;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 #8c1905,
+        0 0 25px rgba(255, 65, 0, .35);
+
+    transition: transform .1s;
+}
+
+.btn:active {
+    transform: translateY(6px);
+
+    box-shadow:
+        0 1px 0 #8c1905,
+        0 0 20px rgba(255, 65, 0, .3);
+}
+
+.instruccion {
+    margin-top: 20px;
+    color: #a99590;
+    font-size: 12px;
+}
+
+
+/* =========================
+   JUEGO
+========================= */
+
+#juego {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.fondo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .08;
+}
+
+.fondo::before {
+    content: "🌭";
+    position: absolute;
+    font-size: 150px;
+    left: -50px;
+    top: 30%;
+    transform: rotate(-25deg);
+}
+
+.fondo::after {
+    content: "🍟";
+    position: absolute;
+    font-size: 130px;
+    right: -40px;
+    bottom: 10%;
+    transform: rotate(20deg);
+}
+
+
+/* =========================
+   HUD
+========================= */
+
+.hud {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    gap: 8px;
+
+    padding: 15px;
+}
+
+.hud-box {
+    flex: 1;
+
+    text-align: center;
+
+    padding: 9px 5px;
+
+    background: rgba(12, 2, 1, .82);
+
+    border: 1px solid rgba(255, 101, 42, .35);
+
+    border-radius: 15px;
+}
+
+.hud-label {
+    color: #bca39d;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hud-value {
+    margin-top: 2px;
+
+    font-size: 24px;
+    font-weight: 1000;
+}
+
+#tiempo {
+    color: #ff681a;
+}
+
+#puntos {
+    color: white;
+}
+
+#combo {
+    color: #ffd04d;
+}
+
+
+/* =========================
+   BARRA
+========================= */
+
+.barra-contenedor {
+    position: absolute;
+
+    top: 91px;
+    left: 15px;
+    right: 15px;
+
+    height: 8px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,.10);
+
+    border-radius: 20px;
+
+    z-index: 20;
+}
+
+#barra {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ffb000,
+        #ff4d10
+    );
+
+    transform-origin: left center;
+}
+
+
+/* =========================
+   ZONA
+========================= */
+
+#zona-juego {
+    position: absolute;
+
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* =========================
+   PANCHO
+========================= */
+
+.pancho {
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 65px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    filter:
+        drop-shadow(0 7px 7px rgba(0,0,0,.55));
+
+    animation:
+        aparecer .16s ease-out;
+
+    touch-action: manipulation;
+}
+
+.pancho:active {
+    transform: scale(.72);
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(.15) rotate(-25deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+
+/* =========================
+   PUNTOS
+========================= */
+
+.punto {
+    position: fixed;
+
+    pointer-events: none;
+
+    color: #ffb23c;
+
+    font-size: 27px;
+    font-weight: 1000;
+
+    z-index: 50;
+
+    text-shadow:
+        0 2px 4px black;
+
+    animation:
+        subir .7s ease-out forwards;
+}
+
+@keyframes subir {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(.7);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-65px) scale(1.25);
+    }
+
+}
+
+
+/* =========================
+   COMBO
+========================= */
+
+.combo-grande {
+    position: fixed;
+
+    left: 50%;
+    top: 43%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    z-index: 60;
+
+    color: #ffd04d;
+
+    font-size: 38px;
+    font-weight: 1000;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 4px 0 #8d3600,
+        0 0 25px rgba(255,170,0,.5);
+}
+
+.combo-grande.mostrar {
+    animation: combo .7s ease-out;
+}
+
+@keyframes combo {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.5) rotate(-8deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15) rotate(2deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(.9);
+    }
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+#final {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(5,1,0,.95);
+}
+
+.final-box {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 32px 22px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2b0804,
+            #100201
+        );
+
+    border: 2px solid rgba(255,94,30,.5);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 50px rgba(255,60,0,.25);
+}
+
+.final-emoji {
+    font-size: 65px;
+    margin-bottom: 5px;
+}
+
+.final-titulo {
+    font-size: 36px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.final-subtitulo {
+    color: #cdb9b3;
+    margin-bottom: 22px;
+    line-height: 1.4;
+}
+
+.resultado {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.resultado-box {
+    flex: 1;
+
+    padding: 15px 5px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.05);
+}
+
+.resultado-label {
+    display: block;
+
+    color: #a99791;
+
+    font-size: 10px;
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+.resultado-numero {
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.nuevo-record {
+    display: none;
+
+    color: #ffd04d;
+
+    font-size: 18px;
+    font-weight: 1000;
+
+    margin-bottom: 18px;
+
+    animation: brillo 1s infinite alternate;
+}
+
+@keyframes brillo {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+
+}
+
+.btn-secundario {
+    margin-top: 12px;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    box-shadow: none;
+}
+
+.btn-secundario:active {
+    box-shadow: none;
+}
+
+
+/* =========================
+   PC
+========================= */
+
+@media (min-width: 700px) {
+
+    #zona-juego {
+        width: 700px;
+
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+
+        border-left:
+            1px solid rgba(255,255,255,.04);
+
+        border-right:
+            1px solid rgba(255,255,255,.04);
+    }
+
+}
+
+
+/* =========================
+   EFECTO GOLPE
+========================= */
+
+body.golpe {
+    animation: golpe .12s;
+}
+
+@keyframes golpe {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     PANTALLA INICIAL
+========================= -->
+
+<section id="inicio">
+
+    <div class="inicio-box">
+
+        <div class="logo">
+            🌭
+        </div>
+
+        <div class="marca">
+            COMO Y OBLIGO
+        </div>
+
+        <div class="titulo">
+            RÉCORD<br>
+            <span>COMO Y OBLIGO</span>
+        </div>
+
+        <div class="descripcion">
+
+            Tenés <strong>30 segundos</strong>
+            para tocar todos los panchos que puedas.
+
+            <br><br>
+
+            ¿Podés romper el récord?
+
+        </div>
+
+        <div class="record-inicio">
+
+            🏆 RÉCORD:
+            <span id="recordInicio">0</span>
+
+        </div>
+
+        <button
+            class="btn"
+            id="btnJugar">
+
+            🌭 EMPEZAR A JUGAR
+
+        </button>
+
+        <div class="instruccion">
+
+            Tocá los panchos lo más rápido posible 🔥
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JUEGO
+========================= -->
+
+<section id="juego">
+
+    <div class="fondo"></div>
+
+    <div class="hud">
+
+        <div class="hud-box">
+
+            <div class="hud-label">
+                Tiempo
+            </div>
+
+            <div
+                class="hud-value"
+                id="tiempo">
+
+                30
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-box">
+
+            <div class="hud-label">
+                Puntos
+            </div>
+
+            <div
+                class="hud-value"
+                id="puntos">
+
+                0
+
+            </div>
+
+        </div>
+
+
+        <div class="hud-box">
+
+            <div class="hud-label">
+                Combo
+            </div>
+
+            <div
+                class="hud-value"
+                id="combo">
+
+                x0
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="barra-contenedor">
+
+        <div id="barra"></div>
+
+    </div>
+
+
+    <div id="zona-juego"></div>
+
+
+    <div
+        class="combo-grande"
+        id="comboGrande">
+
+        ¡COMBO!
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section id="final">
+
+    <div class="final-box">
+
+        <div class="final-emoji">
+            🌭
+        </div>
+
+        <div class="final-titulo">
+            ¡TIEMPO!
+        </div>
+
+        <div
+            class="final-subtitulo"
+            id="mensajeFinal">
+
+            Veamos qué hiciste...
+
+        </div>
+
+
+        <div class="resultado">
+
+            <div class="resultado-box">
+
+                <span class="resultado-label">
+                    Tu puntaje
+                </span>
+
+                <span
+                    class="resultado-numero"
+                    id="resultadoPuntos">
+
+                    0
+
+                </span>
+
+            </div>
+
+
+            <div class="resultado-box">
+
+                <span class="resultado-label">
+                    Récord
+                </span>
+
+                <span
+                    class="resultado-numero"
+                    id="resultadoRecord">
+
+                    0
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="nuevo-record"
+            id="nuevoRecord">
+
+            🏆 ¡NUEVO RÉCORD!
+
+        </div>
+
+
+        <button
+            class="btn"
+            id="btnNuevo">
+
+            🔥 JUGAR DE NUEVO
+
+        </button>
+
+
+        <button
+            class="btn btn-secundario"
+            id="btnInicio">
+
+            ← VOLVER AL INICIO
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   CONFIGURACIÓN
+========================= */
+
+const DURACION = 30;
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let puntos = 0;
+let combo = 0;
+let tiempo = DURACION;
+
+let jugando = false;
+
+let intervaloTiempo = null;
+
+let record =
+    Number(
+        localStorage.getItem(
+            "comoObligoRecord"
+        )
+    ) || 0;
+
+
+/* =========================
+   ELEMENTOS
+========================= */
+
+const inicio =
+    document.getElementById("inicio");
+
+const juego =
+    document.getElementById("juego");
+
+const final =
+    document.getElementById("final");
+
+
+const btnJugar =
+    document.getElementById("btnJugar");
+
+const btnNuevo =
+    document.getElementById("btnNuevo");
+
+const btnInicio =
+    document.getElementById("btnInicio");
+
+
+const zonaJuego =
+    document.getElementById("zona-juego");
+
+
+const tiempoTexto =
+    document.getElementById("tiempo");
+
+const puntosTexto =
+    document.getElementById("puntos");
+
+const comboTexto =
+    document.getElementById("combo");
+
+
+const barra =
+    document.getElementById("barra");
+
+
+const recordInicio =
+    document.getElementById("recordInicio");
+
+
+const resultadoPuntos =
+    document.getElementById("resultadoPuntos");
+
+const resultadoRecord =
+    document.getElementById("resultadoRecord");
+
+const nuevoRecord =
+    document.getElementById("nuevoRecord");
+
+const mensajeFinal =
+    document.getElementById("mensajeFinal");
+
+
+const comboGrande =
+    document.getElementById("comboGrande");
+
+
+recordInicio.textContent =
+    record;
+
+
+/* =========================
+   BOTONES
+========================= */
+
+btnJugar.addEventListener(
+    "click",
+    iniciarJuego
+);
+
+btnNuevo.addEventListener(
+    "click",
+    iniciarJuego
+);
+
+
+btnInicio.addEventListener(
+    "click",
+    volverInicio
+);
+
+
+/* =========================
+   INICIAR
+========================= */
+
+function iniciarJuego() {
+
+    puntos = 0;
+    combo = 0;
+    tiempo = DURACION;
+
+    jugando = true;
+
+    clearInterval(
+        intervaloTiempo
+    );
+
+    zonaJuego.innerHTML = "";
+
+    actualizarHUD();
+
+    inicio.style.display = "none";
+
+    final.style.display = "none";
+
+    juego.style.display = "block";
+
+    barra.style.width = "100%";
+
+
+    crearPancho();
+
+
+    intervaloTiempo =
+        setInterval(
+            actualizarTiempo,
+            1000
+        );
+
+}
+
+
+/* =========================
+   TIEMPO
+========================= */
+
+function actualizarTiempo() {
+
+    if (!jugando) return;
+
+    tiempo--;
+
+    actualizarHUD();
+
+
+    const porcentaje =
+        (tiempo / DURACION) * 100;
+
+    barra.style.width =
+        porcentaje + "%";
+
+
+    if (tiempo <= 0) {
+
+        terminarJuego();
+
+    }
+
+}
+
+
+/* =========================
+   HUD
+========================= */
+
+function actualizarHUD() {
+
+    tiempoTexto.textContent =
+        tiempo;
+
+    puntosTexto.textContent =
+        puntos;
+
+    comboTexto.textContent =
+        "x" + combo;
+
+}
+
+
+/* =========================
+   CREAR PANCHO
+========================= */
+
+function crearPancho() {
+
+    if (!jugando) return;
+
+
+    zonaJuego.innerHTML = "";
+
+
+    const pancho =
+        document.createElement("div");
+
+
+    pancho.className =
+        "pancho";
+
+
+    pancho.innerHTML =
+        "🌭";
+
+
+    const rect =
+        zonaJuego.getBoundingClientRect();
+
+
+    const ancho = 95;
+
+    const alto = 95;
+
+    const margen = 15;
+
+
+    const maxX =
+        Math.max(
+            margen,
+            rect.width -
+            ancho -
+            margen
+        );
+
+
+    const maxY =
+        Math.max(
+            margen,
+            rect.height -
+            alto -
+            margen
+        );
+
+
+    const x =
+        margen +
+        Math.random() *
+        (maxX - margen);
+
+
+    const y =
+        margen +
+        Math.random() *
+        (maxY - margen);
+
+
+    pancho.style.left =
+        x + "px";
+
+    pancho.style.top =
+        y + "px";
+
+
+    pancho.addEventListener(
+        "pointerdown",
+        tocarPancho
+    );
+
+
+    zonaJuego.appendChild(
+        pancho
+    );
+
+}
+
+
+/* =========================
+   TOCAR PANCHO
+========================= */
+
+function tocarPancho(event) {
+
+    if (!jugando) return;
+
+    event.preventDefault();
+
+
+    const pancho =
+        event.currentTarget;
+
+
+    const rect =
+        pancho.getBoundingClientRect();
+
+
+    const x =
+        rect.left +
+        rect.width / 2;
+
+
+    const y =
+        rect.top +
+        rect.height / 2;
+
+
+    /* COMBO */
+
+    combo++;
+
+
+    /* PUNTOS */
+
+    let puntosGanados = 1;
+
+
+    if (combo >= 10) {
+
+        puntosGanados = 3;
+
+    } else if (combo >= 5) {
+
+        puntosGanados = 2;
+
+    }
+
+
+    puntos += puntosGanados;
+
+
+    actualizarHUD();
+
+
+    /* EFECTO */
+
+    mostrarPuntos(
+        x,
+        y,
+        "+" + puntosGanados
+    );
+
+
+    if (
+        combo === 5 ||
+        combo === 10 ||
+        combo === 15 ||
+        combo === 20 ||
+        combo === 30
+    ) {
+
+        mostrarCombo(
+            "¡COMBO x" + combo + "!"
+        );
+
+    }
+
+
+    document.body.classList.remove(
+        "golpe"
+    );
+
+
+    void document.body.offsetWidth;
+
+
+    document.body.classList.add(
+        "golpe"
+    );
+
+
+    crearPancho();
+
+}
+
+
+/* =========================
+   PUNTOS FLOTANTES
+========================= */
+
+function mostrarPuntos(
+    x,
+    y,
+    texto
+) {
+
+    const elemento =
+        document.createElement("div");
+
+
+    elemento.className =
+        "punto";
+
+
+    elemento.textContent =
+        texto;
+
+
+    elemento.style.left =
+        (x - 15) + "px";
+
+
+    elemento.style.top =
+        (y - 20) + "px";
+
+
+    document.body.appendChild(
+        elemento
+    );
+
+
+    setTimeout(
+        () => elemento.remove(),
+        700
+    );
+
+}
+
+
+/* =========================
+   COMBO GRANDE
+========================= */
+
+function mostrarCombo(
+    texto
+) {
+
+    comboGrande.textContent =
+        texto;
+
+
+    comboGrande.classList.remove(
+        "mostrar"
+    );
+
+
+    void comboGrande.offsetWidth;
+
+
+    comboGrande.classList.add(
+        "mostrar"
+    );
+
+}
+
+
+/* =========================
+   TERMINAR
+========================= */
+
+function terminarJuego() {
+
+    if (!jugando) return;
+
+
+    jugando = false;
+
+
+    clearInterval(
+        intervaloTiempo
+    );
+
+
+    zonaJuego.innerHTML = "";
+
+
+    juego.style.display =
+        "none";
+
+
+    resultadoPuntos.textContent =
+        puntos;
+
+
+    let esNuevoRecord =
+        false;
+
+
+    if (puntos > record) {
+
+        record = puntos;
+
+
+        localStorage.setItem(
+            "comoObligoRecord",
+            record
+        );
+
+
+        esNuevoRecord = true;
+
+    }
+
+
+    resultadoRecord.textContent =
+        record;
+
+
+    nuevoRecord.style.display =
+        esNuevoRecord
+            ? "block"
+            : "none";
+
+
+    /* MENSAJE FINAL */
+
+    if (puntos >= 100) {
+
+        mensajeFinal.textContent =
+            "🔥 ¡UNA BESTIA! Llegaste a 100.";
+
+    }
+
+    else if (puntos >= 70) {
+
+        mensajeFinal.textContent =
+            "🌭 ¡Tremendo nivel! Estás jugando en serio.";
+
+    }
+
+    else if (puntos >= 40) {
+
+        mensajeFinal.textContent =
+            "🔥 Muy buen puntaje. ¿Podés superarlo?";
+
+    }
+
+    else if (puntos >= 20) {
+
+        mensajeFinal.textContent =
+            "😎 Nada mal... pero sabemos que podés hacer más.";
+
+    }
+
+    else {
+
+        mensajeFinal.textContent =
+            "😂 Hay que practicar. ¡Probá de nuevo!";
+
+    }
+
+
+    final.style.display =
+        "flex";
+
+}
+
+
+/* =========================
+   VOLVER AL INICIO
+========================= */
+
+function volverInicio() {
+
+    jugando = false;
+
+
+    clearInterval(
+        intervaloTiempo
+    );
+
+
+    zonaJuego.innerHTML = "";
+
+
+    final.style.display =
+        "none";
+
+
+    juego.style.display =
+        "none";
+
+
+    inicio.style.display =
+        "flex";
+
+
+    recordInicio.textContent =
+        record;
+
+}
+
+
+/* =========================
+   EVITAR SCROLL
+========================= */
+
+document.addEventListener(
+    "touchmove",
+    function(event) {
+
+        if (jugando) {
+
+            event.preventDefault();
+
+        }
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+/* =========================
+   TECLADO PC
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.code === "Space" &&
+            !jugando
+        ) {
+
+            if (
+                inicio.style.display !==
+                "none"
+            ) {
+
+                iniciarJuego();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
