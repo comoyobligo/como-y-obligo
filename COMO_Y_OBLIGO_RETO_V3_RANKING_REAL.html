@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070707">
+<title>Reto Como y Obligo 🇦🇷🌭</title>
+<style>
+:root{--red:#ff2418;--orange:#ff7900;--yellow:#ffd21c}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:#070707;color:#fff;font-family:Arial,Helvetica,sans-serif}
+body{min-height:100vh}.app{max-width:720px;margin:auto;padding:16px 14px 30px}
+.header{text-align:center;padding:5px 0 14px}.logo{font-size:clamp(28px,8vw,46px);font-weight:1000;letter-spacing:-2px;text-shadow:3px 3px 0 var(--red)}.logo span{color:var(--orange)}
+.subtitle{font-size:12px;font-weight:900;color:#ccc;letter-spacing:1px}
+.panel{background:linear-gradient(145deg,#171717,#0c0c0c);border:1px solid #292929;border-radius:22px;padding:15px;box-shadow:0 18px 60px #0009}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}.stat{background:#080808;border:1px solid #262626;border-radius:14px;padding:9px 5px;text-align:center}.stat b{display:block;font-size:22px;color:var(--yellow)}.stat small{font-size:9px;color:#999;font-weight:900;text-transform:uppercase}
+.progress{height:8px;background:#262626;border-radius:20px;overflow:hidden;margin-bottom:12px}#bar{height:100%;width:100%;background:linear-gradient(90deg,var(--red),var(--orange))}
+#game{position:relative;height:min(68vh,570px);min-height:430px;border:2px solid #252525;border-radius:20px;overflow:hidden;touch-action:none;user-select:none;background:radial-gradient(circle at 15% 20%,#ff790018 0 2px,transparent 3px),radial-gradient(circle at 80% 35%,#ff241818 0 2px,transparent 3px),linear-gradient(#191919,#090909)}
+.item{position:absolute;width:68px;height:68px;display:grid;place-items:center;border:0;background:transparent;font-size:45px;cursor:pointer;transform:translate(-50%,-50%);filter:drop-shadow(0 5px 5px #000);animation:pop .12s ease-out}.item:active{transform:translate(-50%,-50%) scale(.8)}
+@keyframes pop{from{transform:translate(-50%,-50%) scale(.2);opacity:.2}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+.float{position:absolute;pointer-events:none;font-size:22px;font-weight:1000;text-shadow:2px 2px #000;animation:up .65s forwards;z-index:5}@keyframes up{to{opacity:0;transform:translate(-50%,-55px) scale(1.15)}}
+.overlay{position:absolute;inset:0;z-index:20;background:#000c;display:flex;align-items:center;justify-content:center;padding:20px}.modal{width:min(100%,440px);background:#111;border:1px solid #343434;border-radius:24px;padding:23px;text-align:center;box-shadow:0 25px 80px #000}
+.big{font-size:56px;font-weight:1000;color:var(--orange)}.modal h1{margin:3px 0 8px;font-size:29px}.modal p{color:#ccc;line-height:1.45;margin:7px 0 16px}
+.cta{width:100%;border:0;border-radius:15px;padding:14px 16px;margin-top:8px;color:#fff;font-size:17px;font-weight:1000;background:linear-gradient(135deg,var(--red),var(--orange));box-shadow:0 8px 25px #ff3b0038;cursor:pointer}.secondary{background:#252525;box-shadow:none}.share{background:linear-gradient(135deg,#ff0050,#ff7900)}.hidden{display:none!important}
+input{width:100%;background:#070707;color:#fff;border:1px solid #333;border-radius:13px;padding:13px;outline:none}.section{margin-top:14px}.section h2{font-size:19px;margin:0 0 7px}.note{font-size:11px;color:#888;line-height:1.4}
+.leader{padding:0;margin:10px 0 0;list-style:none;display:grid;gap:7px}.leader li{display:grid;grid-template-columns:42px 1fr auto;align-items:center;background:#101010;border:1px solid #252525;border-radius:13px;padding:10px 12px}.rank{font-weight:1000;color:var(--yellow)}.name{font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.points{font-weight:1000;color:var(--orange)}
+.status{text-align:center;margin:8px 0;font-size:12px;font-weight:800;color:#aaa}.ok{color:#7cff9a}.err{color:#ff8278}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="header"><div class="logo">COMO <span>Y</span> OBLIGO 🌭</div><div class="subtitle">🇦🇷 RETO ARGENTINA · RANKING REAL</div></header>
+<section class="panel">
+<div class="stats"><div class="stat"><b id="score">0</b><small>Puntos</small></div><div class="stat"><b id="combo">x0</b><small>Combo</small></div><div class="stat"><b id="time">30</b><small>Segundos</small></div></div>
+<div class="progress"><div id="bar"></div></div>
+<div id="game">
+<div id="start" class="overlay"><div class="modal"><div class="big">🇦🇷🌭</div><h1>RETO COMO Y OBLIGO</h1><p>Tenés <b>30 segundos</b>. Tocá los panchos, armá combos y conseguí el mayor puntaje.</p><button class="cta" id="startBtn">🔥 EMPEZAR</button></div></div>
+<div id="end" class="overlay hidden"><div class="modal"><div class="big" id="finalScore">0</div><h1 id="resultTitle">¡TERMINÓ!</h1><p id="resultText">Poné tu apodo para guardar tu resultado.</p><input id="name" maxlength="18" placeholder="Tu nombre / apodo"><button class="cta" id="saveBtn">🏆 GUARDAR EN RANKING</button><button class="cta share hidden" id="shareBtn">📸 COMPARTIR</button><button class="cta secondary" id="againBtn">🌭 JUGAR DE NUEVO</button></div></div>
+</div>
+<div id="status" class="status">☁️ Conectando al ranking...</div>
+</section>
+<section class="panel section"><h2>🇦🇷 TOP ARGENTINA · ESTA SEMANA</h2><div id="week" class="note"></div><ol id="ranking" class="leader"></ol><p class="note">Ranking compartido online. Los puntajes de todos los jugadores se guardan en la misma tabla.</p></section>
+<div class="footer">Como y Obligo · @COMO_Y_OBLIGO · Reto semanal 🇦🇷🌭</div>
+</div>
+<script>
+const SUPABASE_URL="https://fkxjkbanqrfbilkdffjb.supabase.co";
+const SUPABASE_KEY="sb_publishable_btPoohNEnib2XRFObNbErg_CHWAPRo0";
+const TABLE="game_scores";
+const $=id=>document.getElementById(id);
+let score=0,combo=0,timeLeft=30,running=false,timer=null,spawner=null,lastHit=0;
+const items=new Set();
+function weekStart(){const d=new Date();const day=(d.getDay()+6)%7;d.setHours(0,0,0,0);d.setDate(d.getDate()-day);return d.toISOString().slice(0,10)}
+function weekText(){const d=new Date();const day=(d.getDay()+6)%7;d.setHours(0,0,0,0);d.setDate(d.getDate()-day);const e=new Date(d);e.setDate(e.getDate()+6);return `Semana ${d.toLocaleDateString("es-AR")} → ${e.toLocaleDateString("es-AR")}`}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+async function api(path,opts={}){const r=await fetch(SUPABASE_URL+"/rest/v1/"+path,{...opts,headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":"application/json",...(opts.headers||{})}});if(!r.ok)throw new Error(await r.text());return r.status===204?null:r.json()}
+async function loadRanking(){
+ try{
+  const w=weekStart();const data=await api(`${TABLE}?select=player_name,score,created_at&week_start=eq.${w}&order=score.desc&limit=10`);
+  $("ranking").innerHTML=data.length?data.map((x,i)=>`<li><span class="rank">#${i+1}</span><span class="name">${esc(x.player_name)}</span><span class="points">${x.score}</span></li>`).join(""):'<li><span class="rank">—</span><span class="name">Sé el primero 🇦🇷</span><span class="points">0</span></li>';
+  $("week").textContent=weekText();$("status").textContent="☁️ Ranking online activo";$("status").className="status ok";
+ }catch(e){$("status").textContent="⚠️ No se pudo cargar el ranking online";$("status").className="status err";console.error(e)}
+}
+async function saveScore(){
+ const name=($("name").value||"Anónimo").trim().slice(0,18)||"Anónimo";
+ $("saveBtn").disabled=true;$("saveBtn").textContent="⏳ GUARDANDO...";
+ try{
+  await api(TABLE,{method:"POST",body:JSON.stringify({player_name:name,score:score,week_start:weekStart()})});
+  $("resultText").textContent="🔥 ¡Puntaje guardado en el ranking nacional!";
+  $("saveBtn").textContent="✅ GUARDADO";$("shareBtn").classList.remove("hidden");await loadRanking();
+ }catch(e){$("saveBtn").disabled=false;$("saveBtn").textContent="🏆 GUARDAR EN RANKING";$("resultText").textContent="No pudimos guardar el puntaje. Revisá tu conexión.";console.error(e)}
+}
+function update(){$("score").textContent=score;$("combo").textContent="x"+combo;$("time").textContent=Math.ceil(timeLeft);$("bar").style.width=Math.max(0,timeLeft/30*100)+"%"}
+function clearItems(){items.forEach(x=>x.remove());items.clear()}
+function rnd(a,b){return Math.random()*(b-a)+a}
+function spawn(){if(!running)return;const good=Math.random()<.88,el=document.createElement("button");el.className="item";el.type="button";el.textContent=good?"🌭":(Math.random()<.5?"💣":"🧅");const r=$("game").getBoundingClientRect(),x=rnd(50,r.width-50),y=rnd(60,r.height-50);el.style.left=x+"px";el.style.top=y+"px";el.onpointerdown=e=>{e.preventDefault();if(running)hit(el,good,x,y)};$("game").appendChild(el);items.add(el);setTimeout(()=>{if(el.isConnected){el.remove();items.delete(el)}},900)}
+function float(t,x,y){const f=document.createElement("div");f.className="float";f.textContent=t;f.style.left=x+"px";f.style.top=y+"px";$("game").appendChild(f);setTimeout(()=>f.remove(),650)}
+function hit(el,good,x,y){el.remove();items.delete(el);if(good){const n=Date.now();combo=n-lastHit<1200?combo+1:1;lastHit=n;const p=10+Math.min(combo,10)*2;score+=p;float("+"+p,x,y)}else{combo=0;score=Math.max(0,score-20);float("-20",x,y)}update()}
+function startGame(){clearItems();score=0;combo=0;timeLeft=30;running=true;lastHit=0;$("start").classList.add("hidden");$("end").classList.add("hidden");$("saveBtn").disabled=false;$("saveBtn").textContent="🏆 GUARDAR EN RANKING";$("shareBtn").classList.add("hidden");$("name").value="";update();spawn();spawner=setInterval(spawn,520);const begin=performance.now();timer=setInterval(()=>{timeLeft=Math.max(0,30-(performance.now()-begin)/1000);update();if(timeLeft<=0)finish()},100)}
+function finish(){if(!running)return;running=false;clearInterval(timer);clearInterval(spawner);timer=null;spawner=null;clearItems();$("finalScore").textContent=score;$("resultTitle").textContent=score>=500?"🔥 ¡ANIMAL!":score>=300?"🌭 ¡MUY BIEN!":"💪 ¡BUEN INTENTO!";$("resultText").textContent="Guardá tu apodo y metete en el ranking de Argentina.";$("end").classList.remove("hidden");$("name").focus()}
+async function share(){const text=`🔥 Hice ${score} puntos en el Reto Como y Obligo 🌭🇦🇷 ¿Quién me supera? @COMO_Y_OBLIGO`;if(navigator.share){try{await navigator.share({title:"Reto Como y Obligo",text,url:location.href});return}catch(e){}}navigator.clipboard?.writeText(text);window.open("https://www.instagram.com/","_blank");alert("Texto copiado. Abrí Instagram, subí tu resultado y etiquetá @COMO_Y_OBLIGO.")}
+$("startBtn").onclick=startGame;$("saveBtn").onclick=saveScore;$("againBtn").onclick=startGame;$("shareBtn").onclick=share;$("name").onkeydown=e=>{if(e.key==="Enter")saveScore()};
+$("week").textContent=weekText();update();loadRanking();
+</script>
+</body>
+</html>
