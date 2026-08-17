@@ -4,111 +4,928 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Como y Obligó — Carta</title>
+
 <style>
+
 :root{
-  --bg:#050505; --card:#111; --red:#e31b12; --orange:#ff9d00;
-  --text:#f7d28a; --muted:#c9a35c; --line:#ff6b00;
+  --bg:#050505;
+  --card:#111;
+  --red:#e31b12;
+  --orange:#ff9d00;
+  --text:#f7d28a;
+  --muted:#c9a35c;
+  --line:#ff6b00;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
-  margin:0;background:var(--bg);color:var(--text);
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
 }
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-  padding:28px 18px 22px;text-align:center;
+  padding:28px 18px 22px;
+  text-align:center;
+
   border-bottom:2px solid var(--line);
-  background:radial-gradient(circle at center,#241000 0,#050505 65%);
+
+  background:
+    radial-gradient(
+      circle at center,
+      #241000 0,
+      #050505 65%
+    );
 }
+
 .logo{
-  font-family:Georgia,serif;font-size:34px;font-weight:800;
-  color:#d71912;text-shadow:0 0 8px #ff9d00;
+  font-family:Georgia,serif;
+  font-size:34px;
+  font-weight:800;
+
+  color:#d71912;
+
+  text-shadow:
+    0 0 8px #ff9d00;
+
   letter-spacing:1px;
 }
-.tag{margin-top:8px;color:var(--orange);font-weight:800;letter-spacing:3px}
-main{max-width:680px;margin:auto;padding:18px 14px 40px}
+
+.tag{
+  margin-top:8px;
+
+  color:var(--orange);
+
+  font-weight:800;
+  letter-spacing:3px;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+main{
+  max-width:680px;
+  margin:auto;
+
+  padding:18px 14px 40px;
+}
+
+
+/* =========================
+   JUGÁ Y GANÁ
+========================= */
+
+.jugar-section{
+
+  position:relative;
+
+  margin:16px 0 20px;
+
+  padding:22px 16px;
+
+  text-align:center;
+
+  overflow:hidden;
+
+  border:2px solid #ff6b00;
+
+  border-radius:20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #4b1504 0%,
+      #1b0702 48%,
+      #090201 100%
+    );
+
+  box-shadow:
+    0 0 20px rgba(255,80,0,.22),
+    inset 0 0 25px rgba(255,80,0,.06);
+
+}
+
+
+/* brillo */
+
+.jugar-section:before{
+
+  content:"";
+
+  position:absolute;
+
+  width:150px;
+  height:150px;
+
+  left:-70px;
+  top:-70px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,120,0,.15);
+
+  filter:blur(20px);
+
+  animation:
+    brillo 3s infinite alternate;
+}
+
+@keyframes brillo{
+
+  from{
+    transform:scale(.8);
+    opacity:.4;
+  }
+
+  to{
+    transform:scale(1.5);
+    opacity:.9;
+  }
+
+}
+
+
+.jugar-icon{
+
+  font-size:50px;
+
+  margin-bottom:4px;
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(255,100,0,.6)
+    );
+
+  animation:
+    saltito 1.5s infinite;
+}
+
+@keyframes saltito{
+
+  0%,100%{
+    transform:translateY(0) rotate(0);
+  }
+
+  50%{
+    transform:translateY(-5px) rotate(-4deg);
+  }
+
+}
+
+
+.jugar-title{
+
+  position:relative;
+
+  margin:0;
+
+  color:#fff;
+
+  font-size:28px;
+
+  font-weight:1000;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  text-shadow:
+    0 3px 0 #8d2005;
+}
+
+
+.jugar-title span{
+
+  color:#ff7a18;
+
+}
+
+
+.jugar-text{
+
+  position:relative;
+
+  margin:8px auto 14px;
+
+  max-width:430px;
+
+  color:#f4d4b2;
+
+  font-size:14px;
+
+  line-height:1.45;
+}
+
+
+.jugar-premio{
+
+  position:relative;
+
+  display:inline-block;
+
+  margin-bottom:16px;
+
+  padding:8px 13px;
+
+  border-radius:50px;
+
+  background:
+    rgba(255,157,0,.12);
+
+  border:
+    1px solid rgba(255,157,0,.35);
+
+  color:#ffd15a;
+
+  font-size:13px;
+
+  font-weight:900;
+}
+
+
+/* BOTÓN */
+
+.jugar-btn{
+
+  position:relative;
+
+  display:block;
+
+  width:100%;
+
+  padding:16px 18px;
+
+  border:0;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff751b,
+      #e32908
+    );
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:1000;
+
+  letter-spacing:.5px;
+
+  text-decoration:none;
+
+  box-shadow:
+    0 6px 0 #8d1905,
+    0 0 24px rgba(255,75,0,.35);
+
+  transition:
+    transform .12s,
+    box-shadow .12s;
+
+  animation:
+    pulso 2.2s infinite;
+}
+
+@keyframes pulso{
+
+  0%,100%{
+    box-shadow:
+      0 6px 0 #8d1905,
+      0 0 20px rgba(255,75,0,.25);
+  }
+
+  50%{
+    box-shadow:
+      0 6px 0 #8d1905,
+      0 0 34px rgba(255,110,0,.55);
+  }
+
+}
+
+
+.jugar-btn:active{
+
+  transform:
+    translateY(5px);
+
+  box-shadow:
+    0 1px 0 #8d1905;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
 .section{
-  margin:16px 0;padding:18px 16px;border:1.5px solid var(--line);
-  border-radius:16px;background:linear-gradient(145deg,#121212,#080808);
-  box-shadow:0 0 12px #6d260033;
+
+  margin:16px 0;
+
+  padding:18px 16px;
+
+  border:
+    1.5px solid var(--line);
+
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #121212,
+      #080808
+    );
+
+  box-shadow:
+    0 0 12px #6d260033;
 }
+
 h2{
-  margin:0 0 14px;text-align:center;color:var(--orange);
-  font-size:24px;letter-spacing:1px;
+
+  margin:0 0 14px;
+
+  text-align:center;
+
+  color:var(--orange);
+
+  font-size:24px;
+
+  letter-spacing:1px;
 }
+
+
+/* =========================
+   ITEMS
+========================= */
+
 .item{
-  display:flex;gap:10px;justify-content:space-between;align-items:flex-start;
-  padding:11px 0;border-bottom:1px dotted #a96600;
+
+  display:flex;
+
+  gap:10px;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  padding:11px 0;
+
+  border-bottom:
+    1px dotted #a96600;
 }
-.item:last-child{border-bottom:0}
-.name{font-weight:800;color:#ffe0a2}
-.desc{display:block;font-size:12px;font-weight:500;color:#d5a955;margin-top:3px}
-.price{white-space:nowrap;color:var(--orange);font-weight:900}
-.group{margin-top:16px;color:#ff3b20;font-weight:900;font-size:13px;text-transform:uppercase}
-ul{margin:8px 0 0 18px;padding:0}
-li{padding:4px 0;color:#f0c879}
-.footer{text-align:center;padding:18px;color:var(--orange);font-weight:900;font-size:20px}
-.small{font-size:12px;color:#ad8a50;text-align:center;margin-top:8px}
+
+.item:last-child{
+
+  border-bottom:0;
+}
+
+.name{
+
+  font-weight:800;
+
+  color:#ffe0a2;
+}
+
+.desc{
+
+  display:block;
+
+  font-size:12px;
+
+  font-weight:500;
+
+  color:#d5a955;
+
+  margin-top:3px;
+}
+
+.price{
+
+  white-space:nowrap;
+
+  color:var(--orange);
+
+  font-weight:900;
+}
+
+
+/* =========================
+   GRUPOS
+========================= */
+
+.group{
+
+  margin-top:16px;
+
+  color:#ff3b20;
+
+  font-weight:900;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+}
+
+ul{
+
+  margin:8px 0 0 18px;
+
+  padding:0;
+}
+
+li{
+
+  padding:4px 0;
+
+  color:#f0c879;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+  text-align:center;
+
+  padding:18px;
+
+  color:var(--orange);
+
+  font-weight:900;
+
+  font-size:20px;
+}
+
+.small{
+
+  font-size:12px;
+
+  color:#ad8a50;
+
+  text-align:center;
+
+  margin-top:8px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+  .logo{
+    font-size:31px;
+  }
+
+  .tag{
+    font-size:12px;
+  }
+
+  .jugar-section{
+    padding:21px 14px;
+  }
+
+  .jugar-title{
+    font-size:26px;
+  }
+
+  .jugar-text{
+    font-size:13px;
+  }
+
+  .jugar-btn{
+    font-size:17px;
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
+
 <header>
-  <div class="logo">COMO Y OBLIGO</div>
-  <div class="tag">CARTA DIGITAL</div>
+
+  <div class="logo">
+    COMO Y OBLIGO
+  </div>
+
+  <div class="tag">
+    CARTA DIGITAL
+  </div>
+
 </header>
 
+
 <main>
-<section class="section">
-<h2>🌭 SUPERPANCHO</h2>
-<div class="item"><div class="name">Parmesano</div><div class="price">$3.000</div></div>
-<div class="item"><div class="name">Doble</div><div class="price">$4.500</div></div>
-<div class="item"><div class="name">Veggie<span class="desc">Pan de papa y salchicha de soja</span></div><div class="price">$5.000</div></div>
+
+
+<!-- =================================
+     JUGÁ Y GANÁ
+================================= -->
+
+<section class="jugar-section">
+
+  <div class="jugar-icon">
+    🎮
+  </div>
+
+  <h2 class="jugar-title">
+    JUGÁ <span>Y GANÁ</span>
+  </h2>
+
+  <div class="jugar-text">
+
+    Tenés solamente
+    <strong>15 segundos</strong>
+    para tocar todos los panchos que puedas.
+
+    <br>
+
+    ¿Podés romper el récord?
+
+  </div>
+
+  <div class="jugar-premio">
+
+    🏆 TODOS LOS DOMINGOS
+    · 1 PARMESANO PARA EL GANADOR
+
+  </div>
+
+
+  <a
+    class="jugar-btn"
+    href="https://comoyobligo.github.io/como-y-obligo/RECORD_COMO_Y_OBLIGO_V1.html"
+  >
+
+    🌭 JUGAR AHORA 🔥
+
+  </a>
+
 </section>
 
-<section class="section">
-<h2>🔥 PROMOS</h2>
-<div class="item"><div class="name">Superparmesano + Gaseosa</div><div class="price">$4.500</div></div>
-<div class="item"><div class="name">Superdoble + Gaseosa</div><div class="price">$6.000</div></div>
-<div class="item"><div class="name">Superveggie + Gaseosa</div><div class="price">$6.500</div></div>
-<div class="item"><div class="name">Superparmesano + Cerveza</div><div class="price">$5.500</div></div>
-<div class="item"><div class="name">Superdoble + Cerveza</div><div class="price">$7.000</div></div>
-<div class="item"><div class="name">2 Superparmesano + Gaseosa</div><div class="price">$7.000</div></div>
-</section>
+
+<!-- =================================
+     SUPERPANCHO
+================================= -->
 
 <section class="section">
-<h2>🥤 BEBIDAS</h2>
-<div class="item"><div class="name">Agua</div><div class="price">$2.000</div></div>
-<div class="item"><div class="name">Gaseosa</div><div class="price">$3.000</div></div>
-<div class="item"><div class="name">Red Bull</div><div class="price">$5.000</div></div>
-<div class="item"><div class="name">Ortuzar</div><div class="price">$3.000</div></div>
-<div class="item"><div class="name">Schneider</div><div class="price">$4.000</div></div>
-<div class="item"><div class="name">Andes</div><div class="price">$5.000</div></div>
-<div class="item"><div class="name">Stella</div><div class="price">$6.000</div></div>
-</section>
 
-<section class="section">
-<h2>🥫 ADEREZOS</h2>
-<div class="group">Clásicos</div>
-<ul>
-<li>Mayonesa / Mayonesa vegana (Felices las Vacas)</li>
-<li>Ketchup</li><li>Mostaza</li><li>Barbacoa</li>
-</ul>
-<div class="group">Especiales</div>
-<ul>
-<li>Cheddar</li><li>Alioli (mayonesa de ajo)</li><li>Parmesano</li>
-<li>Salsa picante</li><li>Roquefort</li><li>Salsa golf</li><li>Salsa mil islas</li>
-</ul>
-</section>
+<h2>
+  🌭 SUPERPANCHO
+</h2>
 
-<section class="section">
-<h2>➕ TOPPINGS EXTRAS</h2>
-<div style="text-align:center;line-height:1.7">
-Guacamole · Salsa criolla · Tomate · Aceitunas · Choclo · Champiñones · etc.
+<div class="item">
+
+  <div class="name">
+    Parmesano
+  </div>
+
+  <div class="price">
+    $3.000
+  </div>
+
 </div>
-<div style="text-align:center;margin-top:12px;font-size:22px;font-weight:900;color:var(--orange)">$500</div>
-<div class="small">Sujetos a disponibilidad</div>
+
+
+<div class="item">
+
+  <div class="name">
+    Doble
+  </div>
+
+  <div class="price">
+    $4.500
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <div class="name">
+
+    Veggie
+
+    <span class="desc">
+      Pan de papa y salchicha de soja
+    </span>
+
+  </div>
+
+  <div class="price">
+    $5.000
+  </div>
+
+</div>
+
 </section>
 
-<div class="footer">COMÉ RICO, MUCHO MÁS QUE UN PANCHO ❤️</div>
+
+<!-- =================================
+     PROMOS
+================================= -->
+
+<section class="section">
+
+<h2>
+  🔥 PROMOS
+</h2>
+
+
+<div class="item">
+
+  <div class="name">
+    Superparmesano + Gaseosa
+  </div>
+
+  <div class="price">
+    $4.500
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <div class="name">
+    Superdoble + Gaseosa
+  </div>
+
+  <div class="price">
+    $6.000
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <div class="name">
+    Superveggie + Gaseosa
+  </div>
+
+  <div class="price">
+    $6.500
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <div class="name">
+    Superparmesano + Cerveza
+  </div>
+
+  <div class="price">
+    $5.500
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <div class="name">
+    Superdoble + Cerveza
+  </div>
+
+  <div class="price">
+    $7.000
+  </div>
+
+</div>
+
+
+<div class="item">
+
+  <div class="name">
+    2 Superparmesano + Gaseosa
+  </div>
+
+  <div class="price">
+    $7.000
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     BEBIDAS
+================================= -->
+
+<section class="section">
+
+<h2>
+  🥤 BEBIDAS
+</h2>
+
+
+<div class="item">
+  <div class="name">Agua</div>
+  <div class="price">$2.000</div>
+</div>
+
+
+<div class="item">
+  <div class="name">Gaseosa</div>
+  <div class="price">$3.000</div>
+</div>
+
+
+<div class="item">
+  <div class="name">Red Bull</div>
+  <div class="price">$5.000</div>
+</div>
+
+
+<div class="item">
+  <div class="name">Ortuzar</div>
+  <div class="price">$3.000</div>
+</div>
+
+
+<div class="item">
+  <div class="name">Schneider</div>
+  <div class="price">$4.000</div>
+</div>
+
+
+<div class="item">
+  <div class="name">Andes</div>
+  <div class="price">$5.000</div>
+</div>
+
+
+<div class="item">
+  <div class="name">Stella</div>
+  <div class="price">$6.000</div>
+</div>
+
+</section>
+
+
+<!-- =================================
+     ADEREZOS
+================================= -->
+
+<section class="section">
+
+<h2>
+  🥫 ADEREZOS
+</h2>
+
+
+<div class="group">
+  Clásicos
+</div>
+
+<ul>
+
+<li>
+  Mayonesa / Mayonesa vegana
+  (Felices las Vacas)
+</li>
+
+<li>
+  Ketchup
+</li>
+
+<li>
+  Mostaza
+</li>
+
+<li>
+  Barbacoa
+</li>
+
+</ul>
+
+
+<div class="group">
+  Especiales
+</div>
+
+<ul>
+
+<li>
+  Cheddar
+</li>
+
+<li>
+  Alioli (mayonesa de ajo)
+</li>
+
+<li>
+  Parmesano
+</li>
+
+<li>
+  Salsa picante
+</li>
+
+<li>
+  Roquefort
+</li>
+
+<li>
+  Salsa golf
+</li>
+
+<li>
+  Salsa mil islas
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- =================================
+     TOPPINGS
+================================= -->
+
+<section class="section">
+
+<h2>
+  ➕ TOPPINGS EXTRAS
+</h2>
+
+
+<div
+  style="
+    text-align:center;
+    line-height:1.7;
+  "
+>
+
+  Guacamole ·
+  Salsa criolla ·
+  Tomate ·
+  Aceitunas ·
+  Choclo ·
+  Champiñones ·
+  etc.
+
+</div>
+
+
+<div
+  style="
+    text-align:center;
+    margin-top:12px;
+    font-size:22px;
+    font-weight:900;
+    color:var(--orange);
+  "
+>
+
+  $500
+
+</div>
+
+
+<div class="small">
+
+  Sujetos a disponibilidad
+
+</div>
+
+</section>
+
+
+<div class="footer">
+
+  COMÉ RICO,
+  MUCHO MÁS QUE UN PANCHO ❤️
+
+</div>
+
+
 </main>
+
 </body>
 </html>
