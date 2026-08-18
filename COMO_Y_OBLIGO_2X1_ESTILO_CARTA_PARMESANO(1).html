@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,11 +9,6 @@
 <title>Como y Obligó | 2×1</title>
 
 <style>
-
-/* =====================================================
-   BASE
-===================================================== */
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -30,7 +26,6 @@
 
 body{
   min-height:100vh;
-
   background:
     radial-gradient(
       circle at 50% -15%,
@@ -38,27 +33,16 @@ body{
       #1d0803 27%,
       #080808 67%
     );
-
   color:#fff;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 .container{
   width:100%;
   max-width:520px;
   margin:auto;
-
   padding:18px 14px 40px;
 }
-
-
-/* =====================================================
-   MARCA
-===================================================== */
 
 .brand{
   text-align:center;
@@ -66,14 +50,10 @@ body{
 
 .brandName{
   font-family:Georgia,serif;
-
   font-size:38px;
   line-height:.84;
-
   font-weight:900;
-
   color:var(--red);
-
   text-shadow:
     0 0 5px #ffbd00,
     0 0 16px #ff5200;
@@ -81,21 +61,16 @@ body{
 
 .brandTag{
   margin-top:13px;
-
   color:#bda777;
-
   font-size:9px;
   font-weight:700;
-
   letter-spacing:2.4px;
 }
 
 .brandLine{
   width:95px;
   height:2px;
-
   margin:14px auto 0;
-
   background:
     linear-gradient(
       90deg,
@@ -105,41 +80,27 @@ body{
     );
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
 .hero{
   margin-top:25px;
-
   text-align:center;
 }
 
 .eyebrow{
   display:inline-flex;
-
   padding:7px 11px;
-
   border:1px solid #63300e;
   border-radius:30px;
-
   background:#170d08;
-
   color:#ffb64a;
-
   font-size:9px;
   font-weight:900;
-
   letter-spacing:1.5px;
 }
 
 .hero h1{
   margin-top:18px;
-
   font-size:28px;
   line-height:1.08;
-
   font-weight:900;
 }
 
@@ -149,65 +110,44 @@ body{
 
 .heroOffer{
   margin-top:5px;
-
   font-size:78px;
   line-height:.9;
-
   font-weight:1000;
-
   color:var(--orange);
-
-  text-shadow:
-    0 5px 30px #ff5b0025;
+  text-shadow:0 5px 30px #ff5b0025;
 }
 
 .heroSub{
   margin-top:9px;
-
   color:var(--cream);
-
   font-size:16px;
   font-weight:800;
 }
 
 .heroDescription{
   max-width:390px;
-
   margin:12px auto 0;
-
   color:#a99573;
-
   font-size:12px;
   line-height:1.55;
 }
 
-
-/* =====================================================
-   CONTADOR
-===================================================== */
-
 .availability{
   margin-top:22px;
-
   padding:17px;
-
   border:1px solid var(--line);
   border-radius:20px;
-
   background:
     linear-gradient(
       145deg,
       #151515,
       #0d0d0d
     );
-
-  box-shadow:
-    0 10px 30px #00000030;
+  box-shadow:0 10px 30px #00000030;
 }
 
 .availabilityTop{
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 }
@@ -219,29 +159,22 @@ body{
 
 .availabilityCount{
   color:var(--gold);
-
   font-size:20px;
   font-weight:1000;
 }
 
 .availabilityBar{
   height:9px;
-
   margin-top:13px;
-
   overflow:hidden;
-
   border-radius:20px;
-
   background:#28201a;
 }
 
 .availabilityFill{
   width:100%;
   height:100%;
-
   border-radius:20px;
-
   background:
     linear-gradient(
       90deg,
@@ -249,46 +182,29 @@ body{
       var(--orange),
       var(--gold)
     );
-
-  transition:
-    width .7s ease;
+  transition:width .7s ease;
 }
 
 .availabilityBottom{
   display:flex;
-
   justify-content:space-between;
-
   margin-top:9px;
-
   color:#8f816c;
-
   font-size:9px;
 }
 
 .stockStatus{
   color:#ffb64a;
-
   font-weight:900;
 }
 
-
-/* =====================================================
-   INSTAGRAM PREMIUM V5.1
-===================================================== */
-
 .instagramPremium{
   position:relative;
-
   overflow:hidden;
-
   margin-top:16px;
-
   padding:20px 17px 17px;
-
   border:1px solid #49251c;
   border-radius:24px;
-
   background:
     radial-gradient(
       circle at 100% 0%,
@@ -305,28 +221,19 @@ body{
       #1b100d,
       #0b0b0b 75%
     );
-
   box-shadow:
     0 15px 40px #00000060,
     inset 0 1px 0 #ffffff0b;
 }
 
-
-/* Halo decorativo */
-
 .instagramPremium::before{
   content:"";
-
   position:absolute;
-
   width:190px;
   height:190px;
-
   top:-120px;
   right:-70px;
-
   border-radius:50%;
-
   background:
     radial-gradient(
       circle,
@@ -334,65 +241,43 @@ body{
       #ff690010 38%,
       transparent 70%
     );
-
   pointer-events:none;
 }
 
 .instagramPremium::after{
   content:"";
-
   position:absolute;
-
   width:130px;
   height:130px;
-
   bottom:-100px;
   left:-70px;
-
   border-radius:50%;
-
   background:
     radial-gradient(
       circle,
       #d6297620,
       transparent 70%
     );
-
   pointer-events:none;
 }
-
-
-/* CABECERA */
 
 .igTop{
   position:relative;
   z-index:2;
-
   display:flex;
-
   align-items:center;
-
   gap:13px;
 }
 
-
-/* LOGO */
-
 .igLogoBox{
   position:relative;
-
   width:61px;
   height:61px;
-
   flex-shrink:0;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   border-radius:18px;
-
   background:
     linear-gradient(
       135deg,
@@ -400,7 +285,6 @@ body{
       #d62976 48%,
       #ff8a00
     );
-
   box-shadow:
     0 8px 25px #d6297640,
     0 0 25px #ff650015;
@@ -408,59 +292,37 @@ body{
 
 .igLogoBox::after{
   content:"";
-
   position:absolute;
-
   inset:2px;
-
   border-radius:16px;
-
   border:1px solid #ffffff45;
 }
 
 .igLogo{
   position:relative;
-
   width:34px;
   height:34px;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   border:2px solid #fff;
-
   border-radius:10px;
-
   color:#fff;
-
   font-size:25px;
-
   line-height:1;
-
-  box-shadow:
-    0 0 10px #ffffff30;
+  box-shadow:0 0 10px #ffffff30;
 }
 
 .igLogo::after{
   content:"";
-
   position:absolute;
-
   width:6px;
   height:6px;
-
   top:4px;
   right:4px;
-
   border-radius:50%;
-
   background:#fff;
 }
-
-
-/* INFORMACIÓN */
 
 .igInfo{
   min-width:0;
@@ -468,40 +330,28 @@ body{
 
 .igOfficial{
   color:#ff9b4b;
-
   font-size:8px;
   font-weight:1000;
-
   letter-spacing:1.6px;
 }
 
 .igUsername{
   margin-top:3px;
-
   color:#fff;
-
   font-size:18px;
   font-weight:1000;
-
   letter-spacing:-.3px;
 }
 
 .igDescription{
   margin-top:4px;
-
   color:#95836e;
-
   font-size:10px;
 }
 
-
-/* DIVISOR */
-
 .igDivider{
   height:1px;
-
   margin:18px 0;
-
   background:
     linear-gradient(
       90deg,
@@ -511,70 +361,41 @@ body{
     );
 }
 
-
-/* TEXTO */
-
 .igMessage{
   position:relative;
-
   z-index:2;
-
   text-align:center;
 }
 
 .igMessage strong{
   display:block;
-
   color:#fff;
-
   font-size:15px;
-
   font-weight:1000;
 }
 
 .igMessage span{
   display:block;
-
   max-width:340px;
-
   margin:5px auto 0;
-
   color:#91816f;
-
   font-size:10px;
-
   line-height:1.5;
 }
 
-
-/* =====================================================
-   BOTÓN INSTAGRAM
-===================================================== */
-
 .igButton{
   position:relative;
-
   overflow:hidden;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   gap:10px;
-
   width:100%;
-
   margin-top:17px;
-
   padding:17px 14px;
-
   border-radius:16px;
-
   text-decoration:none;
-
   color:#fff;
-
   background:
     linear-gradient(
       110deg,
@@ -583,53 +404,31 @@ body{
       #e82c63 60%,
       #ff6900 100%
     );
-
   border:1px solid #ffb07875;
-
   box-shadow:
     0 10px 28px #d6297645,
     0 0 0 1px #ffffff10 inset,
     0 0 35px #ff5b0012;
-
   font-size:12px;
-
   font-weight:1000;
-
   letter-spacing:.7px;
-
   transform:translateZ(0);
-
-  animation:
-    instagramPulse 3s ease-in-out infinite;
-
+  animation:instagramPulse 3s ease-in-out infinite;
   transition:
     transform .18s ease,
     box-shadow .18s ease;
 }
 
 .igButton:hover{
-  transform:
-    translateY(-3px)
-    scale(1.01);
-
-  box-shadow:
-    0 15px 35px #d6297655,
-    0 0 35px #ff690030,
-    0 0 0 1px #ffffff15 inset;
+  transform:translateY(-3px) scale(1.01);
 }
 
 .igButton:active{
-  transform:
-    scale(.96);
+  transform:scale(.96);
 }
 
-
-/* PULSO */
-
 @keyframes instagramPulse{
-
-  0%,
-  100%{
+  0%,100%{
     box-shadow:
       0 10px 28px #d6297640,
       0 0 0 1px #ffffff10 inset;
@@ -641,84 +440,42 @@ body{
       0 0 22px #ff690025,
       0 0 0 1px #ffffff15 inset;
   }
-
 }
-
-
-/* ICONO BOTÓN */
 
 .igButtonIcon{
   position:relative;
-
   z-index:3;
-
   width:25px;
   height:25px;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   border:1.5px solid #fff;
-
   border-radius:7px;
-
   font-size:17px;
-
   line-height:1;
-
-  box-shadow:
-    0 0 8px #ffffff25;
 }
-
-
-/* TEXTO */
 
 .igButtonText{
   position:relative;
-
   z-index:3;
-
   white-space:nowrap;
 }
 
-
-/* FLECHA */
-
 .igArrow{
   position:relative;
-
   z-index:3;
-
   font-size:20px;
-
   line-height:1;
-
-  transition:
-    transform .2s ease;
 }
-
-.igButton:hover .igArrow{
-  transform:
-    translateX(5px);
-}
-
-
-/* BRILLO */
 
 .igShine{
   position:absolute;
-
   z-index:2;
-
   top:-20%;
-
   left:-80px;
-
   width:48px;
   height:140%;
-
   background:
     linear-gradient(
       90deg,
@@ -726,63 +483,30 @@ body{
       #ffffff80,
       transparent
     );
-
-  transform:
-    skewX(-20deg);
-
-  animation:
-    igShine 3s infinite;
+  transform:skewX(-20deg);
+  animation:igShine 3s infinite;
 }
 
 @keyframes igShine{
-
-  0%{
-    left:-80px;
-  }
-
-  35%{
-    left:120%;
-  }
-
-  100%{
-    left:120%;
-  }
-
+  0%{left:-80px;}
+  35%,100%{left:120%;}
 }
-
-
-/* TEXTO OPCIONAL */
 
 .igOptional{
   position:relative;
-
   z-index:2;
-
   margin-top:10px;
-
   text-align:center;
-
   color:#65594c;
-
   font-size:8px;
-
   line-height:1.4;
 }
 
-
-/* =====================================================
-   ACTION CARD
-===================================================== */
-
 .actionCard{
   margin-top:14px;
-
   padding:20px 17px;
-
   border:1px solid #7a3c0d;
-
   border-radius:22px;
-
   background:
     linear-gradient(
       145deg,
@@ -793,76 +517,55 @@ body{
 
 .actionTitle{
   text-align:center;
-
   font-size:18px;
   font-weight:1000;
 }
 
 .actionText{
   max-width:350px;
-
   margin:7px auto 15px;
-
   text-align:center;
-
   color:#9e8c70;
-
   font-size:11px;
-
   line-height:1.5;
 }
 
 .activate{
   width:100%;
-
   border:0;
-
   border-radius:14px;
-
   padding:17px;
-
   cursor:pointer;
-
   color:#1a0b02;
-
   background:
     linear-gradient(
       135deg,
       #fff0b8,
       #ffc13d
     );
-
-  box-shadow:
-    0 8px 25px #ff970030;
-
+  box-shadow:0 8px 25px #ff970030;
   font-size:15px;
-
   font-weight:1000;
-
-  transition:
-    transform .15s ease;
+  transition:transform .15s ease;
 }
 
 .activate:hover{
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 }
 
 .activate:active{
-  transform:
-    translateY(1px);
+  transform:translateY(1px);
 }
 
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
+.activate:disabled{
+  cursor:not-allowed;
+  opacity:.45;
+  transform:none;
+}
 
 .countdown{
   display:none;
-
   padding:28px 0 10px;
-
   text-align:center;
 }
 
@@ -872,34 +575,21 @@ body{
 
 .countNumber{
   font-size:74px;
-
   font-weight:1000;
-
   color:var(--gold);
 }
 
 .countLabel{
   margin-top:8px;
-
   color:#9d8b6d;
-
   font-size:9px;
-
   letter-spacing:2px;
-
   font-weight:900;
 }
 
-
-/* =====================================================
-   UNLOCK
-===================================================== */
-
 .unlock{
   display:none;
-
   text-align:center;
-
   padding:18px 0 5px;
 }
 
@@ -913,38 +603,23 @@ body{
 
 .unlock h2{
   margin-top:7px;
-
   font-size:23px;
 }
 
 .unlock p{
   margin-top:5px;
-
   color:#9d8b6d;
-
   font-size:10px;
 }
 
-
-/* =====================================================
-   VOUCHER
-===================================================== */
-
 .voucher{
   display:none;
-
   margin-top:18px;
-
   overflow:hidden;
-
   color:#170d06;
-
   border-radius:22px;
-
   background:#f8e9bd;
-
-  box-shadow:
-    0 20px 50px #000;
+  box-shadow:0 20px 50px #000;
 }
 
 .voucher.show{
@@ -953,11 +628,8 @@ body{
 
 .voucherHeader{
   padding:20px 18px;
-
   text-align:center;
-
   color:#fff;
-
   background:
     linear-gradient(
       135deg,
@@ -968,196 +640,142 @@ body{
 
 .voucherBrand{
   font-size:8px;
-
   font-weight:900;
-
   letter-spacing:2px;
-
   opacity:.8;
 }
 
 .voucherTitle{
   margin-top:5px;
-
   font-size:29px;
-
   font-weight:1000;
 }
 
 .voucherSubtitle{
   margin-top:4px;
-
   font-size:11px;
 }
 
 .voucherContent{
   padding:19px 16px 20px;
-
   text-align:center;
 }
 
 .validBadge{
   display:inline-block;
-
   padding:6px 10px;
-
   border-radius:20px;
-
   background:#e2f5e8;
-
   color:#19703b;
-
   font-size:9px;
-
   font-weight:1000;
+}
+
+.promoDate{
+  margin-top:10px;
+  color:#8b2d0c;
+  font-size:10px;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.stockNotice{
+  margin-top:5px;
+  color:#a34b12;
+  font-size:9px;
+  font-weight:900;
 }
 
 .timer{
   margin-top:8px;
-
   color:#c43a0a;
-
   font-size:51px;
-
   font-weight:1000;
 }
 
 .timerLabel{
   color:#7d6948;
-
   font-size:8px;
-
   font-weight:900;
-
   letter-spacing:1.5px;
 }
 
 .timer.warning{
   color:#c00000;
-
-  animation:
-    timerPulse .65s infinite alternate;
+  animation:timerPulse .65s infinite alternate;
 }
 
 @keyframes timerPulse{
-
-  to{
-    transform:
-      scale(1.06);
-  }
-
+  to{transform:scale(1.06);}
 }
 
 .codeLabel{
   margin-top:14px;
-
   color:#806d4c;
-
   font-size:8px;
-
   letter-spacing:2px;
-
   font-weight:900;
 }
 
 .code{
   margin-top:5px;
-
   font-family:monospace;
-
   font-size:24px;
-
   font-weight:1000;
-
   letter-spacing:2px;
 }
 
 .showVoucher{
   margin-top:17px;
-
   padding:16px 10px;
-
   border-radius:14px;
-
   background:#180c05;
-
   color:#fff;
-
   font-size:15px;
-
   font-weight:1000;
 }
 
 .showVoucher small{
   display:block;
-
   margin-top:5px;
-
   color:#b9a17a;
-
   font-size:9px;
-
   font-weight:normal;
-
   line-height:1.4;
 }
 
 .location{
   margin-top:15px;
-
   font-size:12px;
-
   font-weight:1000;
 }
 
 .maps{
   display:block;
-
   margin-top:11px;
-
   padding:13px;
-
   border-radius:12px;
-
   text-decoration:none;
-
   color:#fff;
-
   background:#231106;
-
   font-size:11px;
-
   font-weight:1000;
 }
 
 .terms{
   margin-top:12px;
-
   color:#806d4c;
-
   font-size:8px;
-
   line-height:1.5;
 }
 
-
-/* =====================================================
-   AFTER
-===================================================== */
-
 .after{
   display:none;
-
   margin-top:15px;
-
   padding:17px;
-
   text-align:center;
-
   border:1px solid #242424;
-
   border-radius:19px;
-
   background:#0e0e0e;
 }
 
@@ -1167,58 +785,35 @@ body{
 
 .afterTitle{
   font-size:13px;
-
   font-weight:900;
 }
 
 .afterText{
   margin-top:5px;
-
   color:#8e806b;
-
   font-size:10px;
 }
 
 .afterButton{
   display:block;
-
   margin-top:12px;
-
   padding:13px;
-
   border-radius:12px;
-
   text-decoration:none;
-
   color:#fff;
-
   background:#1d1d1d;
-
   border:1px solid #333;
-
   font-size:11px;
-
   font-weight:900;
 }
 
-
-/* =====================================================
-   AGOTADO
-===================================================== */
-
 .soldOut{
   display:none;
-
   margin-top:18px;
-
   padding:22px 15px;
-
   text-align:center;
-
   border:1px solid #5a1914;
-
   border-radius:20px;
-
   background:#160a09;
 }
 
@@ -1232,34 +827,51 @@ body{
 
 .soldOut h2{
   margin-top:7px;
-
   font-size:20px;
 }
 
 .soldOut p{
   margin-top:6px;
-
   color:#9e8873;
-
   font-size:10px;
-
   line-height:1.5;
 }
 
+.closedPromo{
+  display:none;
+  margin-top:18px;
+  padding:22px 15px;
+  text-align:center;
+  border:1px solid #5a1914;
+  border-radius:20px;
+  background:#160a09;
+}
 
-/* =====================================================
-   FOOTER
-===================================================== */
+.closedPromo.show{
+  display:block;
+}
+
+.closedPromoIcon{
+  font-size:38px;
+}
+
+.closedPromo h2{
+  margin-top:7px;
+  font-size:20px;
+}
+
+.closedPromo p{
+  margin-top:6px;
+  color:#9e8873;
+  font-size:10px;
+  line-height:1.5;
+}
 
 .footer{
   margin-top:22px;
-
   text-align:center;
-
   color:#5e5548;
-
   font-size:8px;
-
   line-height:1.6;
 }
 
@@ -1267,13 +879,7 @@ body{
   color:#88785e;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media(max-width:380px){
-
   .brandName{
     font-size:34px;
   }
@@ -1293,21 +899,13 @@ body{
   .igButtonText{
     font-size:11px;
   }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
-
-
-<!-- =====================================================
-     MARCA
-===================================================== -->
 
 <header class="brand">
 
@@ -1322,11 +920,6 @@ body{
   <div class="brandLine"></div>
 
 </header>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <section class="hero">
 
@@ -1344,21 +937,16 @@ body{
   </div>
 
   <div class="heroSub">
-    DOS PANCHOS · PAGÁS UNO 🌭
+    PANCHO DE PARMESANO · PAGÁS UNO
   </div>
 
   <p class="heroDescription">
     Una promo especial de Como y Obligó.
-    Activala solamente cuando estés listo
-    para venir al local.
+    Válida únicamente el lunes 24 y martes 25 de agosto,
+    hasta agotar stock.
   </p>
 
 </section>
-
-
-<!-- =====================================================
-     STOCK
-===================================================== -->
 
 <section class="availability">
 
@@ -1377,7 +965,6 @@ body{
 
   </div>
 
-
   <div class="availabilityBar">
 
     <div
@@ -1386,7 +973,6 @@ body{
     ></div>
 
   </div>
-
 
   <div class="availabilityBottom">
 
@@ -1405,16 +991,9 @@ body{
 
 </section>
 
-
-<!-- =====================================================
-     INSTAGRAM PREMIUM
-===================================================== -->
-
 <section class="instagramPremium">
 
-
   <div class="igTop">
-
 
     <div class="igLogoBox">
 
@@ -1423,7 +1002,6 @@ body{
       </div>
 
     </div>
-
 
     <div class="igInfo">
 
@@ -1441,12 +1019,9 @@ body{
 
     </div>
 
-
   </div>
 
-
   <div class="igDivider"></div>
-
 
   <div class="igMessage">
 
@@ -1460,7 +1035,6 @@ body{
     </span>
 
   </div>
-
 
   <a
     class="igButton"
@@ -1485,18 +1059,11 @@ body{
 
   </a>
 
-
   <div class="igOptional">
     Seguinos si querés ❤️ · No es obligatorio para usar el 2×1
   </div>
 
-
 </section>
-
-
-<!-- =====================================================
-     ACTIVACIÓN
-===================================================== -->
 
 <section
   class="actionCard"
@@ -1508,25 +1075,20 @@ body{
   </div>
 
   <p class="actionText">
-    Activá el voucher cuando estés
-    listo para presentarlo en el local.
+    Activá el voucher cuando estés listo
+    para presentarlo en el local.
     Una vez activado, tenés 5 minutos.
   </p>
 
-
   <button
     class="activate"
+    id="activateButton"
     onclick="startVoucher()"
   >
     🔥 ACTIVAR MI 2×1
   </button>
 
 </section>
-
-
-<!-- =====================================================
-     COUNTDOWN
-===================================================== -->
 
 <section
   class="countdown"
@@ -1545,11 +1107,6 @@ body{
   </div>
 
 </section>
-
-
-<!-- =====================================================
-     UNLOCK
-===================================================== -->
 
 <section
   class="unlock"
@@ -1570,11 +1127,6 @@ body{
 
 </section>
 
-
-<!-- =====================================================
-     VOUCHER
-===================================================== -->
-
 <section
   class="voucher"
   id="voucher"
@@ -1591,19 +1143,24 @@ body{
     </div>
 
     <div class="voucherSubtitle">
-      DOS PANCHOS · PAGÁS UNO
+      PANCHO DE PARMESANO
     </div>
 
   </div>
 
-
   <div class="voucherContent">
-
 
     <div class="validBadge">
       ● VOUCHER ACTIVO
     </div>
 
+    <div class="promoDate">
+      Válido lunes 24 y martes 25 de agosto
+    </div>
+
+    <div class="stockNotice">
+      ⚠️ HASTA AGOTAR STOCK
+    </div>
 
     <div
       class="timer"
@@ -1612,16 +1169,13 @@ body{
       05:00
     </div>
 
-
     <div class="timerLabel">
       TIEMPO RESTANTE
     </div>
 
-
     <div class="codeLabel">
       CÓDIGO DE BENEFICIO
     </div>
-
 
     <div
       class="code"
@@ -1629,7 +1183,6 @@ body{
     >
       CYOB • 0000
     </div>
-
 
     <div class="showVoucher">
 
@@ -1642,11 +1195,9 @@ body{
 
     </div>
 
-
     <div class="location">
       📍 Gorriti 5061 · Palermo
     </div>
-
 
     <a
       class="maps"
@@ -1657,22 +1208,17 @@ body{
       📍 CÓMO LLEGAR
     </a>
 
-
     <div class="terms">
+      2×1 en pancho de parmesano.
       Un voucher por persona.
       Válido únicamente presentando
       esta pantalla en el local.
+      Sujeto a disponibilidad.
     </div>
-
 
   </div>
 
 </section>
-
-
-<!-- =====================================================
-     DESPUÉS DEL VOUCHER
-===================================================== -->
 
 <section
   class="after"
@@ -1699,11 +1245,6 @@ body{
 
 </section>
 
-
-<!-- =====================================================
-     AGOTADO
-===================================================== -->
-
 <section
   class="soldOut"
   id="soldOut"
@@ -1726,10 +1267,28 @@ body{
 
 </section>
 
+<section
+  class="closedPromo"
+  id="closedPromo"
+>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+  <div class="closedPromoIcon">
+    🔒
+  </div>
+
+  <h2>
+    PROMO NO DISPONIBLE
+  </h2>
+
+  <p>
+    El 2×1 estuvo disponible
+    únicamente el lunes 24 y
+    martes 25 de agosto.
+    Seguinos en Instagram para
+    enterarte de las próximas promos.
+  </p>
+
+</section>
 
 <footer class="footer">
 
@@ -1747,19 +1306,107 @@ body{
 
 </footer>
 
-
 </div>
 
-
 <script>
+
+/* =====================================================
+   CONFIGURACIÓN DE LA PROMO
+===================================================== */
+
+const PROMO_YEAR = 2026;
+const PROMO_MONTH = 8;
+
+/*
+   Días válidos:
+   24 = lunes
+   25 = martes
+*/
+
+const PROMO_START_DAY = 24;
+const PROMO_END_DAY = 25;
+
 
 /* =====================================================
    VARIABLES
 ===================================================== */
 
 let disponibles = 100;
-
 let timerInterval = null;
+
+
+/* =====================================================
+   FECHA ARGENTINA
+===================================================== */
+
+function getArgentinaDate(){
+
+  const now = new Date();
+
+  return new Date(
+    now.toLocaleString(
+      "en-US",
+      {
+        timeZone:"America/Argentina/Buenos_Aires"
+      }
+    )
+  );
+
+}
+
+
+/* =====================================================
+   COMPROBAR FECHA DE PROMO
+===================================================== */
+
+function promoDisponible(){
+
+  const fecha = getArgentinaDate();
+
+  const año = fecha.getFullYear();
+  const mes = fecha.getMonth() + 1;
+  const dia = fecha.getDate();
+
+  return (
+    año === PROMO_YEAR &&
+    mes === PROMO_MONTH &&
+    dia >= PROMO_START_DAY &&
+    dia <= PROMO_END_DAY
+  );
+
+}
+
+
+/* =====================================================
+   ESTADO DE FECHA
+===================================================== */
+
+function checkPromoDate(){
+
+  const actionCard =
+    document.getElementById("actionCard");
+
+  const closedPromo =
+    document.getElementById("closedPromo");
+
+  const activateButton =
+    document.getElementById("activateButton");
+
+  if(promoDisponible()){
+
+    actionCard.style.display = "block";
+    closedPromo.classList.remove("show");
+
+    activateButton.disabled = false;
+
+  }else{
+
+    actionCard.style.display = "none";
+    closedPromo.classList.add("show");
+
+  }
+
+}
 
 
 /* =====================================================
@@ -1780,14 +1427,11 @@ function updateStock(){
   const status =
     document.getElementById("stockStatus");
 
-
   number.textContent =
     disponibles + " / 100";
 
-
   bar.style.width =
     disponibles + "%";
-
 
   if(disponibles >= 70){
 
@@ -1829,6 +1473,14 @@ function updateStock(){
     status.textContent =
       "AGOTADO";
 
+    document
+      .getElementById("soldOut")
+      .classList.add("show");
+
+    document
+      .getElementById("actionCard")
+      .style.display = "none";
+
   }
 
 }
@@ -1857,6 +1509,23 @@ function generateCode(){
 
 function startVoucher(){
 
+  /*
+    SEGURIDAD DE FECHA
+  */
+
+  if(!promoDisponible()){
+
+    checkPromoDate();
+
+    return;
+
+  }
+
+
+  /*
+    SEGURIDAD DE STOCK
+  */
+
   if(disponibles <= 0){
 
     document
@@ -1868,7 +1537,9 @@ function startVoucher(){
   }
 
 
-  /* RESTAMOS UNO */
+  /*
+    RESTAR UNO
+  */
 
   disponibles--;
 
@@ -1897,7 +1568,6 @@ function startVoucher(){
   actionCard.style.display =
     "none";
 
-
   countdown.classList.add("show");
 
 
@@ -1912,7 +1582,6 @@ function startVoucher(){
 
       count--;
 
-
       if(count > 0){
 
         number.textContent =
@@ -1924,16 +1593,13 @@ function startVoucher(){
 
         clearInterval(animation);
 
-
         countdown.classList.remove(
           "show"
         );
 
-
         unlock.classList.add(
           "show"
         );
-
 
         document
           .getElementById("code")
@@ -1947,16 +1613,13 @@ function startVoucher(){
             "show"
           );
 
-
           voucher.classList.add(
             "show"
           );
 
-
           after.classList.add(
             "show"
           );
-
 
           startTimer();
 
@@ -1965,7 +1628,6 @@ function startVoucher(){
             behavior:"smooth",
             block:"center"
           });
-
 
         },900);
 
@@ -1986,9 +1648,7 @@ function startTimer(){
     return;
   }
 
-
   let seconds = 300;
-
 
   const timer =
     document.getElementById("timer");
@@ -2041,7 +1701,6 @@ function startTimer(){
 
   updateTimer();
 
-
   timerInterval =
     setInterval(
       updateTimer,
@@ -2056,8 +1715,10 @@ function startTimer(){
 ===================================================== */
 
 updateStock();
+checkPromoDate();
 
 </script>
 
 </body>
 </html>
+```
