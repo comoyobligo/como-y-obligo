@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atrapa La Burger PRO — Demo</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070707;color:#fff;font-family:Inter,Arial,sans-serif}.wrap{min-height:100vh;display:grid;place-items:center;padding:14px}.phone{width:min(430px,100%);height:min(820px,calc(100vh - 28px));min-height:650px;background:#0f0f0f;border:1px solid #292929;border-radius:30px;overflow:hidden;box-shadow:0 30px 90px #000;position:relative}
+header{text-align:center;padding:22px 18px 8px}.brand{font-size:11px;letter-spacing:4px;font-weight:900;color:#ff3b30}.logo{font-size:28px;font-weight:1000;margin-top:4px}.sub{font-size:12px;color:#888}
+.screen{height:calc(100% - 92px);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.hidden{display:none!important}
+.hero{font-size:90px;filter:drop-shadow(0 12px 15px #000)}h1{font-size:32px;margin:8px 0}h2{font-size:24px}.muted{color:#aaa;line-height:1.5}.card{width:100%;padding:15px;border:1px solid #292929;background:#151515;border-radius:17px;margin:12px 0}.card strong{color:#ff4b43}
+button{border:0;border-radius:15px;padding:15px 22px;font-weight:900;font-size:16px;background:#ef3027;color:#fff;cursor:pointer;box-shadow:0 8px 25px #ef302740}button:active{transform:scale(.96)}.dark{background:#222;box-shadow:none}
+.stats{width:100%;display:flex;gap:8px;margin-bottom:8px}.stat{flex:1;background:#151515;border:1px solid #292929;border-radius:12px;padding:8px}.stat b{font-size:22px;display:block}.stat small{font-size:9px;color:#888}
+.target{font-size:12px;color:#aaa;margin:4px 0 8px}.target b{color:#fff}.arena{width:100%;height:100%;min-height:455px;border:1px solid #292929;border-radius:19px;background:radial-gradient(circle at 50% 30%,#252525,#0b0b0b 72%);position:relative;overflow:hidden}
+.item{position:absolute;padding:0;background:none;box-shadow:none;font-size:43px;line-height:1;filter:drop-shadow(0 6px 7px #000);animation:pop .08s ease-out}@keyframes pop{from{transform:scale(.4)}to{transform:scale(1)}}
+input{width:100%;padding:15px;background:#111;border:1px solid #444;border-radius:14px;color:#fff;text-align:center;font-size:16px;margin:8px 0;outline:none}.score{font-size:64px;font-weight:1000}.prize{font-size:45px}.board{width:100%;border:1px solid #292929;background:#111;border-radius:17px;padding:8px;margin:12px 0;max-height:270px}.row{display:flex;padding:9px;border-bottom:1px solid #252525}.row:last-child{border:0}.r{width:35px}.n{flex:1;text-align:left;font-weight:800}.p{font-weight:900;color:#ff4b43}.footer{position:absolute;bottom:8px;width:100%;text-align:center;font-size:9px;color:#555;letter-spacing:1px}
+</style></head><body><div class="wrap"><main class="phone">
+<header><div class="brand">DEMO COMERCIAL</div><div class="logo">🍔 ATRAPA LA BURGER</div><div class="sub">DESAFÍO SEMANAL</div></header>
+
+<section id="home" class="screen"><div class="hero">🍔</div><h1>¿SOS EL REY DE LA BURGER?</h1><p class="muted">Tenés <b>10 segundos</b>. Tocá las burgers lo más rápido posible y conseguí el puntaje más alto.</p><div class="card">🏆 <strong>El #1 de la semana gana 1 hamburguesa gratis.</strong></div><button onclick="start()">🔥 JUGAR</button><button class="dark" style="margin-top:9px" onclick="board()">🏆 VER RANKING</button></section>
+
+<section id="play" class="screen hidden"><div class="stats"><div class="stat"><b id="pts">0</b><small>PUNTOS</small></div><div class="stat"><b id="clock">10.0</b><small>TIEMPO</small></div><div class="stat"><b id="record">0</b><small>RÉCORD</small></div></div><div class="target">🎯 TOCÁ <b>🍔</b> &nbsp; ❌ EVITÁ <b>🍟</b></div><div id="arena" class="arena"></div></section>
+
+<section id="save" class="screen hidden"><div class="hero">🏁</div><h2>¡TIEMPO!</h2><div class="score" id="final">0</div><div class="muted">PUNTOS</div><div class="card">🏆 Récord de esta demo: <b id="finalRecord">0</b><br><br>Ingresá tu nombre para entrar al ranking semanal.</div><input id="name" maxlength="16" placeholder="TU NOMBRE"><button onclick="save()">🚀 SUBIR AL RANKING</button></section>
+
+<section id="board" class="screen hidden"><div class="prize">🍔</div><h2>RANKING SEMANAL</h2><div class="muted">🥇 El #1 gana una hamburguesa gratis</div><div id="list" class="board"></div><button onclick="start()">🔥 SUPERAR EL RÉCORD</button><button class="dark" style="margin-top:9px" onclick="show('home')">← VOLVER</button></section>
+<div class="footer">ATRAPA LA BURGER · V1 PRO DEMO</div></main></div>
+<script>
+const seed=[["MATEO",34],["LUCAS",31],["SOFI",29],["JUAN",27],["MARTI",23]];
+let scores=JSON.parse(localStorage.getItem("burgerProScores")||"null")||seed.map(x=>({name:x[0],score:x[1]}));
+let score=0,t=10,raf=null,last=0,best=Number(localStorage.getItem("burgerProBest")||0),playing=false;
+const $=id=>document.getElementById(id);
+function show(id){["home","play","save","board"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function start(){score=0;t=10;playing=true;$("pts").textContent=0;$("record").textContent=best;show("play");spawn();last=performance.now();raf=requestAnimationFrame(loop)}
+function loop(now){if(!playing)return;let dt=(now-last)/1000;last=now;t-=dt;$("clock").textContent=Math.max(0,t).toFixed(1);if(t<=0){finish();return}requestAnimationFrame(loop)}
+function spawn(){if(!playing)return;const a=$("arena");a.innerHTML="";for(let i=0;i<6;i++){let b=document.createElement("button"),good=Math.random()<.5;b.className="item";b.textContent=good?"🍔":"🍟";b.style.left=(3+Math.random()*88)+"%";b.style.top=(3+Math.random()*88)+"%";b.onclick=()=>{if(!playing)return;score+=good?1:-1;score=Math.max(0,score);$("pts").textContent=score;spawn()};a.appendChild(b)}}
+function finish(){playing=false;cancelAnimationFrame(raf);$("arena").innerHTML="";if(score>best){best=score;localStorage.setItem("burgerProBest",best)}$("final").textContent=score;$("finalRecord").textContent=best;$("name").value="";show("save")}
+function save(){let n=$("name").value.trim().toUpperCase()||"ANÓNIMO";scores.push({name:n,score});scores.sort((a,b)=>b.score-a.score);scores=scores.slice(0,10);localStorage.setItem("burgerProScores",JSON.stringify(scores));board()}
+function board(){render();show("board")}
+function render(){let l=$("list");l.innerHTML="";scores.forEach((x,i)=>{let d=document.createElement("div");d.className="row";d.innerHTML=`<span class="r">${i<3?["🥇","🥈","🥉"][i]:i+1}</span><span class="n">${esc(x.name)}</span><span class="p">${x.score} pts</span>`;l.appendChild(d)})}
+function esc(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+render();
+</script></body></html>
