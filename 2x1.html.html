@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Como y Obligo | 2×1</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#e21b12;--orange:#ff6900;--gold:#ffb52e;--cream:#fff3cf;--line:#292929}
+body{min-height:100vh;background:radial-gradient(circle at 50% -15%,#641b06 0%,#1d0803 27%,#080808 67%);color:#fff;font-family:Arial,Helvetica,sans-serif}
+.container{width:100%;max-width:520px;margin:auto;padding:22px 15px 42px}
+.brand{text-align:center}.brandName{font-family:Georgia,serif;font-size:38px;line-height:.84;font-weight:900;color:var(--red);text-shadow:0 0 5px #ffbd00,0 0 16px #ff5200}
+.brandTag{margin-top:13px;color:#bda777;font-size:9px;font-weight:700;letter-spacing:2.4px}.brandLine{width:95px;height:2px;margin:14px auto 0;background:linear-gradient(90deg,transparent,var(--orange),transparent)}
+.hero{margin-top:25px;text-align:center}.eyebrow{display:inline-flex;padding:7px 11px;border:1px solid #63300e;border-radius:30px;background:#170d08;color:#ffb64a;font-size:9px;font-weight:900;letter-spacing:1.5px}
+.hero h1{margin-top:18px;font-size:28px;line-height:1.08;font-weight:900}.hero h1 span{color:var(--gold)}
+.heroOffer{margin-top:5px;font-size:78px;line-height:.9;font-weight:1000;color:var(--orange);text-shadow:0 5px 30px #ff5b0025}
+.heroSub{margin-top:9px;color:var(--cream);font-size:16px;font-weight:800}.heroDescription{max-width:390px;margin:12px auto 0;color:#a99573;font-size:12px;line-height:1.55}
+.card{margin-top:18px;padding:18px;border:1px solid #292929;border-radius:20px;background:linear-gradient(145deg,#151515,#0d0d0d);box-shadow:0 10px 30px #00000045}
+.stockTop{display:flex;justify-content:space-between;align-items:center}.stockTitle{font-size:12px;font-weight:900}.stockCount{color:var(--gold);font-size:20px;font-weight:1000}.bar{height:9px;margin-top:13px;overflow:hidden;border-radius:20px;background:#28201a}.fill{width:100%;height:100%;border-radius:20px;background:linear-gradient(90deg,var(--red),var(--orange),var(--gold))}
+.stockBottom{display:flex;justify-content:space-between;margin-top:9px;color:#8f816c;font-size:9px}.status{color:#ffb64a;font-weight:900}
+.instagram{margin-top:16px;padding:19px 17px;border:1px solid #49251c;border-radius:22px;background:radial-gradient(circle at 100% 0%,#ff65002c,transparent 40%),linear-gradient(145deg,#1b100d,#0b0b0b 75%);box-shadow:0 15px 40px #00000060}
+.igTop{display:flex;align-items:center;gap:13px}.igIcon{width:55px;height:55px;flex:none;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,#5c176e,#d62976 48%,#ff8a00);border:1px solid #ffffff35}
+.igOfficial{color:#ff9b4b;font-size:8px;font-weight:1000;letter-spacing:1.6px}.igUser{margin-top:3px;font-size:18px;font-weight:1000}.igDesc{margin-top:4px;color:#95836e;font-size:10px}
+.igMessage{margin-top:17px;text-align:center}.igMessage strong{display:block;font-size:15px}.igMessage span{display:block;margin:5px auto 0;color:#91816f;font-size:10px;line-height:1.5}
+.igButton{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:17px;padding:16px 14px;border-radius:15px;text-decoration:none;color:#fff;background:linear-gradient(110deg,#701844,#c92168 38%,#e82c63 60%,#ff6900);border:1px solid #ffb07875;font-size:12px;font-weight:1000;letter-spacing:.7px}
+.action{margin-top:14px;padding:20px 17px;border:1px solid #7a3c0d;border-radius:22px;background:linear-gradient(145deg,#19110c,#0d0d0d);text-align:center}
+.action h2{font-size:18px}.action p{max-width:350px;margin:7px auto 15px;color:#9e8c70;font-size:11px;line-height:1.5}
+button{width:100%;border:0;border-radius:14px;padding:17px;cursor:pointer;color:#1a0b02;background:linear-gradient(135deg,#fff0b8,#ffc13d);box-shadow:0 8px 25px #ff970030;font-size:15px;font-weight:1000}
+button:disabled{cursor:not-allowed;opacity:.45}
+.countdown{display:none;text-align:center;padding:28px 0 8px}.countdown.show{display:block}.count{font-size:74px;font-weight:1000;color:var(--gold)}.countLabel{margin-top:8px;color:#9d8b6d;font-size:9px;letter-spacing:2px;font-weight:900}
+.unlock{display:none;text-align:center;padding:18px 0 5px}.unlock.show{display:block}.unlockIcon{font-size:45px}.unlock h2{margin-top:7px;font-size:23px}.unlock p{margin-top:5px;color:#9d8b6d;font-size:10px}
+.voucher{display:none;margin-top:18px;overflow:hidden;color:#170d06;border-radius:22px;background:#f8e9bd;box-shadow:0 20px 50px #000}.voucher.show{display:block}
+.vHead{padding:20px 18px;text-align:center;color:#fff;background:linear-gradient(135deg,#a80e09,#e83f0b)}.vBrand{font-size:8px;font-weight:900;letter-spacing:2px;opacity:.8}.vTitle{margin-top:5px;font-size:29px;font-weight:1000}.vSub{margin-top:4px;font-size:11px}
+.vContent{padding:19px 16px 20px;text-align:center}.badge{display:inline-block;padding:6px 10px;border-radius:20px;background:#e2f5e8;color:#176b35;font-size:10px;font-weight:900}.vMain{margin-top:12px;font-size:18px;font-weight:1000}.vNote{margin-top:7px;color:#765f43;font-size:11px;line-height:1.5}.code{margin-top:15px;padding:13px;border:2px dashed #a98248;border-radius:12px;font-size:18px;font-weight:1000;letter-spacing:2px}.footer{margin-top:20px;text-align:center;color:#65594c;font-size:9px;line-height:1.5}
+.hidden{display:none!important}
+@media(max-width:380px){.heroOffer{font-size:68px}.brandName{font-size:34px}}
+</style>
+</head>
+<body>
+<main class="container">
+  <section class="brand">
+    <div class="brandName">COMO Y OBLIGO</div>
+    <div class="brandTag">PANCHERÍA • PALERMO</div>
+    <div class="brandLine"></div>
+  </section>
+
+  <section class="hero">
+    <div class="eyebrow">🔥 PROMO ESPECIAL</div>
+    <h1>HOY COMÉS <span>MEJOR</span></h1>
+    <div class="heroOffer">2×1</div>
+    <div class="heroSub">PANCHO PARMESANO</div>
+    <p class="heroDescription">Conseguí tu beneficio y disfrutá 2 panchos pagando 1.</p>
+  </section>
+
+  <section class="card">
+    <div class="stockTop"><span class="stockTitle">Beneficios disponibles</span><span class="stockCount" id="stockCount">100</span></div>
+    <div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="stockBottom"><span>Limitado</span><span class="status" id="status">DISPONIBLE</span></div>
+  </section>
+
+  <section class="instagram">
+    <div class="igTop">
+      <div class="igIcon">◎</div>
+      <div>
+        <div class="igOfficial">SEGUINOS EN INSTAGRAM</div>
+        <div class="igUser">@comoyobligo</div>
+        <div class="igDesc">Promos, novedades y mucho pancho 🌭</div>
+      </div>
+    </div>
+    <div class="igMessage">
+      <strong>Primero seguinos en Instagram</strong>
+      <span>Después activá tu beneficio 2×1.</span>
+    </div>
+    <a class="igButton" href="https://www.instagram.com/comoyobligo/" target="_blank" rel="noopener">📸 IR A INSTAGRAM →</a>
+  </section>
+
+  <section class="action">
+    <h2>🎟️ ACTIVÁ TU 2×1</h2>
+    <p>Una vez que hayas seguido nuestra cuenta, tocá el botón para generar tu voucher.</p>
+    <button id="activate">ACTIVAR BENEFICIO</button>
+  </section>
+
+  <section class="countdown" id="countdown">
+    <div class="count" id="count">3</div>
+    <div class="countLabel">GENERANDO TU BENEFICIO</div>
+  </section>
+
+  <section class="unlock" id="unlock">
+    <div class="unlockIcon">🎉</div>
+    <h2>¡BENEFICIO ACTIVADO!</h2>
+    <p>Mostrá este voucher en el local.</p>
+  </section>
+
+  <section class="voucher" id="voucher">
+    <div class="vHead">
+      <div class="vBrand">COMO Y OBLIGO</div>
+      <div class="vTitle">2×1</div>
+      <div class="vSub">PANCHO PARMESANO</div>
+    </div>
+    <div class="vContent">
+      <span class="badge">✓ BENEFICIO VÁLIDO</span>
+      <div class="vMain">LLEVÁS 2 • PAGÁS 1</div>
+      <div class="vNote">Presentá este voucher en el local para utilizar la promo.</div>
+      <div class="code" id="code">COMO2X1</div>
+      <div class="vNote">Promo sujeta a disponibilidad. Un beneficio por persona.</div>
+    </div>
+  </section>
+
+  <div class="footer">Gorriti 5061 · Palermo · Como y Obligo 🌭</div>
+</main>
+
+<script>
+const btn=document.getElementById('activate');
+const countdown=document.getElementById('countdown');
+const count=document.getElementById('count');
+const unlock=document.getElementById('unlock');
+const voucher=document.getElementById('voucher');
+const stockCount=document.getElementById('stockCount');
+const fill=document.getElementById('fill');
+const status=document.getElementById('status');
+
+let used=localStorage.getItem('como_obligo_2x1_used')==='1';
+
+function showUsed(){
+  stockCount.textContent='—';
+  fill.style.width='0%';
+  status.textContent='AGOTADO / YA UTILIZADO';
+  btn.disabled=true;
+  btn.textContent='BENEFICIO YA ACTIVADO';
+}
+if(used) showUsed();
+
+btn.addEventListener('click',()=>{
+  if(used) return;
+  btn.disabled=true;
+  countdown.classList.add('show');
+  let n=3;
+  count.textContent=n;
+  const timer=setInterval(()=>{
+    n--;
+    count.textContent=n;
+    if(n<=0){
+      clearInterval(timer);
+      countdown.classList.remove('show');
+      unlock.classList.add('show');
+      voucher.classList.add('show');
+      localStorage.setItem('como_obligo_2x1_used','1');
+      used=true;
+      stockCount.textContent='99';
+      fill.style.width='99%';
+      status.textContent='DISPONIBLE';
+      btn.textContent='BENEFICIO ACTIVADO';
+    }
+  },700);
+});
+</script>
+</body>
+</html>
